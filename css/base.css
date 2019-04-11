@@ -22,7 +22,6 @@ h3,
 h4,
 h5,
 h6,
-.navbar-custom,
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading,
 .intro-header .post-heading .subheading,
@@ -30,6 +29,10 @@ h6,
 .pager li > a,
 .pager li > span {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.centaur,
+.navbar-custom {
+  font-family: 'Centaur', centaur;
 }
 body {
   font-size: 20px;
@@ -84,7 +87,7 @@ hr.small {
 }
 .navbar-custom .nav li a {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 1px;
   text-decoration: none;
