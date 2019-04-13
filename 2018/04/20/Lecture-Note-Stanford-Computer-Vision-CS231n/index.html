@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/st-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/st-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="machine learning,deep learning,computer vision,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Welcome to my note on CS231n! In this note, I summarize the key points in this course with my comments. Supplemental tutorials by other experts are also provided to grasp a deeper understanding of thi">
+<meta name="keywords" content="machine learning,deep learning,computer vision">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lecture Note: Stanford Computer Vision CS231n">
+<meta property="og:url" content="http://yoursite.com/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/index.html">
+<meta property="og:site_name" content="The Yard">
+<meta property="og:description" content="Welcome to my note on CS231n! In this note, I summarize the key points in this course with my comments. Supplemental tutorials by other experts are also provided to grasp a deeper understanding of thi">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/assets/1554984314649.png">
+<meta property="og:image" content="http://yoursite.com/assets/1554984357707.png">
+<meta property="og:image" content="http://yoursite.com/assets/1554984349744.png">
+<meta property="og:image" content="http://yoursite.com/assets/1554984460281.png">
+<meta property="og:image" content="http://yoursite.com/assets/1554984462447.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118508595.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118552268.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118575182.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118582290.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118592815.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118605355.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118623788.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118680783.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118709172.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118794967.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118806486.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118849229.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133574839.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555118917150.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119008677.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119128151.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119160397.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119174931.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119213571.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119227647.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119258638.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119342625.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119352934.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119367698.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119372127.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119382650.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119394524.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119498617.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119505538.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119516346.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119527090.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119537205.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119551909.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119555642.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119570314.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119589676.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119594158.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119608528.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119613678.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119618224.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119640784.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119653249.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119668121.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119711313.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119783184.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119792452.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119796862.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119848477.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119853711.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119972395.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119989779.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555119995684.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120002164.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120015106.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120022198.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120028724.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120106146.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120118130.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120146461.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120188357.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120214331.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120221498.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120337423.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120362800.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120423547.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120433535.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120455605.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555120502804.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133283816.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133292966.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133306241.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133327076.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133353270.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133370237.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133380565.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133385970.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133843377.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133888631.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133893376.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133918629.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133932966.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133948185.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133961173.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133965121.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555133970425.png">
+<meta property="og:updated_time" content="2019-04-13T05:56:48.116Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lecture Note: Stanford Computer Vision CS231n">
+<meta name="twitter:description" content="Welcome to my note on CS231n! In this note, I summarize the key points in this course with my comments. Supplemental tutorials by other experts are also provided to grasp a deeper understanding of thi">
+<meta name="twitter:image" content="http://yoursite.com/assets/1554984314649.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/">
+
+
+
+
+
+  <title>Lecture Note: Stanford Computer Vision CS231n | The Yard</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Yard</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">life journey, beauty & challenge</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael.Xiu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Yard">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Lecture Note: Stanford Computer Vision CS231n</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-20T00:00:00+08:00">
+                2018-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  15
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Welcome to my note on CS231n! In this note, I summarize the key points in this course with my comments. Supplemental tutorials by other experts are also provided to grasp a deeper understanding of this field. Let’s find out how to empower machine vision with deep learning!</p>
+<a id="more"></a>
+<h1 id="L2-Image-Classification"><a href="#L2-Image-Classification" class="headerlink" title="L2: Image Classification"></a>L2: Image Classification</h1><h2 id="K-Nearest-Neighbor"><a href="#K-Nearest-Neighbor" class="headerlink" title="K-Nearest Neighbor"></a>K-Nearest Neighbor</h2><p>不太好在于只是把注意力放在distance； 而且为了密集填充区域，随着维度上升，需要的数据点就会指数增加</p>
+<h2 id="Linear-classification"><a href="#Linear-classification" class="headerlink" title="Linear classification"></a>Linear classification</h2><p>parameter好处在于测试时不用考虑数据集，只用考虑x,W</p>
+<p>bias 在数据不平衡时起作用</p>
+<p>缺点是只有一个template</p>
+<h2 id="Cross-Validation"><a href="#Cross-Validation" class="headerlink" title="Cross Validation"></a>Cross Validation</h2><p><img src="\assets\1554984314649.png" alt="1554984314649"></p>
+<p><img src="\assets\1554984357707.png" alt="1554984357707"></p>
+<p>原理实际上是：为了使得训练出来的模型稍微复杂些适应现实情况，又不能太复杂以至于泛化性差，我们需要有一定数据去测试模型的效果。但是我们不能用test的数据，毕竟这有点作弊了，于是我们在训练集中划分出folds(羊群)，取其中一个作为假定的test数据集进行检验。然后换着fold作为测试对象。最终将总的误差求平均作为模型误差值！</p>
+<p><img src="\assets\1554984349744.png" alt="1554984349744"></p>
+<p>举个例子：横轴为多项式次数，当次数越高，虽然在训练集上效果越好，但是交叉验证的结果很差，证明次方数高时，其泛化性是很低的。</p>
+<h2 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h2><p><img src="\assets\1554984460281.png" alt="1554984460281"><br><img src="\assets\1554984462447.png" alt="1554984462447"></p>
+<h1 id="L3-Loss-Functions-and-Optimization"><a href="#L3-Loss-Functions-and-Optimization" class="headerlink" title="L3: Loss Functions and Optimization"></a>L3: Loss Functions and Optimization</h1><h2 id="Loss-Functions"><a href="#Loss-Functions" class="headerlink" title="Loss Functions"></a>Loss Functions</h2><p><img src="/assets/1555118508595.png" alt="1555118508595"></p>
+<p>计算错误判断的label的值-正确label的值＋1，若此值小于0，意味着正确label的区分度好，loss=0；若此值大于0，意味着label区分度差，loss等于此值。</p>
+<p><img src="/assets/1555118552268.png" alt="1555118552268"></p>
+<p><img src="/assets/1555118575182.png" alt="1555118575182"></p>
+<p><img src="/assets/1555118582290.png" alt="1555118582290"></p>
+<p>选择loss function的方式在于如何衡量误差</p>
+<p><img src="/assets/1555118592815.png" alt="1555118592815"></p>
+<p>鼓励将模型简单化，引入regularization 其中λ是超参数：超参数是在开始学习过程之前设置值的参数，而不是通过训练得到的参数数据。通常情况下，需要对超参数进行优化，给学习机选择一组最优超参数，以提高学习的性能和效果。</p>
+<p><img src="/assets/1555118605355.png" alt="1555118605355"></p>
+<p>当使用复杂模型时，会被惩罚。</p>
+<p><img src="/assets/1555118623788.png" alt="1555118623788"></p>
+<p>Softmax函数作为loss function是另外一种选择。其值介于0-1，sum=1。</p>
+<p><img src="/assets/1555118680783.png" alt="1555118680783"></p>
+<p>loss function是为了最小化，因此取-log进行优化。</p>
+<p><img src="/assets/1555118709172.png" alt="1555118709172"></p>
+<p>SVM loss 的特点在于，如果正确label已经具有很好区分度（过了bar线之后就放弃了），那么loss=0，即使改变正确label对应的值，也不影响loss。</p>
+<p>而Softmax特点是始终希望正确label的值在经过softmax函数后趋向于1，意味着始终希望预测结果全部都落在正确label上。</p>
+<h2 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h2><p><img src="/assets/1555118794967.png" alt="1555118794967"></p>
+<p><img src="/assets/1555118806486.png" alt="1555118806486"></p>
+<p>运用batch减少优化时的计算量</p>
+<p><img src="/assets/1555118849229.png" alt="1555118849229"></p>
+<h1 id="L4-Introduction-to-Neural-Networks"><a href="#L4-Introduction-to-Neural-Networks" class="headerlink" title="L4: Introduction to Neural Networks"></a>L4: Introduction to Neural Networks</h1><h2 id="Neuron"><a href="#Neuron" class="headerlink" title="Neuron"></a>Neuron</h2><p><strong>注：关于如何理解神经元个数和特征</strong></p>
+<p><img src="/assets/1555133574839.png" alt="1555133574839"></p>
+<p>XW矩阵，W的行数与X匹配，而W的列数是不受限的，所以W的列才是特征。</p>
+<p>另外，在此例中b应该是1*4的矩阵，意味着每个图像在考虑同一个特征时，其所加的偏置都是相同的。</p>
+<p>有多少个特征就应该有多少个神经元（不确定）</p>
+<h2 id="Back-Propagation"><a href="#Back-Propagation" class="headerlink" title="Back Propagation"></a>Back Propagation</h2><p><img src="/assets/1555118917150.png" alt="1555118917150"></p>
+<p>但每一项只能是很简单的结构，很重要的是要画出图！</p>
+<p><img src="/assets/1555119008677.png" alt="1555119008677"></p>
+<p>1作为local值，求1/x节点的值，则1.37作为x值，求-1/x^2</p>
+<p><img src="/assets/1555119128151.png" alt="1555119128151"></p>
+<p>继续对+1求导为1，意味着1要乘以之前节点的值-0.53=-0.53</p>
+<p><img src="/assets/1555119160397.png" alt="1555119160397"></p>
+<p>可以把一些计算整合起来作为1个node</p>
+<p><img src="/assets/1555119174931.png" alt="1555119174931"></p>
+<p>Max可以看作是选择其中一个通道进行梯度传递，而mul可以看成是交换梯度</p>
+<p><img src="/assets/1555119213571.png" alt="1555119213571"></p>
+<p>Node的梯度由branch相加</p>
+<p><img src="/assets/1555119227647.png" alt="1555119227647"></p>
+<p>当是矩阵表示时，采用雅可比矩阵。但实际上不需要把雅可比矩阵明写，只需要知道每个x和每个y的对应关系即可。</p>
+<p><img src="/assets/1555119258638.png" alt="1555119258638"></p>
+<p>矩阵back propagation时，矩阵大小是相同的，如图红色矩阵和上面绿色矩阵是一样的，而每个元素的表达的是对应绿色矩阵的元素相对于L2的梯度。</p>
+<p><img src="/assets/1555119342625.png" alt="1555119342625"></p>
+<p>e.g. W12<em>x2是q1的一个项，所以W12的梯度等于x2</em>q1的梯度=0.4*0.44=0.176</p>
+<p><img src="/assets/1555119352934.png" alt="1555119352934"></p>
+<p>可以从雅可比矩阵的角度分析：即左边红色矩阵为W的雅可比矩阵，元素1.1是中间红色矩阵第一项对W1.1的梯度。元素1.2是红色矩阵第1项对W1.2的梯度。</p>
+<p><img src="/assets/1555119367698.png" alt="1555119367698"></p>
+<p><img src="/assets/1555119372127.png" alt="1555119372127"></p>
+<p><img src="/assets/1555119382650.png" alt="1555119382650"></p>
+<p><img src="/assets/1555119394524.png" alt="1555119394524"></p>
+<h1 id="L5-Convolutional-Neural-Networks"><a href="#L5-Convolutional-Neural-Networks" class="headerlink" title="L5: Convolutional Neural Networks"></a>L5: Convolutional Neural Networks</h1><h2 id="Convolutions"><a href="#Convolutions" class="headerlink" title="Convolutions"></a>Convolutions</h2><p><img src="/assets/1555119498617.png" alt="1555119498617"></p>
+<p><img src="/assets/1555119505538.png" alt="1555119505538"></p>
+<p>注意：CNN所说的卷积，实际上并不需要如信号与系统中，对一个轴进行反转操作。而是借用了卷积时不断平移的特性，所以称为卷积神经网络。注意相较前面处理图像时把32<em>32</em>3展开成一维数组，CNN中是同时考虑多层的效果。而且采用的是点乘。</p>
+<p><img src="/assets/1555119516346.png" alt="1555119516346"></p>
+<p>采用多个filter就能够生成多个activation maps</p>
+<p><img src="/assets/1555119527090.png" alt="1555119527090"></p>
+<p>更像是correlation</p>
+<p><img src="/assets/1555119537205.png" alt="1555119537205"></p>
+<p>一个例子：POOL用来downsample，CNN最后会有fully connected network去计算每一类的得分。分为4部分，CONV，RELU，POOL，FC</p>
+<p><img src="/assets/1555119551909.png" alt="1555119551909"></p>
+<p><img src="/assets/1555119555642.png" alt="1555119555642"></p>
+<p>好处是左上角的数据点在填补了0后，可以作为filter的中心；可以使下一层的大小和这一层相同，避免size越来越小。而F不同，zero层数不同</p>
+<p><img src="/assets/1555119570314.png" alt="1555119570314"></p>
+<p>不一定是填0，根据filter大小有公式可以计算zero padding的值</p>
+<p><img src="/assets/1555119589676.png" alt="1555119589676"></p>
+<p><img src="/assets/1555119594158.png" alt="1555119594158"></p>
+<p>一定要记得，每个filter都是多层的，而不是二维的</p>
+<p><img src="/assets/1555119608528.png" alt="1555119608528"></p>
+<p><img src="/assets/1555119613678.png" alt="1555119613678"></p>
+<p><img src="/assets/1555119618224.png" alt="1555119618224"></p>
+<p>前面两张图对比CNN和之前的Fully connected layer: CNN每个元素只关注一小部分data，同时会因为有多个filter所以会有多个元素关注同一个区域。而Fully connected layer的每个元素关注的是一个input中所有的数据，因为它是W的一行×input一整列的加和值。</p>
+<h2 id="Pooling"><a href="#Pooling" class="headerlink" title="Pooling"></a>Pooling</h2><p><img src="/assets/1555119640784.png" alt="1555119640784"></p>
+<p>Pool的作用是downsample,用一个典型值代替这个region，一般不overlap</p>
+<p><img src="/assets/1555119653249.png" alt="1555119653249"></p>
+<p>其中一种方式是Max pooling，表示：这个神经元在这个位置激发了多少能量</p>
+<p><img src="/assets/1555119668121.png" alt="1555119668121"></p>
+<h2 id="Activation"><a href="#Activation" class="headerlink" title="Activation"></a>Activation</h2><p>第一个问题：为什么引入非线性激励函数？<br> 如果不用激励函数（其实相当于激励函数是f(x) = x），在这种情况下你每一层输出都是上层输入的线性函数，很容易验证，无论你神经网络有多少层，输出都是输入的线性组合，与没有隐藏层效果相当，这种情况就是最原始的感知机（Perceptron）了。<br> 正因为上面的原因，我们决定引入非线性函数作为激励函数，这样深层神经网络就有意义了（不再是输入的线性组合，可以逼近任意函数）。最早的想法是sigmoid函数或者tanh函数，输出有界，很容易充当下一层输入。</p>
+<p>第二个问题：为什么引入Relu /‘reilju/呢？<br> 第一，采用sigmoid等函数，算激活函数时（指数运算），计算量大，反向传播求误差梯度时，求导涉及除法，计算量相对大，而采用Relu激活函数，整个过程的计算量节省很多。<br> 第二，对于深层网络，sigmoid函数反向传播时，很容易就会出现梯度消失的情况（在sigmoid接近饱和区时，变换太缓慢，导数趋于0，这种情况会造成信息丢失。</p>
+<p><img src="/assets/1555119711313.png" alt="1555119711313"></p>
+<h1 id="L6-Training-Neural-Networks-I"><a href="#L6-Training-Neural-Networks-I" class="headerlink" title="L6: Training Neural Networks I"></a>L6: Training Neural Networks I</h1><p><img src="/assets/1555119783184.png" alt="1555119783184"></p>
+<p><img src="/assets/1555119792452.png" alt="1555119792452"></p>
+<p><img src="/assets/1555119796862.png" alt="#1555119796862"></p>
+<h2 id="Activation-function"><a href="#Activation-function" class="headerlink" title="Activation function"></a>Activation function</h2><p>为什么需要激励函数：因为线性函数并不能完全表示数据之间的关系，通过Activation  Function（非线性函数）来把线性Y=WX给掰弯。确保可以微分，才能back propagation.</p>
+<p>当层数只有两层的时候，任意AF都是可以尝试的，但是当层数很多时，得慎重选择AF，不然可能会出现梯度爆炸和梯度消失的现象。</p>
+<p>CNN用Relu</p>
+<p>RNN用Relu，tanh</p>
+<p><img src="/assets/1555119848477.png" alt="1555119848477"></p>
+<p><img src="/assets/1555119853711.png" alt="1555119853711"></p>
+<p>1.x取两端时，导数为0</p>
+<p>2.local gradient是X加和，如果x是恒正的，所以local gradient是恒正的，如果上一级传下来的梯度是正/负，则该级梯度为正/负。结果就是W全部增加或W全部减小。 右图，绿色区域为梯度方向，若最优方向为第四象限，那么Sigmoid函数不能直接向着第四象限，而是需要zig zag</p>
+<p><strong><em>这也是为什么我们需要把data先归一化为平均值为0</em></strong></p>
+<p><img src="/assets/1555119972395.png" alt="1555119972395"></p>
+<p><img src="/assets/1555119989779.png" alt="1555119989779"></p>
+<p><img src="/assets/1555119995684.png" alt="1555119995684"></p>
+<p><img src="/assets/1555120002164.png" alt="1555120002164"></p>
+<p>dead ReLU是无效分界线，因为位于data cloud外部，而且不会得到更新。当步长设置过大时，有可能出现dead ReLU</p>
+<p>dead ReLU是一个超平面，一半是正，一半被kill</p>
+<p><img src="/assets/1555120015106.png" alt="1555120015106"></p>
+<p><img src="/assets/1555120022198.png" alt="1555120022198"></p>
+<p><img src="/assets/1555120028724.png" alt="1555120028724"></p>
+<p>最后需要注意一点：在同一个网络中混合使用不同类型的神经元是非常少见的，虽然没有什么根本性问题来禁止这样做</p>
+<blockquote>
+<p><strong>一句话</strong>：“<em>那么该用那种呢？</em>”用ReLU非线性函数。注意设置好学习率，或许可以监控你的网络中死亡的神经元占的比例。如果单元死亡问题困扰你，就试试Leaky ReLU或者Maxout，不要再用sigmoid了。也可以试试tanh，但是其效果应该不如ReLU或者Maxout。</p>
+</blockquote>
+<h2 id="Data-Preprocessing"><a href="#Data-Preprocessing" class="headerlink" title="Data Preprocessing"></a>Data Preprocessing</h2><p><img src="/assets/1555120106146.png" alt="1555120106146"></p>
+<p>在图像处理中，不需要太多的规范化，但广泛的机器学习任务（有很多特征的…）则需要</p>
+<p><img src="/assets/1555120118130.png" alt="1555120118130"></p>
+<p>记住：在对训练集做处理的时候，也要同时对测试集做处理！</p>
+<blockquote>
+<p><strong>常见错误。</strong>进行预处理很重要的一点是：任何预处理策略（比如数据均值）都只能在训练集数据上进行计算，算法训练完毕后再应用到验证集或者测试集上。例如，如果先计算整个数据集图像的平均值然后每张图片都减去平均值，最后将整个数据集分成训练/验证/测试集，那么这个做法是错误的。<strong>应该怎么做呢？应该先分成训练/验证/测试集，只是从训练集中求图片平均值，然后各个集（训练/验证/测试集）中的图像再减去这个平均值。</strong></p>
+</blockquote>
+<p><img src="/assets/1555120146461.png" alt="1555120146461"></p>
+<p>对于CIFAR-10的处理: 减去mean image指RGB层各自减去全体RGB的mean</p>
+<h2 id="Weight-Initialization"><a href="#Weight-Initialization" class="headerlink" title="Weight Initialization"></a>Weight Initialization</h2><p><img src="/assets/1555120188357.png" alt="1555120188357"></p>
+<p>问题：如果初始矩阵都是0，那么每个神经元学习到的东西都是相同的，这和我们的愿望是违背的。</p>
+<p>是因为如果所有的参数都是0，那么所有神经元的输出都将是相同的，那在back propagation的时候同一层内所有神经元的行为也是相同的 — gradient相同，weight update也相同。这显然是一个不可接受的结果。</p>
+<p><img src="/assets/1555120214331.png" alt="1555120214331"></p>
+<p><img src="/assets/1555120221498.png" alt="1555120221498"></p>
+<p>Weight很小时：XW乘积越来越趋近于1，问题是backpropagate时local gradient=0，各层几乎不变化.</p>
+<blockquote>
+<p> <strong>小随机数初始化。</strong>因此，权重初始值要非常接近0又不能等于0。解决方法就是将权重初始化为很小的数值，以此来<em>打破对称性</em>。其思路是：如果神经元刚开始的时候是随机且不相等的，那么它们将计算出不同的更新，并将自身变成整个网络的不同部分。小随机数权重初始化的实现方法是：<strong>W = 0.01 * np.random.randn(D,H)。</strong>其中<strong>randn</strong>函数是基于零均值和标准差的一个高斯分布（<strong>译者注：国内教程一般习惯称均值参数为期望μ</strong>）来生成随机数的。根据这个式子，每个神经元的权重向量都被初始化为一个随机向量，而这些随机向量又服从一个多变量高斯分布，这样在输入空间中，所有的神经元的指向是随机的。也可以使用均匀分布生成的随机数，但是从实践结果来看，对于算法的结果影响极小。</p>
+</blockquote>
+<p><img src="/assets/1555120337423.png" alt="1555120337423"></p>
+<p>Weight大：XW会saturate，经常会在saturate region（很正或很负），all gradient=0</p>
+<p>几乎所有的值集中在-1或1附近，神经元saturated了！注意到tanh在-1和1附近的gradient都接近0，这同样导致了gradient太小，参数难以被更新。</p>
+<p><img src="/assets/1555120362800.png" alt="1555120362800"></p>
+<ul>
+<li><strong>Xavier initialization</strong></li>
+</ul>
+<p><strong>使用1/sqrt(n)校准方差。</strong>上面做法存在一个问题，随着输入数据量的增长，随机初始化的神经元的输出数据的分布中的方差也在增大。我们可以除以输入数据量的平方根来调整其数值范围，这样神经元输出的方差就归一化到1了。也就是说，建议将神经元的权重向量初始化为：<strong>w = np.random.randn(n) / sqrt(n)。</strong>其中<strong>n</strong>是输入数据的数量。这样就保证了网络中所有神经元起始时有近似同样的输出分布。实践经验证明，这样做可以提高收敛的速度。</p>
+<p><img src="/assets/1555120423547.png" alt="1555120423547"></p>
+<p><img src="/assets/1555120433535.png" alt="1555120433535"></p>
+<p>之前谈到Xavier initialization是在线性函数上推导得出，这说明它对非线性函数并不具有普适性，所以这个例子仅仅说明它对tanh很有效，那么对于目前最常用的ReLU神经元呢 继续做一下实验：</p>
+<p><img src="/assets/1555120455605.png" alt="1555120455605"></p>
+<p>前面看起来还不错，后面的趋势却是越来越接近0。幸运的是，He initialization可以用来解决ReLU初始化的问题。</p>
+<ul>
+<li><strong>He initialization</strong> </li>
+</ul>
+<p><img src="/assets/1555120502804.png" alt="1555120502804"></p>
+<p>He initialization的思想是：在ReLU网络中，假定每一层有一半的神经元被激活，另一半为0，所以，要保持variance不变，只需要在Xavier的基础上再除以2：</p>
+<p>看起来效果非常好，推荐在ReLU网络中使用！</p>
+<h2 id="Barch-Normalization"><a href="#Barch-Normalization" class="headerlink" title="Barch Normalization"></a>Barch Normalization</h2><blockquote>
+<p><strong>批量归一化（Batch Normalization）。</strong><a href="https://link.zhihu.com/?target=http%3A//arxiv.org/abs/1502.03167" target="_blank" rel="noopener">批量归一化</a>是loffe和Szegedy最近才提出的方法，该方法减轻了如何合理初始化神经网络这个棘手问题带来的头痛：），其做法是让激活数据在训练开始前通过一个网络，网络处理数据使其服从标准高斯分布。因为归一化是一个简单可求导的操作，所以上述思路是可行的。在实现层面，应用这个技巧通常意味着全连接层（或者是卷积层，后续会讲）与激活函数之间添加一个BatchNorm层。对于这个技巧本节不会展开讲，因为上面的参考文献中已经讲得很清楚了，需要知道的是在神经网络中使用批量归一化已经变得非常常见。在实践中，使用了批量归一化的网络对于不好的初始值有更强的鲁棒性。最后一句话总结：批量归一化可以理解为在网络的每一层之前都做预处理，只是这种操作以另一种方式与网络集成在了一起。搞定！</p>
+<p>Batch Normalization是一种巧妙而粗暴的方法来削弱bad initialization的影响，其基本思想是：If you want it, just make it! </p>
+</blockquote>
+<p><img src="/assets/1555133283816.png" alt="1555133283816"></p>
+<p><img src="/assets/1555133292966.png" alt="1555133292966"></p>
+<p>N个数据，D个特征；是对每一个特征都做一次高斯标准化</p>
+<p><img src="/assets/1555133306241.png" alt="1555133306241"></p>
+<p>X已经是标准化后的输出，而我们还可以引入γ和β参数，使得这个标准正态分布进行一定的移动和压缩，使得更适合下一层的使用。这些参数都是可以被训练的。</p>
+<p>如果进行Batch normalization是对这个网络不利的，那么网络还能自己学会通过两个参数去把BN层给抵消掉！</p>
+<p>Batch Normalization很重要的作用是：减少对初始化的依赖</p>
+<p><img src="/assets/1555133327076.png" alt="1555133327076"></p>
+<p>注意BN的位置！在非线性activation之前，输出值应该有比较好的分布。Batch Normalization想达到的目的是，强行把batch标准化为正态分布。</p>
+<p>它是一种对原始数据的shift成0-mean和scale by variance，并不会影响数据的structure </p>
+<p><img src="/assets/1555133353270.png" alt="1555133353270"></p>
+<p>需要注意的是：在用模型进行预测的时候，不再需要计算均值和方差，而是用训练时确定下来的经验均值和方差。【这和前面所说所说的预处理方法是类似的，即将全体数据集划分为训练/验证/测试，然后所有的数据集是减去训练集中的mean，而不是各自减去各自的mean】【这样做的意义在于，规范化的过程对于模型来说是一个属性，所以用该模型进行验证/测试时，都要保证这个过程是相同的，这样才能确保准确性得以维持】</p>
+<p><img src="/assets/1555133370237.png" alt="1555133370237"></p>
+<p>可以看到，进行过batch normalization的数据更加集中于红色的有效区域（对于tanh激活函数），经过激活函数的结果也更加的理想！</p>
+<p><img src="/assets/1555133380565.png" alt="1555133380565"></p>
+<p><img src="/assets/1555133385970.png" alt="1555133385970"></p>
+<h2 id="Babysitting-the-Learning-Process"><a href="#Babysitting-the-Learning-Process" class="headerlink" title="Babysitting the Learning Process"></a>Babysitting the Learning Process</h2><ul>
+<li><p><strong>Step 1: Preprocess the data</strong></p>
+</li>
+<li><p><strong>Step 2: Choose the architecture</strong></p>
+</li>
+<li><p><strong>Step 3：Double check that the loss is reasonable</strong></p>
+<p>注：</p>
+<p>一次epoch=<strong>所有</strong>训练数据forward+backward后更新参数的过程。<br> 一次iteration=<strong>[batch size]**</strong>个**训练数据forward+backward后更新参数过程。<br> 另：一般是iteration译成“迭代”</p>
+<p>一个epoch里面，iteration次数＝batch个数(epoch/batch size)</p>
+<p><img src="/assets/1555133843377.png" alt="1555133843377"></p>
+</li>
+</ul>
+<ul>
+<li><strong>Step 4：Start with small regularization and find learning rate that makes the loss go down</strong></li>
+</ul>
+<p><img src="/assets/1555133888631.png" alt="1555133888631"></p>
+<p><img src="/assets/1555133893376.png" alt="1555133893376"></p>
+<p>（NAN通常是损失爆炸）</p>
+<h2 id="Hyperparameter-Optimization"><a href="#Hyperparameter-Optimization" class="headerlink" title="Hyperparameter Optimization"></a>Hyperparameter Optimization</h2><p><img src="/assets/1555133918629.png" alt="1555133918629"></p>
+<p>一开始可以只是用少量样本，确定大致的范围。</p>
+<p>Cross-validation是指train on your training set, and evaluate on validation set 这个超参量怎么样。</p>
+<p>通过超参量的循环使用，可以看出每个超参量对loss的影响，进而帮助选择最优的超参量。</p>
+<p><img src="/assets/1555133932966.png" alt="1555133932966"></p>
+<p>散的各个超参量取值反而有更好的效果。</p>
+<p><img src="/assets/1555133948185.png" alt="1555133948185"></p>
+<p>我们可以处理的超参量有很多种。</p>
+<p><img src="/assets/1555133961173.png" alt="1555133961173"></p>
+<p><img src="/assets/1555133965121.png" alt="1555133965121"></p>
+<p><img src="/assets/1555133970425.png" alt="1555133970425"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/machine-learning/" rel="tag"># machine learning</a>
+          
+            <a href="/tags/deep-learning/" rel="tag"># deep learning</a>
+          
+            <a href="/tags/computer-vision/" rel="tag"># computer vision</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Michael.Xiu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Michael-Xiu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:shengjiexiu@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/shengjie.xiu.3" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/michael.xiu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:Shengjie Xiu?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#L2-Image-Classification"><span class="nav-number">1.</span> <span class="nav-text">L2: Image Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#K-Nearest-Neighbor"><span class="nav-number">1.1.</span> <span class="nav-text">K-Nearest Neighbor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-classification"><span class="nav-number">1.2.</span> <span class="nav-text">Linear classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cross-Validation"><span class="nav-number">1.3.</span> <span class="nav-text">Cross Validation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Others"><span class="nav-number">1.4.</span> <span class="nav-text">Others</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#L3-Loss-Functions-and-Optimization"><span class="nav-number">2.</span> <span class="nav-text">L3: Loss Functions and Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Functions"><span class="nav-number">2.1.</span> <span class="nav-text">Loss Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimization"><span class="nav-number">2.2.</span> <span class="nav-text">Optimization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#L4-Introduction-to-Neural-Networks"><span class="nav-number">3.</span> <span class="nav-text">L4: Introduction to Neural Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Neuron"><span class="nav-number">3.1.</span> <span class="nav-text">Neuron</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Back-Propagation"><span class="nav-number">3.2.</span> <span class="nav-text">Back Propagation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#L5-Convolutional-Neural-Networks"><span class="nav-number">4.</span> <span class="nav-text">L5: Convolutional Neural Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Convolutions"><span class="nav-number">4.1.</span> <span class="nav-text">Convolutions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pooling"><span class="nav-number">4.2.</span> <span class="nav-text">Pooling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Activation"><span class="nav-number">4.3.</span> <span class="nav-text">Activation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#L6-Training-Neural-Networks-I"><span class="nav-number">5.</span> <span class="nav-text">L6: Training Neural Networks I</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Activation-function"><span class="nav-number">5.1.</span> <span class="nav-text">Activation function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Preprocessing"><span class="nav-number">5.2.</span> <span class="nav-text">Data Preprocessing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Weight-Initialization"><span class="nav-number">5.3.</span> <span class="nav-text">Weight Initialization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Barch-Normalization"><span class="nav-number">5.4.</span> <span class="nav-text">Barch Normalization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Babysitting-the-Learning-Process"><span class="nav-number">5.5.</span> <span class="nav-text">Babysitting the Learning Process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hyperparameter-Optimization"><span class="nav-number">5.6.</span> <span class="nav-text">Hyperparameter Optimization</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael Xiu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
