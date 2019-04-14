@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="signal processing,">
 
 
 
@@ -79,13 +79,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="The Yard">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="This is an updating note on random signal analysis.">
+<meta name="keywords" content="signal processing">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Random Signal Analysis">
+<meta property="og:url" content="http://yoursite.com/2019/04/14/Random-Signal-Analysis/index.html">
 <meta property="og:site_name" content="The Yard">
+<meta property="og:description" content="This is an updating note on random signal analysis.">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/assets/1555224354383.png">
+<meta property="og:image" content="http://yoursite.com/assets/1555225278092.png">
+<meta property="og:updated_time" content="2019-04-14T12:03:48.638Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The Yard">
+<meta name="twitter:title" content="Random Signal Analysis">
+<meta name="twitter:description" content="This is an updating note on random signal analysis.">
+<meta name="twitter:image" content="http://yoursite.com/assets/1555224354383.png">
 
 
 
@@ -115,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/14/Random-Signal-Analysis/">
 
 
 
 
 
-  <title>The Yard - life journey</title>
+  <title>Random Signal Analysis | The Yard</title>
   
 
 
@@ -140,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	
 	<a href="https://github.com/Michael-Xiu" class="github-corner" aria-label="My GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#CABCBC; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -226,9 +233,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -258,9 +265,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/14/Random-Signal-Analysis/" itemprop="url">Random Signal Analysis</a></h1>
+          <h1 class="post-title" itemprop="name headline">Random Signal Analysis</h1>
         
 
         <div class="post-meta">
@@ -350,16 +355,118 @@
       
 
       
-        
-          <p>This is an updating note on random signal analysis.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/14/Random-Signal-Analysis/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>This is an updating note on random signal analysis.</p>
+<a id="more"></a>
+<h1 id="Random-Signal-Basic"><a href="#Random-Signal-Basic" class="headerlink" title="Random Signal Basic"></a>Random Signal Basic</h1><hr>
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><p>At first, we should have a prior that to define a random variable, one tool is <strong>probability</strong>, and the other one is <strong>statistics (moment, cumulants)</strong>.</p>
+<h3 id="Probability-distribution"><a href="#Probability-distribution" class="headerlink" title="Probability distribution"></a>Probability distribution</h3><p>In 1D, at first, we have random variable <strong>X</strong> .</p>
+<p>Then we have to describe the relationship between <strong>X</strong> and its probability distribution.</p>
+<ul>
+<li><p><strong>Culminative Distribution Function (CDF)</strong>: $ F(x)=p(X \leq x)$</p>
+</li>
+<li><p><strong>Probability Density Function (PDF)</strong>: $f(x)=\frac{dF(x)}{dx}$</p>
+</li>
+</ul>
+<p>In 2D, random variable <strong>X</strong> can be specified as <strong>(X,Y)</strong></p>
+<ul>
+<li><p><strong>CDF</strong>: $F_{XY}(x, y)=p(X \leq x, Y \leq y)$</p>
+</li>
+<li><p><strong>PDF</strong>: $ \frac{\partial^{2} F_{XY}(x,y)}{\partial x \partial y}$</p>
+</li>
+<li><p><strong>Marginal Distribution</strong>: $f_{X}(x)=\int\limits_{-\infty}^{+\infty} f_{XY}(x,y)dy$</p>
+</li>
+<li><p><strong>Conditional Distribution</strong>: $f_Y(y|x)=\frac{f_{XY}(x,y)}{f_X(x)}$</p>
+</li>
+</ul>
+<h3 id="Moment-and-Cumulant"><a href="#Moment-and-Cumulant" class="headerlink" title="Moment and Cumulant"></a>Moment and Cumulant</h3><p>In 1D case:</p>
+<ul>
+<li><p>The <em>n</em>-th <strong>ordinary moment</strong>:  $m_n=E[X^n],\ n=1,2,…$</p>
+<blockquote>
+<p>The zeroth moment is the total probability (i.e. one), the first moment is the mean, the second central moment is the variance, the third standardized moment is the skewness, and the fourth standardized moment is the kurtosis. The mathematical concept is closely related to the concept of moment in physics.</p>
+<p>For the second and higher moments, <strong>the central moment</strong> are usually used rather than the moments about zero, because they provide clearer information about the distribution’s shape.</p>
+</blockquote>
+</li>
+<li><p>The <em>n</em>-th <strong>central moment</strong>: $\mu_{n}=E\{(X-E[X])^n\},\ n=1,2,…$<br>The second central moment $μ_2$ is called the variance, and is usually denoted $σ_2$, where σ represents the standard deviation.<br>The third and fourth central moments are used to define the standardized moments which are used to define skewness and kurtosis, respectively.</p>
+</li>
+</ul>
+<p>Ordinary moment vs Central moment:</p>
+<ul>
+<li>The <strong>1st ordinary moment</strong> is the mean. — Define concentration.</li>
+<li>The <strong>2nd central moment</strong> is the variance. — Define dispersion.</li>
+<li>The <strong>3rd central moment</strong> is a standardized moment. — Define skewness.</li>
+<li>The <strong>4th central moment</strong> is a standardized moment. — Define kurtosis.</li>
+</ul>
+<p><img src="/assets/1555224354383.png" alt="1555224354383"></p>
+<blockquote>
+<p>Class note:  Higher moments (&gt;2) are used to describe the deviation from gaussian variables. Only <em>1~2-th</em> moment are required to analyze gaussian variables because higher moments are relevant to these lower moments.</p>
+</blockquote>
+<p>In 2D case:</p>
+<ul>
+<li>The <em>(n+k)</em>-th <strong>mixed ordinary moment</strong>:  $m_{nk}=E[X^nY^k]$; when n=1, k=1, called relevant moment $R_{XY}$ .</li>
+<li>The <em>(n+k)</em>-th <strong>mixed central moment</strong>:  $\mu_{nk}=E\{(X-E[X])^n(Y-E[Y])^k\}$; when n=1, k=1, called covariance $C_{XY}$</li>
+<li><strong>Correlation Coefficient</strong>: $r_{X,Y}=\frac{cov(X,Y)}{\sigma_{X}\sigma_{Y}}$, where $cov(X,Y)$ is the 2nd mixed central moment called covariance and $\sigma​$ is standard deviations. It is a measure of the linear correlation between two variables.<br><img src="/assets/1555225278092.png" alt="1555225278092"></li>
+</ul>
+<ul>
+<li><strong>Cumulant</strong>: a concept close to moment. </li>
+</ul>
+<p>As for gaussian variables, I have mentioned that higher moments are determined by lower moments so only 1~2th moments are necessary. From the perspective of cumulants, when n&gt;2, they are zero in this case. More specifically, if the gaussian variables have zero mean, moments are even the same as cumulants. We can take it easy.</p>
+<h3 id="Statistical-independence-and-irrelevance"><a href="#Statistical-independence-and-irrelevance" class="headerlink" title="Statistical independence and irrelevance"></a>Statistical independence and irrelevance</h3><ul>
+<li><strong>Statistical Independence</strong>: <script type="math/tex; mode=display">
+\textbf{X}\ and\ \textbf{Y}\ are\ statistically\ independent \Leftrightarrow f_{XY}(x,y)=f_{X}(x)\bullet f_{Y}(y)</script></li>
+</ul>
+<ul>
+<li><strong>Irrelevance</strong> (In short of linear irrelevance): $r_{XY}=0$. We gain $E[XY](R_{XY})=E[X]E[Y]$.</li>
+</ul>
+<p>Generally speaking, Statistical Independence $\Rightarrow$ Irrelevance. As for gaussian random variables, Statistical Independence $\Leftrightarrow$ Irrelevance.</p>
+<ul>
+<li><strong>Orthogonality</strong>: $E[XY](R_{XY})=0$</li>
+</ul>
+<hr>
+<h2 id="Characteristic-function"><a href="#Characteristic-function" class="headerlink" title="Characteristic function"></a>Characteristic function</h2><blockquote>
+<p>In probability theory and statistics, the characteristic function of any real-valued random variable completely defines its probability distribution. If a random variable admits a probability density function, then the characteristic function is the Fourier transform of the probability density function. Thus it provides the basis of an alternative route to analytical results compared with working directly with probability density functions or cumulative distribution functions. There are particularly simple results for the characteristic functions of distributions defined by the weighted sums of random variables.</p>
+</blockquote>
+<ul>
+<li><strong>Characteristic function</strong>: $\phi(\omega)=E[e^{j\omega X}]​$</li>
+</ul>
+<p>The characteristic function is the Fourier transform of the probability density function. (It is not exactly the same, because of $\pm j\omega X$.)</p>
+<p>Another feature is that characteristic function is correspond to moment, so characteristic function is also named <strong>moment-generating function</strong>.</p>
+<hr>
+<h2 id="Distribution-model"><a href="#Distribution-model" class="headerlink" title="Distribution model"></a>Distribution model</h2><p>In this part, we have a brief introduction of ordinary distribution models in order to classify our problems into different models.</p>
+<h3 id="Easy-ones"><a href="#Easy-ones" class="headerlink" title="Easy ones"></a>Easy ones</h3><ul>
+<li><strong>Binomial distribution</strong></li>
+</ul>
+<p>To be or not to be, that is the question. We have only two choices.</p>
+<ul>
+<li><strong>Poisson distribution</strong></li>
+</ul>
+<p>No matter how long I have been waiting for the bus, how many buses will arrive in the coming 5 mins are a constant.</p>
+<ul>
+<li><strong>Uniform distribution</strong></li>
+</ul>
+<p>There isn’t any bias within the probabilities of different choices.</p>
+<h3 id="Gaussian-distribution"><a href="#Gaussian-distribution" class="headerlink" title="Gaussian distribution"></a>Gaussian distribution</h3><p>Detailed information can be found in “Probability theory”.</p>
+<h3 id="chi-2-distribution"><a href="#chi-2-distribution" class="headerlink" title="$\chi^2$ distribution"></a>$\chi^2$ distribution</h3><p> $\chi^2$ distribution is also named  chi-squared distribution.</p>
+<ul>
+<li><strong>Central $\chi^2​$  distribution: $Y=\sum_{i=1}^{n}{X_{i}^2}​$</strong></li>
+</ul>
+<p>It has n degrees of freedom and is the distribution of a sum of the squares of n independent standard normal random variables (Mean=0, variance=1).</p>
+<ul>
+<li><strong>Noncentral $\chi^2​$  distribution: $Y=\sum_{i=1}^{n}{X_{i}^2}​$</strong></li>
+</ul>
+<p>It has n degrees of freedom and is the distribution of a sum of the squares of n independent random variables (Mean=$m_{i}$, variance=$\sigma^2$).</p>
+<h3 id="Rayleigh-distribution"><a href="#Rayleigh-distribution" class="headerlink" title="Rayleigh distribution"></a>Rayleigh distribution</h3><ul>
+<li><strong>Rayleigh distribution</strong>: $R=\sqrt{Y}=\sqrt{X^1+X^2}​$</li>
+</ul>
+<p>It is essentially a central $\chi ^2$ distribution with two degrees of freedom.</p>
+<ul>
+<li><strong>Generalized Rayleigh distribution</strong>: $R=\sqrt{Y}=\sqrt{\sum_{i=1}^{n}{X_{i}^2}}​$</li>
+</ul>
+<p>It is essentially a central $\chi ^2$ distribution with n degrees of freedom.</p>
+<ul>
+<li><strong>Rice distribution</strong>: $R=\sqrt{Y}​$</li>
+</ul>
+<p>It is essentially a noncentral $\chi ^2$ distribution with two (or n?) degrees of freedom.</p>
+
       
     </div>
     
@@ -374,178 +481,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Michael.Xiu">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Yard">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/" itemprop="url">Lecture Note: Stanford Computer Vision CS231n</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-20T00:00:00+08:00">
-                2018-04-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/note/" itemprop="url" rel="index">
-                    <span itemprop="name">note</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/signal-processing/" rel="tag"># signal processing</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  75 mins
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <p>Welcome to my note on CS231n! In this note, I summarize the key points in this course with my comments. Supplemental tutorials by other experts are also provided to grasp a deeper understanding of this field. Let’s find out how to empower machine vision with deep learning!</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/" rel="next" title="Lecture Note: Stanford Computer Vision CS231n">
+                <i class="fa fa-chevron-left"></i> Lecture Note: Stanford Computer Vision CS231n
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -555,10 +520,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -566,6 +532,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -586,8 +556,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -687,6 +666,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-Signal-Basic"><span class="nav-number">1.</span> <span class="nav-text">Random Signal Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Review"><span class="nav-number">1.1.</span> <span class="nav-text">Review</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution"><span class="nav-number">1.1.1.</span> <span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moment-and-Cumulant"><span class="nav-number">1.1.2.</span> <span class="nav-text">Moment and Cumulant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Statistical-independence-and-irrelevance"><span class="nav-number">1.1.3.</span> <span class="nav-text">Statistical independence and irrelevance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characteristic-function"><span class="nav-number">1.2.</span> <span class="nav-text">Characteristic function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distribution-model"><span class="nav-number">1.3.</span> <span class="nav-text">Distribution model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Easy-ones"><span class="nav-number">1.3.1.</span> <span class="nav-text">Easy ones</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-distribution"><span class="nav-number">1.3.2.</span> <span class="nav-text">Gaussian distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chi-2-distribution"><span class="nav-number">1.3.3.</span> <span class="nav-text">$\chi^2$ distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rayleigh-distribution"><span class="nav-number">1.3.4.</span> <span class="nav-text">Rayleigh distribution</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -814,6 +809,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

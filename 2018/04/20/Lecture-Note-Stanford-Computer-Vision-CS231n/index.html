@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  15
+                  75 mins
                 </span>
               
             </div>
@@ -570,7 +570,7 @@
 <p>对于CIFAR-10的处理: 减去mean image指RGB层各自减去全体RGB的mean</p>
 <h2 id="Weight-Initialization"><a href="#Weight-Initialization" class="headerlink" title="Weight Initialization"></a>Weight Initialization</h2><p><img src="/assets/1555120188357.png" alt="1555120188357"></p>
 <p>问题：如果初始矩阵都是0，那么每个神经元学习到的东西都是相同的，这和我们的愿望是违背的。</p>
-<p>是因为如果所有的参数都是0，那么所有神经元的输出都将是相同的，那在back propagation的时候同一层内所有神经元的行为也是相同的 — gradient相同，weight update也相同。这显然是一个不可接受的结果。</p>
+<p>是因为如果所有的参数都是0，那么所有神经元的输出都将是相同的，那在back propagation的时候同一层内所有神经元的行为也是相同的 —- gradient相同，weight update也相同。这显然是一个不可接受的结果。</p>
 <p><img src="/assets/1555120214331.png" alt="1555120214331"></p>
 <p><img src="/assets/1555120221498.png" alt="1555120221498"></p>
 <p>Weight很小时：XW乘积越来越趋近于1，问题是backpropagate时local gradient=0，各层几乎不变化.</p>
@@ -676,6 +676,22 @@
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/14/Random-Signal-Analysis/" rel="prev" title="Random Signal Analysis">
+                Random Signal Analysis <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
       
@@ -748,7 +764,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -770,7 +786,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -790,7 +806,13 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:shengjiexiu@outlook.com" target="_blank" title="E-Mail">
+                    <a href="https://www.zhihu.com/people/xiao-li-dou-dan/activities" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-paper-plane"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xiushj@mail2.sysu.edu.cn" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -1031,6 +1053,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
