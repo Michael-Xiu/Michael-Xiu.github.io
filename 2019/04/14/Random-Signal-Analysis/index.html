@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/1555224354383.png">
 <meta property="og:image" content="http://yoursite.com/assets/1555225278092.png">
 <meta property="og:image" content="http://yoursite.com/assets/1557196005851.png">
-<meta property="og:updated_time" content="2019-05-07T03:18:48.941Z">
+<meta property="og:updated_time" content="2019-05-08T12:34:45.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -495,13 +495,14 @@
 </li>
 </ul>
 <p>It describes the relevance of two moments of the stochastic process, which is widely used in engineering.</p>
-<h3 id="Numerical-Characteristic"><a href="#Numerical-Characteristic" class="headerlink" title="Numerical Characteristic"></a>Numerical Characteristic</h3><ul>
+<h3 id="Numerical-characteristic"><a href="#Numerical-characteristic" class="headerlink" title="Numerical characteristic"></a>Numerical characteristic</h3><ul>
 <li>Expectation: $m_X(t)=E[X(t)]=\int\limits_{-\infty}^{+\infty}x f_{X}(x,t)dx​$</li>
 <li>Variance: $\sigma^2 _X(t)=D[X(t)]=\int\limits_{-\infty}^{+\infty}[x-m_X(t)]^2 f_{X}(x,t)dx​$</li>
 </ul>
 <p>The expectation and variance are both definite functions of time t.</p>
 <ul>
-<li>Autocorrelation: $R_X(t_1,t_2)=E[X(t_1)X(t_2)]=\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}x_1x_2 f_X(x_1,x_2;t_1,t_2)dx_1dx_2$.</li>
+<li>Autocorrelation: $R_X(t_1,t_2)=E[X(t_1)X(t_2)]=\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}x_1x_2 f_X(x_1,x_2;t_1,t_2)dx_1dx_2$. </li>
+<li>Cross-correlation: $R_{XY}(t_1,t_2)=E[X(t_1)Y(t_2)]=\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}xy f_{XY}(x,y;t_1,t_2)dxdy$.</li>
 </ul>
 <p>It is the 2nd mixed ordinary moment of random process. And it describes the relationship of two times.</p>
 <blockquote>
@@ -557,7 +558,7 @@ E[X^2(t)]<\infty</script><p>Weakly stationary process is 2-nd stationary. In con
 <p>Speech coding: </p>
 <ul>
 <li>Method1 - Waveform coders: The waveform we receive is the same as the original signal. Speed is about 16～64 kb/s. Time-domain: PCM, ADPCM. Frequency-domain: Sub-band coders, adaptive transform coders</li>
-<li>Method2 - Vocoders: The vocoder examines speech by measuring how its spectral characteristics change over time. Since the vocoder process sends only the parameters of the vocal model over the communication link, instead of a point-by-point recreation of the waveform, the bandwidth required to transmit speech can be reduced significantly. Information about the instantaneous frequency of the original voice signal (as distinct from its spectral characteristic) is discarded; it was not important to preserve this for the purposes of the vocoder’s original use as an encryption aid. (<a href="https://en.wikipedia.org/wiki/Vocoder" target="_blank" rel="noopener">wiki</a>)</li>
+<li>Method2 - Vocoders: The vocoder examines speech by measuring how its spectral characteristics change over time. Since the vocoder process sends only the parameters of the vocal model over the communication link, instead of a point-by-point recreation of the waveform, the bandwidth required to transmit speech can be reduced significantly. Information about the instantaneous frequency of the original voice signal (as distinct from its spectral characteristic) is discarded; it was not important to preserve this for the purposes of the vocoder’s original use as an encryption aid. (<a href="https://en.wikipedia.org/wiki/Vocoder" target="_blank" rel="noopener">Vocoder</a>)</li>
 </ul>
 </blockquote>
 <h3 id="PSD-and-autocorrelation"><a href="#PSD-and-autocorrelation" class="headerlink" title="PSD and autocorrelation"></a>PSD and autocorrelation</h3><p>PSD and autocorrelation are a Fourier Transform pair: </p>
@@ -567,7 +568,7 @@ R_X(\tau)=\frac{1}{2\pi}\int\limits_{-\infty}^{+\infty}S_X(\omega)e^{j\omega\tau
 <font face="Segoe Print" color="#D87093" size="4">class note:</font>
 
 <p>Why we analyze gaussian processes?</p>
-<p><em>Central limit theorem</em>  : In some situations, when independent random variables are added, their properly normalized sum tends toward a normal distribution even if the original variables themselves are not normally distributed. (<a href="https://en.wikipedia.org/wiki/Central_limit_theorem" target="_blank" rel="noopener">wiki</a>)</p>
+<p><em>Central limit theorem</em>  : In some situations, when independent random variables are added, their properly normalized sum tends toward a normal distribution even if the original variables themselves are not normally distributed. (<a href="https://en.wikipedia.org/wiki/Central_limit_theorem" target="_blank" rel="noopener">Central limit theorem</a>)</p>
 <p>Difference between white and gaussian: </p>
 <ul>
 <li><p>Ref1: White noise can be Gaussian, or uniform or even Poisson. It seems to be that the key characteristic of white noise is that each measurement is completely independent of the measurements preceding it. Also, it must be flat on the frequency spectrum.</p>
@@ -602,6 +603,53 @@ R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><blockquote>
 </li>
 </ul>
 </blockquote>
+<hr>
+<h1 id="System-response"><a href="#System-response" class="headerlink" title="System response"></a>System response</h1><h2 id="PDF"><a href="#PDF" class="headerlink" title="PDF"></a>PDF</h2><p>none </p>
+<h2 id="Expectation-and-autocorrelation"><a href="#Expectation-and-autocorrelation" class="headerlink" title="Expectation and autocorrelation"></a>Expectation and autocorrelation</h2><ul>
+<li>Expectation: $E[Y(t)] = m_X\int\limits_{-\infty}^{+\infty}h(\tau)d\tau = m_Y $</li>
+<li>Autocorrelation: $R_Y(\tau)=R_X(\tau)\ast h(-\tau) \ast h(\tau)$ [Tips: $h(\tau)$ is from output so autocorrelation (2nd) of Y has 2 $h(\tau)​$]</li>
+<li>Cross-correlation: $R_{XY}(\tau)=R_X(\tau) \ast h(\tau)​$</li>
+</ul>
+<blockquote>
+<font face="Segoe Print" color="#D87093" size="4">class note:</font>
+
+<ul>
+<li>Stationary $\rightarrow$ Time invariant $\rightarrow$ Stationary</li>
+<li>Not stationary $\rightarrow$ Time invariant $\rightarrow$ Not stationary</li>
+<li>Stationary $\rightarrow$ Time variant $\rightarrow$ Not stationary</li>
+</ul>
+</blockquote>
+<h2 id="PSD"><a href="#PSD" class="headerlink" title="PSD"></a>PSD</h2><ul>
+<li>PSD: $S_Y(\omega)=S_X(\omega)H(-\omega)H(\omega)=S_X(\omega)|H(\omega)|^2$</li>
+</ul>
+<p><br></p>
+<font face="Segoe Print" color="#D87093" size="4">class note: Channel Estimation</font>  
+
+<p><br><font face="Segoe Print" color="#4CABEE" size="3">Wired Channel:</font> It is relevant to transmission bandwidth and signal bandwidth. If we know $h(t)$, we can design a reverse system for equalization.</p>
+<p><br><font face="Segoe Print" color="#4CABEE" size="3">Wireless Channel:</font> It is irrelevant to bandwidth and allows a wide bandwidth. It is relevant to multipath propagation which will brings ISI in a high speed. Here there are 3 methods to estimate this channel:</p>
+<ul>
+<li><strong>Training sequence</strong> (pilot sequence): [know input &amp; output | Cross-correlation] We know $R_{XY}(\tau)$ and $R_X(\tau)$ of $R_{XY}(\tau)=R_X(\tau)*h(\tau)$, it is easy to gain $h(\tau)$. <a href="https://en.wikipedia.org/wiki/Channel_state_information" target="_blank" rel="noopener">Channel state information</a> </li>
+</ul>
+<p><br><font face="Segoe Print" color="#FFC300" size="3">White Assumption:</font> </p>
+<ul>
+<li><p><strong>Blind channel estimation</strong>: [know output | Cross-correlation] Assuming that $x(t)$ is <em>i.i.d.</em> and 2nd white. Thus, $R_X=\delta(t)$. Based on the definition of cross-correlation, we can estimate the $|\hat{H}(\omega)| = c |H(\omega)|​$, which is only the amplitude spectrum.</p>
+</li>
+<li><p><strong>Model based estimation</strong>: [know output | PSD] Assuming that $x(t)$ is <em>i.i.d.</em> and 2nd white. Then we have  $S_X(\omega)$ and $S_Y(\omega)$ which is short in most cases. There are several models to gain long but varied $|\hat{H}(\omega)|$</p>
+</li>
+</ul>
+<font face="Segoe Print" color="#FFC300" size="3">Not White Assumption:</font> 
+
+<ul>
+<li><strong>Autoregressive model (<a href="https://en.wikipedia.org/wiki/Autoregressive_model" target="_blank" rel="noopener">AR</a>) </strong>: Sum of past $X_t$. </li>
+</ul>
+<script type="math/tex; mode=display">
+X_t=c+\varepsilon_t+\sum_{i=1}^{p}{\varphi_iX_{t-i}}</script><p>where $\varphi_i, … ,\varphi_p$ are the parameters of the model, $c$ is a constant, and $\varepsilon_t$ is white noise. </p>
+<ul>
+<li><strong>Moving-average model (<a href="https://en.wikipedia.org/wiki/Moving-average_model" target="_blank" rel="noopener">MA</a>) </strong>: Sum of past <em>i.i.d.</em> $\varepsilon_t$ <script type="math/tex; mode=display">
+X_t=\mu+ \varepsilon_{t} + \sum_{i=1}^{q}{\theta_{i}\varepsilon_{t-i}}</script>where $\mu$ is the mean of the series, the $\theta_1,…,\theta_q$ are the parameters of the model and the $\varepsilon_t, \varepsilon_{t-1}, …, \varepsilon_{t-q}​$ are <em>i.i.d.</em> white noise.  <a href="https://www.youtube.com/watch?v=lUhtcP2SUsg" target="_blank" rel="noopener">video</a></li>
+<li><strong>Autoregressive–moving-average model (<a href="https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model" target="_blank" rel="noopener">ARMA</a>)</strong> : <script type="math/tex; mode=display">
+X_t=\mu+ \varepsilon_{t} + \sum_{i=1}^{p}{\varphi_iX_{t-i}}+ \sum_{i=1}^{q}{\theta_{i}\varepsilon_{t-i}}</script></li>
+</ul>
 
       
     </div>
@@ -812,7 +860,7 @@ R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><blockquote>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-Signal-Basic"><span class="nav-number">1.</span> <span class="nav-text">Random Signal Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Review"><span class="nav-number">1.1.</span> <span class="nav-text">Review</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution"><span class="nav-number">1.1.1.</span> <span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moment-and-Cumulant"><span class="nav-number">1.1.2.</span> <span class="nav-text">Moment and Cumulant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Statistical-independence-and-irrelevance"><span class="nav-number">1.1.3.</span> <span class="nav-text">Statistical independence and irrelevance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characteristic-function"><span class="nav-number">1.2.</span> <span class="nav-text">Characteristic function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distribution-model"><span class="nav-number">1.3.</span> <span class="nav-text">Distribution model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Easy-ones"><span class="nav-number">1.3.1.</span> <span class="nav-text">Easy ones</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-distribution"><span class="nav-number">1.3.2.</span> <span class="nav-text">Gaussian distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chi-2-distribution"><span class="nav-number">1.3.3.</span> <span class="nav-text">$\chi^2$ distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rayleigh-distribution"><span class="nav-number">1.3.4.</span> <span class="nav-text">Rayleigh distribution</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stochastic-Process"><span class="nav-number">2.</span> <span class="nav-text">Stochastic Process</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-random-variable-to-stochastic-process"><span class="nav-number">2.1.</span> <span class="nav-text">From random variable to stochastic process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stochastic-process-definition"><span class="nav-number">2.1.1.</span> <span class="nav-text">Stochastic process definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numerical-Characteristic"><span class="nav-number">2.1.3.</span> <span class="nav-text">Numerical Characteristic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stationary-process-and-ergodicity"><span class="nav-number">2.2.</span> <span class="nav-text">Stationary process and ergodicity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Strictly-stationary-process"><span class="nav-number">2.2.1.</span> <span class="nav-text">Strictly stationary process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weakly-stationary-process"><span class="nav-number">2.2.2.</span> <span class="nav-text">Weakly stationary process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ergodicity"><span class="nav-number">2.2.3.</span> <span class="nav-text">Ergodicity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Power-spectrum-density-PSD"><span class="nav-number">2.3.</span> <span class="nav-text">Power spectrum density (PSD)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-definition"><span class="nav-number">2.3.1.</span> <span class="nav-text">PSD definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-and-autocorrelation"><span class="nav-number">2.3.2.</span> <span class="nav-text">PSD and autocorrelation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gaussian-process-and-white-noise"><span class="nav-number">2.4.</span> <span class="nav-text">Gaussian process and white noise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-process"><span class="nav-number">2.4.1.</span> <span class="nav-text">Gaussian process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#White-noise"><span class="nav-number">2.4.2.</span> <span class="nav-text">White noise</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-Signal-Basic"><span class="nav-number">1.</span> <span class="nav-text">Random Signal Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Review"><span class="nav-number">1.1.</span> <span class="nav-text">Review</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution"><span class="nav-number">1.1.1.</span> <span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moment-and-Cumulant"><span class="nav-number">1.1.2.</span> <span class="nav-text">Moment and Cumulant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Statistical-independence-and-irrelevance"><span class="nav-number">1.1.3.</span> <span class="nav-text">Statistical independence and irrelevance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characteristic-function"><span class="nav-number">1.2.</span> <span class="nav-text">Characteristic function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distribution-model"><span class="nav-number">1.3.</span> <span class="nav-text">Distribution model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Easy-ones"><span class="nav-number">1.3.1.</span> <span class="nav-text">Easy ones</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-distribution"><span class="nav-number">1.3.2.</span> <span class="nav-text">Gaussian distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chi-2-distribution"><span class="nav-number">1.3.3.</span> <span class="nav-text">$\chi^2$ distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rayleigh-distribution"><span class="nav-number">1.3.4.</span> <span class="nav-text">Rayleigh distribution</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stochastic-Process"><span class="nav-number">2.</span> <span class="nav-text">Stochastic Process</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-random-variable-to-stochastic-process"><span class="nav-number">2.1.</span> <span class="nav-text">From random variable to stochastic process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stochastic-process-definition"><span class="nav-number">2.1.1.</span> <span class="nav-text">Stochastic process definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numerical-characteristic"><span class="nav-number">2.1.3.</span> <span class="nav-text">Numerical characteristic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stationary-process-and-ergodicity"><span class="nav-number">2.2.</span> <span class="nav-text">Stationary process and ergodicity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Strictly-stationary-process"><span class="nav-number">2.2.1.</span> <span class="nav-text">Strictly stationary process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weakly-stationary-process"><span class="nav-number">2.2.2.</span> <span class="nav-text">Weakly stationary process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ergodicity"><span class="nav-number">2.2.3.</span> <span class="nav-text">Ergodicity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Power-spectrum-density-PSD"><span class="nav-number">2.3.</span> <span class="nav-text">Power spectrum density (PSD)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-definition"><span class="nav-number">2.3.1.</span> <span class="nav-text">PSD definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-and-autocorrelation"><span class="nav-number">2.3.2.</span> <span class="nav-text">PSD and autocorrelation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gaussian-process-and-white-noise"><span class="nav-number">2.4.</span> <span class="nav-text">Gaussian process and white noise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-process"><span class="nav-number">2.4.1.</span> <span class="nav-text">Gaussian process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#White-noise"><span class="nav-number">2.4.2.</span> <span class="nav-text">White noise</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-response"><span class="nav-number">3.</span> <span class="nav-text">System response</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PDF"><span class="nav-number">3.1.</span> <span class="nav-text">PDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Expectation-and-autocorrelation"><span class="nav-number">3.2.</span> <span class="nav-text">Expectation and autocorrelation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PSD"><span class="nav-number">3.3.</span> <span class="nav-text">PSD</span></a></li></ol></li></ol></div>
             
 
           </div>
