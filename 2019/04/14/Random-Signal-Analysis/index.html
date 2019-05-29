@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/1555225278092.png">
 <meta property="og:image" content="http://yoursite.com/assets/1557196005851.png">
 <meta property="og:image" content="http://yoursite.com/assets/1558406463923.png">
-<meta property="og:updated_time" content="2019-05-28T11:20:35.580Z">
+<meta property="og:updated_time" content="2019-05-29T05:26:50.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -384,7 +384,7 @@
 <ul>
 <li><p>The <em>n</em>-th <strong>ordinary moment</strong>:  $m_n=E[X^n],\ n=1,2,…$</p>
 <blockquote>
-<p>The zeroth moment is the total probability (i.e. one), the first moment is the mean, the second central moment is the variance, the third standardized moment is the skewness, and the fourth standardized moment is the kurtosis. The mathematical concept is closely related to the concept of moment in physics.</p>
+<p>The zeroth moment is the total probability (i.e. one), the first moment is the mean, the second central moment is the variance, the third standardized moment is the skewness, and the fourth standardized moment is the kurtosis. The mathematical concept is closely related to the concept of moment in physics. (<a href="https://en.wikipedia.org/wiki/Moment_(mathematics" target="_blank" rel="noopener">Moment</a>&gt;))</p>
 <p>For the second and higher moments, <strong>the central moment</strong> are usually used rather than the moments about zero, because they provide clearer information about the distribution’s shape.</p>
 </blockquote>
 </li>
@@ -400,10 +400,10 @@
 <li>The <strong>4th central moment</strong> is a standardized moment. — Define kurtosis.</li>
 </ul>
 <p><img src="/assets/1555224354383.png" alt="1555224354383"></p>
-<blockquote>
-<font face="Segoe Print" color="#D87093" size="4">class note:</font>
+<font face="Segoe Print" color="#D87093" size="4">class note: Moments of gaussian variables</font>
 
-<p>  Higher moments (&gt;2) are used to describe the deviation from gaussian variables. Only <em>1~2-th</em> moment are required to analyze gaussian variables because higher moments are relevant to these lower moments.</p>
+<blockquote>
+<p> Higher moments (&gt;2) are used to describe the deviation from gaussian variables. Only <em>1~2-th</em> moment are required to analyze gaussian variables because higher moments are relevant to these lower moments.</p>
 </blockquote>
 <p>In 2D case:</p>
 <ul>
@@ -414,7 +414,7 @@
 <ul>
 <li><strong>Cumulant</strong>: a concept close to moment. </li>
 </ul>
-<p>As for gaussian variables, I have mentioned that higher moments are determined by lower moments so only 1~2nd moments are necessary. From the perspective of cumulants, when n&gt;2, they are zero in this case. Moreover, if the gaussian variables have zero mean, moments are even the same as cumulants. We can take it easy.</p>
+<p>As for gaussian variables, higher moments are determined by lower moments so only 1~2nd moments are necessary. From the perspective of cumulants, when n&gt;2, they are zero in this case. Moreover, if the gaussian variables have zero mean, moments are even the same as cumulants. We can take it easy.</p>
 <h3 id="Statistical-independence-and-irrelevance"><a href="#Statistical-independence-and-irrelevance" class="headerlink" title="Statistical independence and irrelevance"></a>Statistical independence and irrelevance</h3><ul>
 <li><strong>Statistical Independence</strong>: <script type="math/tex; mode=display">
 \textbf{X}\ and\ \textbf{Y}\ are\ statistically\ independent \Leftrightarrow f_{XY}(x,y)=f_{X}(x)\bullet f_{Y}(y)</script></li>
@@ -428,7 +428,7 @@
 </ul>
 <hr>
 <h2 id="Characteristic-function"><a href="#Characteristic-function" class="headerlink" title="Characteristic function"></a>Characteristic function</h2><blockquote>
-<p>In probability theory and statistics, the characteristic function of any real-valued random variable completely defines its probability distribution. If a random variable admits a probability density function, then the characteristic function is the Fourier transform of the probability density function. Thus it provides the basis of an alternative route to analytical results compared with working directly with probability density functions or cumulative distribution functions. There are particularly simple results for the characteristic functions of distributions defined by the weighted sums of random variables.</p>
+<p>In probability theory and statistics, the characteristic function of any real-valued random variable completely defines its probability distribution. If a random variable admits a probability density function, then the characteristic function is the Fourier transform of the probability density function. Thus it provides the basis of an alternative route to analytical results compared with working directly with probability density functions or cumulative distribution functions. There are particularly simple results for the characteristic functions of distributions defined by the weighted sums of random variables. (<a href="https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory" target="_blank" rel="noopener">Characteristic function</a>))</p>
 </blockquote>
 <ul>
 <li><strong>Characteristic function</strong>: $\phi(\omega)=E[e^{j\omega X}]​$</li>
@@ -446,12 +446,12 @@
 </ul>
 <p>No matter how long I have been waiting for the bus, how many buses will arrive in the coming 5 mins are a constant.</p>
 <blockquote>
-<p>It is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant rate and independently of the time since the last event.</p>
+<p>It is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant rate and independently of the time since the last event. (<a href="https://en.wikipedia.org/wiki/Poisson_distribution" target="_blank" rel="noopener">Poisson distribution</a>)</p>
 </blockquote>
 <ul>
 <li><strong>Uniform distribution</strong></li>
 </ul>
-<p>There isn’t any bias within the probabilities of different choices.</p>
+<p>There is no bias within the probabilities of different choices.</p>
 <h3 id="Gaussian-distribution"><a href="#Gaussian-distribution" class="headerlink" title="Gaussian distribution"></a>Gaussian distribution</h3><p>Detailed information can be found in “Probability theory”.</p>
 <h3 id="chi-2-distribution"><a href="#chi-2-distribution" class="headerlink" title="$\chi^2$ distribution"></a>$\chi^2$ distribution</h3><p> $\chi^2$ distribution is also named  chi-squared distribution.</p>
 <ul>
@@ -475,20 +475,20 @@
 </ul>
 <p>It is essentially a noncentral $\chi ^2$ distribution with n degrees of freedom.</p>
 <hr>
-<h1 id="Stochastic-Process"><a href="#Stochastic-Process" class="headerlink" title="Stochastic Process"></a>Stochastic Process</h1><hr>
-<h2 id="From-random-variable-to-stochastic-process"><a href="#From-random-variable-to-stochastic-process" class="headerlink" title="From random variable to stochastic process"></a>From random variable to stochastic process</h2><h3 id="Stochastic-process-definition"><a href="#Stochastic-process-definition" class="headerlink" title="Stochastic process definition"></a>Stochastic process definition</h3><blockquote>
-<p>Historically, the random variables were associated with or indexed by a set of numbers, usually viewed as points in time, giving the interpretation of a stochastic process representing numerical values of some system randomly changing over time, such as the growth of a bacterial population, an electrical current fluctuating due to thermal noise, or the movement of a gas molecule</p>
+<h1 id="Stochastic-Process"><a href="#Stochastic-Process" class="headerlink" title="Stochastic Process"></a>Stochastic Process</h1><h2 id="From-random-variable-to-stochastic-process"><a href="#From-random-variable-to-stochastic-process" class="headerlink" title="From random variable to stochastic process"></a>From random variable to stochastic process</h2><h3 id="Stochastic-process-definition"><a href="#Stochastic-process-definition" class="headerlink" title="Stochastic process definition"></a>Stochastic process definition</h3><blockquote>
+<p>Historically, the random variables were associated with or indexed by a set of numbers, usually viewed as points in time, giving the interpretation of a stochastic process representing numerical values of some system randomly changing over time, such as the growth of a bacterial population, an electrical current fluctuating due to thermal noise, or the movement of a gas molecule. (<a href="https://en.wikipedia.org/wiki/Stochastic_process" target="_blank" rel="noopener">Stochastic process</a>)</p>
 </blockquote>
-<p>In short, a stochastic process has two dimensions - <strong>Time</strong> and <strong>Value</strong>. At a specific time, the value is a random variable. This random variable may be determined by time t, which means at another specific time, the random variable may differ.</p>
-<h3 id="Probability-distribution-1"><a href="#Probability-distribution-1" class="headerlink" title="Probability distribution"></a>Probability distribution</h3><p>In 1D, </p>
+<p>In short, a stochastic process has two dimensions - <strong>Time</strong> and <strong>Value</strong>. At a specific time, the value is a random variable. This random variable may be determined by time $t$, which means at another specific time, the random variable may differ. </p>
+<p>P.S. Probability distribution and numerical characteristics describe the random variable in the <em>Value</em> axis. There is no random variables along the <em>Time</em> axis but properties of random variables change along the <em>Time</em> axis. <em>1D</em> means one random variable and <em>2D</em> means two random variables in different times.</p>
+<h3 id="Probability-distribution-1"><a href="#Probability-distribution-1" class="headerlink" title="Probability distribution"></a>Probability distribution</h3><p>In 1D <em>(one variable $x$ given two specific time $t$)</em>, </p>
 <ul>
 <li><p><strong>CDF</strong>: $ F_{X}(x_1,t_1)=P(X(t_1)\leq x_1)$</p>
 </li>
-<li><p><strong>PDF</strong>: $f_X(x_1,t_1)=\frac {\partial F_X(x_1,t_1)}{\partial x}​$</p>
+<li><p><strong>PDF</strong>: $f_X(x_1,t_1)=\frac {\partial F_X(x_1,t_1)}{\partial x_1}$</p>
 </li>
 </ul>
 <p>We can easily find that this stochastic process is a function of <em>x</em> and <em>t</em>.</p>
-<p>In 2D,</p>
+<p>In 2D <em>(two variable $x$ given two specific time $t$)</em>, </p>
 <ul>
 <li><p><strong>CDF</strong>: $ F_{X}(x_1,x_2;t_1,t_2)=P\{(X(t_1)\leq x_1, X(t_2)\leq x_2)\}$</p>
 </li>
@@ -496,27 +496,30 @@
 </li>
 </ul>
 <p>It describes the relevance of two moments of the stochastic process, which is widely used in engineering.</p>
-<h3 id="Numerical-characteristic"><a href="#Numerical-characteristic" class="headerlink" title="Numerical characteristic"></a>Numerical characteristic</h3><ul>
+<h3 id="Numerical-characteristic"><a href="#Numerical-characteristic" class="headerlink" title="Numerical characteristic"></a>Numerical characteristic</h3><p>In 1D,</p>
+<ul>
 <li>Expectation: $m_X(t)=E[X(t)]=\int\limits_{-\infty}^{+\infty}x f_{X}(x,t)dx​$</li>
 <li>Variance: $\sigma^2 _X(t)=D[X(t)]=\int\limits_{-\infty}^{+\infty}[x-m_X(t)]^2 f_{X}(x,t)dx​$</li>
 </ul>
 <p>The expectation and variance are both definite functions of time t.</p>
+<p>In 2D,</p>
 <ul>
 <li>Autocorrelation: $R_X(t_1,t_2)=E[X(t_1)X(t_2)]=\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}x_1x_2 f_X(x_1,x_2;t_1,t_2)dx_1dx_2$. </li>
 <li>Cross-correlation: $R_{XY}(t_1,t_2)=E[X(t_1)Y(t_2)]=\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}xy f_{XY}(x,y;t_1,t_2)dxdy$.</li>
 </ul>
 <p>It is the 2nd mixed ordinary moment of random process. And it describes the relationship of two times.</p>
-<blockquote>
-<font face="Segoe Print" color="#D87093" size="4">class note:</font>
+<font face="Segoe Print" color="#D87093" size="4">class note: The usage of autocorrelation</font>
 
-<p>In communication system, autocorrelation of a communication channel can be used to determine whether this channel changes abruptly. If $R_X(t_1,t_2)$ is small, it indicates that this channel changes slowly, vice versa.<br>Autocorrelation is a square function described a linear relationship. It instructs the design of <strong>Adaptive differential pulse-code modulation (ADPCM)</strong>.</p>
+<blockquote>
+<p>In communication system, autocorrelation of a communication channel can be used to determine whether this channel changes abruptly. If $R_X(t_1,t_2)​$ is small, it indicates that this channel changes slowly, vice versa.<br>Autocorrelation is a square function that describes a linear relationship. It instructs the design of <strong>Adaptive differential pulse-code modulation (ADPCM)</strong>.</p>
 </blockquote>
 <hr>
 <h2 id="Stationary-process-and-ergodicity"><a href="#Stationary-process-and-ergodicity" class="headerlink" title="Stationary process and ergodicity"></a>Stationary process and ergodicity</h2><h3 id="Strictly-stationary-process"><a href="#Strictly-stationary-process" class="headerlink" title="Strictly stationary process"></a>Strictly stationary process</h3><script type="math/tex; mode=display">
 f_X(x_1,x_2,...,x_n;t_1,t_2,...,t_n)=f_X(x_1,x_2,...,x_n;t_1+\tau,t_2+\tau,...,t_n+\tau)</script><p>This is the definition of n-th strictly stationary process and its PDF doesn’t vary with the time.</p>
-<blockquote>
 <font face="Segoe Print" color="#D87093" size="4">class note:</font>
 
+<p>&gt;</p>
+<blockquote>
 <p>n here means the number of points.</p>
 <p>Strictly stationary process $\Rightarrow​$ Expectation and variance are irrelevant with t. </p>
 <p>Expectation and variance are irrelevant with t. + Gaussian process (PDF determined by 1~2-nd moment) $\Rightarrow$ Strictly stationary process.</p>
@@ -533,16 +536,18 @@ E[X^2(t)]<\infty</script><p>Weakly stationary process is 2-nd stationary. In con
 <li><p>cond3: Weakly stationary process</p>
 </li>
 </ul>
-<p>In total: <strong>Time average = Phase average</strong></p>
+<p>In total: <strong>Time average = Phase average</strong> (Phase refers to the <em>Value</em> axis)</p>
 <blockquote>
 <p>In probability theory, an ergodic dynamical system is one that, broadly speaking, has the same behavior averaged over time as averaged over the space of all the system’s states in its phase space. </p>
+</blockquote>
 <font face="Segoe Print" color="#D87093" size="4">class note:</font>
 
+<blockquote>
 <p>The premise of ergodicity is the process should be stationary [ergodicity $\rightarrow​$ stationary], or the mean we gain cannot reflect the reality since the mean varies with time.</p>
 <p>A <strong>stationary and ergodic</strong> process $\rightarrow$ Time average $\rightarrow$  (1) PDF or (2) statistic $\rightarrow$ Relevance $\rightarrow$ ADPCM</p>
 <p>A <strong>weakly and non-stationary</strong> process $\rightarrow$ Short Time Window (since the process is stationary in a short period of time and the difference between periods indicates the time-varying characteristic of the process) $\rightarrow$ Relevance within a short period $\rightarrow$ ADPCM</p>
-<p>In this case, there is a conflict between <strong>time resolution</strong> (prefer shorter window) and <strong>frequency resolution</strong> (prefer longer window named as <em>time-frequency symmetry</em>).</p>
-<p>In engineering, we only need tens of samples to gain the time average.</p>
+<p>In this case, there is a conflict between <strong>time resolution</strong> (prefer shorter window) and <strong>frequency resolution</strong> (prefer longer window) named as <em>time-frequency symmetry</em>.</p>
+<p>In engineering, we need tens of samples to gain the time average.</p>
 </blockquote>
 <hr>
 <h2 id="Power-spectrum-density-PSD"><a href="#Power-spectrum-density-PSD" class="headerlink" title="Power spectrum density (PSD)"></a>Power spectrum density (PSD)</h2><h3 id="PSD-definition"><a href="#PSD-definition" class="headerlink" title="PSD definition"></a>PSD definition</h3><ul>
@@ -552,9 +557,9 @@ E[X^2(t)]<\infty</script><p>Weakly stationary process is 2-nd stationary. In con
 </li>
 </ul>
 <p>Important conclusion: <strong>PSD of random process</strong> $\Leftrightarrow$ <strong>amplitude spectrum deterministic signal</strong>, containing no <strong>phase</strong> information.  </p>
-<blockquote>
 <font face="Segoe Print" color="#D87093" size="4">class note: Speech coding</font>
 
+<blockquote>
 <p>2nd statistics ($\approx$ PSD / autocorrelation) contains no phase information.</p>
 <p>Speech coding: </p>
 <ul>
@@ -565,15 +570,15 @@ E[X^2(t)]<\infty</script><p>Weakly stationary process is 2-nd stationary. In con
 <h3 id="PSD-and-autocorrelation"><a href="#PSD-and-autocorrelation" class="headerlink" title="PSD and autocorrelation"></a>PSD and autocorrelation</h3><p>PSD and autocorrelation are a Fourier Transform pair: </p>
 <script type="math/tex; mode=display">
 R_X(\tau)=\frac{1}{2\pi}\int\limits_{-\infty}^{+\infty}S_X(\omega)e^{j\omega\tau}d\omega</script><hr>
-<h2 id="Gaussian-process-and-white-noise"><a href="#Gaussian-process-and-white-noise" class="headerlink" title="Gaussian process and white noise"></a>Gaussian process and white noise</h2><blockquote>
-<font face="Segoe Print" color="#D87093" size="4">class note: Why we focus on gaussian processes?</font>
+<h2 id="Gaussian-process-and-white-noise"><a href="#Gaussian-process-and-white-noise" class="headerlink" title="Gaussian process and white noise"></a>Gaussian process and white noise</h2><font face="Segoe Print" color="#D87093" size="4">class note: Why we focus on gaussian processes?</font>
 
+<blockquote>
 <p><strong>Central limit theorem</strong>  : In some situations, when independent random variables are added, their properly normalized sum tends toward a normal distribution even if the original variables themselves are not normally distributed. (<a href="https://en.wikipedia.org/wiki/Central_limit_theorem" target="_blank" rel="noopener">Central limit theorem</a>)</p>
 <p>Difference between white and gaussian: </p>
 <ul>
 <li><p>Ref1: White noise can be Gaussian, or uniform or even Poisson. It seems to be that the key characteristic of white noise is that each measurement is completely independent of the measurements preceding it. Also, it must be flat on the frequency spectrum.</p>
 </li>
-<li><p>Ref2: White noise has equal intensity over the whole frequency domain (i.e. nearly flat curve). Gaussian refers to (time domain) sample distribution: each sample has a normal distribution with zero mean and finite variance (which corresponds to the above mentioned flat curve in a frequency domain).</p>
+<li><p>Ref2: White noise has equal intensity over the whole frequency domain (i.e. nearly flat curve). Gaussian refers to (time domain) sample distribution: each sample has a normal distribution with zero mean and finite variance.</p>
 </li>
 <li><p>Ref3: In particular, if each sample of white noise has a normal distribution with zero mean, the signal is said to be <strong>additive white Gaussian noise</strong> (shown as follow). Gaussianity refers to the probability distribution with respect to the value, in this context the probability of the signal falling within any particular range of amplitudes, while the term ‘white’ refers to the way the signal power is distributed (i.e., independently) over time or among frequencies.<br><img src="/assets/1557196005851.png" alt="1557196005851"></p>
 </li>
@@ -595,9 +600,9 @@ R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><blockquote>
 <li>In reality,  signals of narrowband system can be similar to white noise. However, in broadband system, this assumption fails.</li>
 <li><p>How <strong>PDF of white noise $\Rightarrow$ PDF</strong> :</p>
 <ul>
-<li><p>Gaussian white noise: [ PSD $\rightarrow$ autocorrelation (2nd statistic) $+$ zero mean (white noise’s attribute) (1nd statistic) ] $\rightarrow$ definite gaussian variable $\rightarrow$ PDF WITHOUT specific time value (The character of random signal processing)</p>
+<li><p>Gaussian white noise: [ PSD $\rightarrow$ autocorrelation (2nd statistic) $+$ zero mean (gaussian noise’s attribute) (1nd statistic) ] $\rightarrow$ definite gaussian variable $\rightarrow​$ PDF WITHOUT specific time value (The character of random signal processing)</p>
 </li>
-<li><p>NOT Gaussian white noise: it lacks &gt; 2nd statistics.</p>
+<li><p>NOT Gaussian white noise: it lacks &gt;2nd statistics.</p>
 </li>
 </ul>
 </li>
@@ -610,9 +615,9 @@ R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><blockquote>
 <li>Autocorrelation: $R_Y(\tau)=R_X(\tau)\ast h(-\tau) \ast h(\tau)$ [Tips: $h(\tau)$ is from output so autocorrelation (2nd) of Y has 2 $h(\tau)​$]</li>
 <li>Cross-correlation: $R_{XY}(\tau)=R_X(\tau) \ast h(\tau)​$</li>
 </ul>
-<blockquote>
 <font face="Segoe Print" color="#D87093" size="4">class note:</font>
 
+<blockquote>
 <ul>
 <li>Stationary $\rightarrow$ Time invariant $\rightarrow$ Stationary</li>
 <li>Not stationary $\rightarrow$ Time invariant $\rightarrow$ Not stationary</li>
@@ -626,18 +631,18 @@ R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><blockquote>
 <font face="Segoe Print" color="#D87093" size="4">class note: Channel Estimation</font>  
 
 <p><br><font face="Segoe Print" color="#4CABEE" size="3">Wired Channel:</font> It is relevant to transmission bandwidth and signal bandwidth. If we know $h(t)$, we can design a reverse system for equalization.</p>
-<p><br><font face="Segoe Print" color="#4CABEE" size="3">Wireless Channel:</font> It is irrelevant to bandwidth and allows a wide bandwidth. It is relevant to multipath propagation which will brings ISI in a high speed. Here there are 3 methods to estimate this channel:</p>
+<p><br><font face="Segoe Print" color="#4CABEE" size="3">Wireless Channel:</font> It is irrelevant to bandwidth and allows a wide bandwidth. It is relevant to multipath propagation which will bring ISI in a high speed. Here there are 3 methods to estimate this channel:</p>
 <ul>
 <li><strong>Training sequence</strong> (pilot sequence): [know input &amp; output | Cross-correlation] We know $R_{XY}(\tau)$ and $R_X(\tau)$ of $R_{XY}(\tau)=R_X(\tau)*h(\tau)$, it is easy to gain $h(\tau)$. <a href="https://en.wikipedia.org/wiki/Channel_state_information" target="_blank" rel="noopener">Channel state information</a> </li>
 </ul>
-<p><br><font face="Segoe Print" color="#FFC300" size="3">White Assumption:</font> </p>
+<p><br><font face="Segoe Print" color="#FFC300" size="3">  White Assumption:</font> </p>
 <ul>
-<li><p><strong>Blind channel estimation</strong>: [know output | Cross-correlation] Assuming that $x(t)$ is <em>i.i.d.</em> and 2nd white. Thus, $R_X=\delta(t)$. Based on the definition of cross-correlation, we can estimate the $|\hat{H}(\omega)| = c |H(\omega)|​$, which is only the amplitude spectrum.</p>
+<li><p><strong>Blind channel estimation</strong>: [know output | Cross-correlation] Assuming that $x(t)$ is <em>i.i.d.</em> and 2nd white. Thus, $R_X=\delta(t)$. Based on the definition of cross-correlation, we can estimate the $|\hat{H}(\omega)| = c |H(\omega)|$, which is only the amplitude spectrum.</p>
 </li>
 <li><p><strong>Model based estimation</strong>: [know output | PSD] Assuming that $x(t)$ is <em>i.i.d.</em> and 2nd white. Then we have  $S_X(\omega)$ and $S_Y(\omega)$ which is short in most cases. There are several models to gain long but varied $|\hat{H}(\omega)|$</p>
 </li>
 </ul>
-<font face="Segoe Print" color="#FFC300" size="3">Not White Assumption:</font> 
+<font face="Segoe Print" color="#FFC300" size="3">  Not White Assumption:</font> 
 
 <ul>
 <li><strong>Autoregressive model (<a href="https://en.wikipedia.org/wiki/Autoregressive_model" target="_blank" rel="noopener">AR</a>) </strong>: Sum of past $X_t$. </li>
@@ -701,7 +706,9 @@ mse(\hat{\theta})&=E\{[(\hat{\theta}-E(\hat{\theta}))+(E(\hat{\theta})-\theta)]^
 <hr>
 <h1 id="Cramer-Rao-Lower-Bound"><a href="#Cramer-Rao-Lower-Bound" class="headerlink" title="Cramer-Rao Lower Bound"></a>Cramer-Rao Lower Bound</h1><font face="Segoe Print" color="#D87093" size="4">class note: why we need CRLB?</font>  
 
-<p>From the last chapter, we know that a better estimation will have lower variance. CRLB provides the lower band of this variance and it becomes the objective of designs of algorithms.</p>
+<blockquote>
+<p> From the last chapter, we know that a better estimation will have lower variance. CRLB provides the lower band of this variance and it becomes the objective of designs of algorithms.</p>
+</blockquote>
 <h2 id="Efficiency"><a href="#Efficiency" class="headerlink" title="Efficiency"></a>Efficiency</h2><p>An estimator which is unbiased and attains the CRLB is said to be efficient in that it efficiently uses the data. An MVU estimator may or may not be efficient.</p>
 <h2 id="Scalar-parameter"><a href="#Scalar-parameter" class="headerlink" title="Scalar parameter"></a>Scalar parameter</h2><p><strong>Theorem (Cramer-Rao Lower Bound - Scalar Parameter)</strong></p>
 <p>1) </p>
