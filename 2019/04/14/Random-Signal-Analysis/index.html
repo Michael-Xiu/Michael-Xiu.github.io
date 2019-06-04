@@ -91,7 +91,9 @@
 <meta property="og:image" content="http://yoursite.com/assets/1555225278092.png">
 <meta property="og:image" content="http://yoursite.com/assets/1557196005851.png">
 <meta property="og:image" content="http://yoursite.com/assets/1558406463923.png">
-<meta property="og:updated_time" content="2019-05-29T05:26:50.125Z">
+<meta property="og:image" content="http://yoursite.com/assets/1559615726536.png">
+<meta property="og:image" content="http://yoursite.com/assets/1559623836912.png">
+<meta property="og:updated_time" content="2019-06-04T05:05:54.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -384,7 +386,7 @@
 <ul>
 <li><p>The <em>n</em>-th <strong>ordinary moment</strong>:  $m_n=E[X^n],\ n=1,2,…$</p>
 <blockquote>
-<p>The zeroth moment is the total probability (i.e. one), the first moment is the mean, the second central moment is the variance, the third standardized moment is the skewness, and the fourth standardized moment is the kurtosis. The mathematical concept is closely related to the concept of moment in physics. (<a href="https://en.wikipedia.org/wiki/Moment_(mathematics" target="_blank" rel="noopener">Moment</a>&gt;))</p>
+<p>The zeroth moment is the total probability (i.e. one), the first moment is the mean, the second central moment is the variance, the third standardized moment is the skewness, and the fourth standardized moment is the kurtosis. The mathematical concept is closely related to the concept of moment in physics.</p>
 <p>For the second and higher moments, <strong>the central moment</strong> are usually used rather than the moments about zero, because they provide clearer information about the distribution’s shape.</p>
 </blockquote>
 </li>
@@ -428,7 +430,7 @@
 </ul>
 <hr>
 <h2 id="Characteristic-function"><a href="#Characteristic-function" class="headerlink" title="Characteristic function"></a>Characteristic function</h2><blockquote>
-<p>In probability theory and statistics, the characteristic function of any real-valued random variable completely defines its probability distribution. If a random variable admits a probability density function, then the characteristic function is the Fourier transform of the probability density function. Thus it provides the basis of an alternative route to analytical results compared with working directly with probability density functions or cumulative distribution functions. There are particularly simple results for the characteristic functions of distributions defined by the weighted sums of random variables. (<a href="https://en.wikipedia.org/wiki/Characteristic_function_(probability_theory" target="_blank" rel="noopener">Characteristic function</a>))</p>
+<p>In probability theory and statistics, the characteristic function of any real-valued random variable completely defines its probability distribution. If a random variable admits a probability density function, then the characteristic function is the Fourier transform of the probability density function. Thus it provides the basis of an alternative route to analytical results compared with working directly with probability density functions or cumulative distribution functions. There are particularly simple results for the characteristic functions of distributions defined by the weighted sums of random variables. </p>
 </blockquote>
 <ul>
 <li><strong>Characteristic function</strong>: $\phi(\omega)=E[e^{j\omega X}]​$</li>
@@ -592,9 +594,9 @@ R_X(\tau)=\frac{1}{2\pi}\int\limits_{-\infty}^{+\infty}S_X(\omega)e^{j\omega\tau
 <script type="math/tex; mode=display">
 S_N(\omega)=\frac{N_0}{2},\ -\infty<\omega<\infty</script><p>The autocorrelation of white noise has this form: </p>
 <script type="math/tex; mode=display">
-R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><blockquote>
-<font face="Segoe Print" color="#D87093" size="4">class note:</font>
+R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><font face="Segoe Print" color="#D87093" size="4">class note:</font>
 
+<blockquote>
 <ul>
 <li>The definition of white noise here is specific for 2nd white noise.</li>
 <li>In reality,  signals of narrowband system can be similar to white noise. However, in broadband system, this assumption fails.</li>
@@ -778,7 +780,103 @@ M\ positive\ semidefinite \Leftrightarrow {\displaystyle x^{\textsf {T}}Mx\geq 0
 <script type="math/tex; mode=display">
 \boldsymbol{\hat{\theta}}=(\mathbf{H}^T \mathbf C^{-1} \mathbf{H})^{-1}\mathbf{H}^T \mathbf C^{-1} \mathbf x</script><p>The biggest difference with “Linear model · white noise” is that the estimator requires statistics of the noise. The covariance matrix of $\boldsymbol{\hat{\theta}}$ is</p>
 <script type="math/tex; mode=display">
-\mathbf{C_{\boldsymbol{\hat{\theta}}}}=(\mathbf{H}^T \mathbf C^{-1} \mathbf{H})^{-1}.</script>
+\mathbf{C_{\boldsymbol{\hat{\theta}}}}=(\mathbf{H}^T \mathbf C^{-1} \mathbf{H})^{-1}.</script><font face="Segoe Print" color="#D87093" size="4">class note: Serial channel estimation using linear model</font>  
+
+<p>This method is based on <strong>Training sequence</strong>.</p>
+<p><img src="/assets/1559615726536.png" alt="1559615726536"></p>
+<p>The receive signals start at $t+L$ because we should make sure that our $y$ is totally derived from prior signal instead of data.</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+y(t+L) &= \sum_{l=0}^{L-1}{h_{l}}s(t+L-l)+n\\
+\vdots \\
+y(t+L+Q) &= \sum_{l=0}^{L-1}{h_{l}}s(t+L+Q-l)+n
+\end{aligned}
+\end{equation}</script><p>$L​$ is the channel latency, $S​$ is the prior signal with length of $Q​$.  Then we can build a linear model to gain the MVU estimator:</p>
+<script type="math/tex; mode=display">
+\mathbf{Y}=
+\left[
+ \begin{matrix}
+S
+  \end{matrix} 
+\right]
+\left[
+ \begin{matrix}
+h_o\\
+\vdots \\
+h_{L-1}
+  \end{matrix} 
+\right]
++ \mathbf{N}
+
+\Rightarrow
+
+\mathbf{Y}=\mathbf{H}\boldsymbol{\theta}+\mathbf{N}</script><p>$\left[<br> \begin{matrix}<br>S<br>  \end{matrix}<br>\right]​$ is a matrix with $s(t)​$ components.</p>
+<p>There are three rules:</p>
+<ul>
+<li>The length of prior signal $\geq​$ $2L-1​$. To enhance performance, the length should increase.</li>
+<li><p>$\mathbf{H}$ requires to be <em>full column rank</em> and thus we should better design the prior signal $s$.</p>
+</li>
+<li><p>$\mathbf{H}^T\mathbf{H}=C \cdot \mathbf{I}​$ is the best choice because $\mathbf{H}^T\mathbf{H}​$ has uniform eigenvalues so its inverse will not enlarge the $\mathbf{N}​$.</p>
+</li>
+</ul>
+<font face="Segoe Print" color="#D87093" size="4">class note: Parellel channel estimation using linear model</font>
+
+<p>In OFDM system, one method of inserting pilot symbols is:</p>
+<p><img src="/assets/1559623836912.png" alt="1559623836912"></p>
+<p>The whole system can be described as:</p>
+<script type="math/tex; mode=display">
+\left[
+ \begin{matrix}
+S(k)\\
+\vdots \\
+S(k-N+1)
+  \end{matrix} 
+\right]
+\xrightarrow{IFFT}
+\left[
+ \begin{matrix}
+x(t)\\
+\vdots \\
+x(t-N+1)
+  \end{matrix} 
+\right]
+\xrightarrow{channel}
+\left[
+ \begin{matrix}
+y(t)\\
+\vdots \\
+y(t-N+1)
+  \end{matrix} 
+\right]
+\xrightarrow{FFT}
+Y(k)=(\sum_{l=0}^{L-1}{h_{l}}e^{-j\frac{2\pi}{N}kl})S(k)+N(k)</script><p>$S(k)$ are the pilot symbols which are evenly distributed in frequency domain. Then we can build a linear model to gain the MVU estimator:</p>
+<script type="math/tex; mode=display">
+\left[
+ \begin{matrix}
+Y(k)\\
+\vdots \\
+y(k-N+1)
+  \end{matrix} 
+\right]=
+\left[
+ \begin{matrix}
+S
+  \end{matrix} 
+\right]
+\left[
+ \begin{matrix}
+h_o\\
+\vdots \\
+h_{L-1}
+  \end{matrix} 
+\right]
++ \mathbf{N}
+
+\Rightarrow
+
+\mathbf{Y}=\mathbf{H}\boldsymbol{\theta}+\mathbf{N}</script><p>$\left[<br> \begin{matrix}<br>S<br>  \end{matrix}<br>\right]$ is the combination of $e^{-j\frac{2\pi}{N}kl}$ and $S(k)$.</p>
+
       
     </div>
     
