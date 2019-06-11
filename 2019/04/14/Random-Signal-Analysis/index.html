@@ -93,7 +93,8 @@
 <meta property="og:image" content="http://yoursite.com/assets/1558406463923.png">
 <meta property="og:image" content="http://yoursite.com/assets/1559615726536.png">
 <meta property="og:image" content="http://yoursite.com/assets/1559623836912.png">
-<meta property="og:updated_time" content="2019-06-04T05:05:54.858Z">
+<meta property="og:image" content="http://yoursite.com/assets/1560249863674.png">
+<meta property="og:updated_time" content="2019-06-11T11:39:15.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -716,17 +717,17 @@ mse(\hat{\theta})&=E\{[(\hat{\theta}-E(\hat{\theta}))+(E(\hat{\theta})-\theta)]^
 <p>1) </p>
 <p><em>It is assumed that the PDF $p(\mathbf{x};\theta)​$ satisfied the “regularity” condition</em></p>
 <script type="math/tex; mode=display">
-E[\frac{\partial \ ln \ p(\mathbf{x};\theta)}{\partial \theta}]=0 \ \ \ \ for\ all\ \theta</script><p><em>where the expectation is taken with respect to $p(\mathbf{x};\theta)$. Then, the variance of any unbiased estimator $\hat{\theta}$ must satisfy</em></p>
+E[\frac{\partial \ \ln p(\mathbf{x};\theta)}{\partial \theta}]=0 \ \ \ \ for\ all\ \theta</script><p><em>where the expectation is taken with respect to $p(\mathbf{x};\theta)$. Then, the variance of any unbiased estimator $\hat{\theta}$ must satisfy</em></p>
 <script type="math/tex; mode=display">
-var(\hat{\theta})\geq \frac{1}{-E[\frac{\partial^2 \ ln \ p(\mathbf{x};\theta)}{\partial \theta^2}]}</script><p><em>where the derivative is evaluated at the true value of $\theta$ and the expectation is taken with respect to $p(\mathbf{x};\theta)$.</em></p>
+var(\hat{\theta})\geq \frac{1}{-E[\frac{\partial^2 \ \ln p(\mathbf{x};\theta)}{\partial \theta^2}]}</script><p><em>where the derivative is evaluated at the true value of $\theta$ and the expectation is taken with respect to $p(\mathbf{x};\theta)$.</em></p>
 <p>2)</p>
 <p>The denominator is referred to as the <strong><em>Fisher information</em></strong>:</p>
 <script type="math/tex; mode=display">
-I(\theta)=-E[\frac{\partial^2 \ ln \ p(\mathbf{x};\theta)}{\partial \theta^2}]</script><p>The more information, the lower the bound.</p>
+I(\theta)=-E[\frac{\partial^2 \ \ln p(\mathbf{x};\theta)}{\partial \theta^2}]</script><p>The more information, the lower the bound.</p>
 <p>3)</p>
 <p><em>Furthermore, an unbiased estimator may be found that attains the bound for all $\theta$ if and only if</em> </p>
 <script type="math/tex; mode=display">
-\frac{\partial \ ln \ p(\mathbf{x};\theta)}{\partial \theta}=I(\theta)(g(\mathbf{x})-\theta))</script><p><em>for some functions $g$ and $I$. That estimator, which is the MVU estimator, is $\hat{\theta}=g(\mathbf{x})$, and the minimum variance is $1/I(\theta)$.</em></p>
+\frac{\partial \ \ln p(\mathbf{x};\theta)}{\partial \theta}=I(\theta)(g(\mathbf{x})-\theta))</script><p><em>for some functions $g$ and $I$. That estimator, which is the MVU estimator, is $\hat{\theta}=g(\mathbf{x})$, and the minimum variance is $1/I(\theta)$.</em></p>
 <p><img src="/assets/1558406463923.png" alt="1558406463923"></p>
 <h2 id="Scalar-parameter-·-transformation"><a href="#Scalar-parameter-·-transformation" class="headerlink" title="Scalar parameter · transformation"></a>Scalar parameter · transformation</h2><p><strong>Situation: The parameter we wish to estimate is a function of some more fundamental parameter.</strong></p>
 <p>Although efficiency is reserved only over linear transformations, it is approximately maintained over nonlinear transformations <strong>if the data record is large enough (Asymptotic efficiency)</strong>. This has great practical significance in that we are frequently interested in estimating functions of parameters.</p>
@@ -741,7 +742,7 @@ I(\theta)=-E[\frac{\partial^2 \ ln \ p(\mathbf{x};\theta)}{\partial \theta^2}]</
 <p>1) </p>
 <p><em>It is assumed that the PDF $p(\mathbf{x}; \boldsymbol \theta)​$ satisfies the “regularity” conditions:</em></p>
 <script type="math/tex; mode=display">
-E[\frac{\partial \ ln \ p(\mathbf{x};\boldsymbol \theta)}{\partial \boldsymbol \theta}]=0 \ \ \ \ for\ all\ \boldsymbol \theta</script><p><em>where the expectation is taken with respect to $p(\mathbf{x}; \boldsymbol \theta)​$. Then, the covariance matrix of any unbiased estimator $\boldsymbol{ \hat{\theta}} ​$ satisfies:</em></p>
+E[\frac{\partial \ \ln p(\mathbf{x};\boldsymbol \theta)}{\partial \boldsymbol \theta}]=0 \ \ \ \ for\ all\ \boldsymbol \theta</script><p><em>where the expectation is taken with respect to $p(\mathbf{x}; \boldsymbol \theta)​$. Then, the covariance matrix of any unbiased estimator $\boldsymbol{ \hat{\theta}} ​$ satisfies:</em></p>
 <script type="math/tex; mode=display">
 \mathbf{C_{\boldsymbol{ \hat{\theta}}}}-\mathbf{I}^{-1}(\boldsymbol {\theta})\geq\mathbf 0</script><p><em>where $\geq\mathbf 0$ is interpreted as meaning that the matrix is positive semidefinite.</em></p>
 <blockquote>
@@ -752,13 +753,13 @@ M\ positive\ semidefinite \Leftrightarrow {\displaystyle x^{\textsf {T}}Mx\geq 0
 <p>2)</p>
 <p>$\mathbf{I}(\boldsymbol\theta)$ is the $p\times p​$ <strong><em>Fisher information matrix</em></strong>. The latter is defined by:</p>
 <script type="math/tex; mode=display">
-[\mathbf{I}(\boldsymbol\theta)]_{ij}=-E[\frac{\partial^2 \ ln \ p(\mathbf{x};\boldsymbol\theta)}{\partial \theta_{i}\partial \theta_j}] \ \ \ i=1,2,...,p;\ j=1,2,...,p</script><blockquote>
+[\mathbf{I}(\boldsymbol\theta)]_{ij}=-E[\frac{\partial^2 \ \ln p(\mathbf{x};\boldsymbol\theta)}{\partial \theta_{i}\partial \theta_j}] \ \ \ i=1,2,...,p;\ j=1,2,...,p</script><blockquote>
 <p>$\mathbf{I}^{-1}$ exists $\Leftrightarrow$ $rank(\mathbf{I})=p$<br>If $rank(\mathbf{I})\prec p$, we can’t estimate an efficient channel. <em>e.g.</em> If $rank(\mathbf{I})=p-1$, we require a known parameter.</p>
 </blockquote>
 <p>3)</p>
 <p><em>Furthermore, an unbiased estimator may be found that attains the bound in that $\mathbf{C_{\boldsymbol{ \hat{\theta}}}}=\mathbf{I}^{-1}(\boldsymbol {\theta})​$ if and only if</em></p>
 <script type="math/tex; mode=display">
-\frac{\partial \ ln \ p(\mathbf{x};\boldsymbol \theta)}{\partial \boldsymbol \theta}=\mathbf{I}(\boldsymbol {\theta})(\mathbf g(\mathbf{x})-\boldsymbol \theta))</script><p><em>for some p-dimensional function $\mathbf g$ and some $p \times p$ matrix $\mathbf I$. That estimator, which is the MVU estimator, is $\boldsymbol {\hat {\theta}} = \mathbf g(\mathbf{x})$, and its covariance matrix is $\mathbf{I}^{-1}(\boldsymbol {\theta})$.</em></p>
+\frac{\partial \ \ln p(\mathbf{x};\boldsymbol \theta)}{\partial \boldsymbol \theta}=\mathbf{I}(\boldsymbol {\theta})(\mathbf g(\mathbf{x})-\boldsymbol \theta))</script><p><em>for some p-dimensional function $\mathbf g$ and some $p \times p$ matrix $\mathbf I$. That estimator, which is the MVU estimator, is $\boldsymbol {\hat {\theta}} = \mathbf g(\mathbf{x})$, and its covariance matrix is $\mathbf{I}^{-1}(\boldsymbol {\theta})$.</em></p>
 <h2 id="Vector-parameter-·-transformation"><a href="#Vector-parameter-·-transformation" class="headerlink" title="Vector parameter · transformation"></a>Vector parameter · transformation</h2><p>Similar to “Scalar parameter · transformation”.</p>
 <hr>
 <h1 id="Linear-Model"><a href="#Linear-Model" class="headerlink" title="Linear Model"></a>Linear Model</h1><font face="Segoe Print" color="#D87093" size="4">class note: why we need Linear Model?</font>  
@@ -766,7 +767,7 @@ M\ positive\ semidefinite \Leftrightarrow {\displaystyle x^{\textsf {T}}Mx\geq 0
 <blockquote>
 <p>The determination of the MVU estimator is in general a difficult task. It is fortunate, however, that a large number of signal processing estimation problems can be represented by a data model that allows us to easily determine this estimator. This class of models is the <strong>linear model</strong>.</p>
 </blockquote>
-<h2 id="Linear-model-·-white-noise"><a href="#Linear-model-·-white-noise" class="headerlink" title="Linear model · white noise"></a>Linear model · white noise</h2><p><strong>Theorem (Minimum Variance Unbiased Estimator for the Linear Model)</strong></p>
+<h2 id="Linear-model-·-specific"><a href="#Linear-model-·-specific" class="headerlink" title="Linear model · specific"></a>Linear model · specific</h2><p><strong>Theorem (Minimum Variance Unbiased Estimator for the Linear Model)</strong></p>
 <p><em>If the data observed can be modeled as</em></p>
 <script type="math/tex; mode=display">
 \mathbf x = \mathbf H \boldsymbol \theta + \mathbf w</script><p><em>where $\mathbf{x}$ is an $N \times 1$ vector of observations, $\mathbf H$ is a known $N\times p$ observation matrix (with $N\succ p$) and rank p, $\boldsymbol \theta$ is a $p\times1$ vector of parameters to be estimated, and $\mathbf w$ is an $N\times1$ noise vector with PDF $N(\mathbf 0, \sigma^2 \mathbf I)$, then the MVU estimator is</em></p>
@@ -774,7 +775,7 @@ M\ positive\ semidefinite \Leftrightarrow {\displaystyle x^{\textsf {T}}Mx\geq 0
 \boldsymbol{\hat{\theta}}=(\mathbf{H}^T\mathbf{H})^{-1}\mathbf{H}^T\mathbf x</script><p><em>and the covariance matrix of $\boldsymbol{\hat{\theta}}$ is</em></p>
 <script type="math/tex; mode=display">
 \mathbf{C_{\boldsymbol{\hat{\theta}}}}=\sigma^2(\mathbf{H}^T\mathbf{H})^{-1}.</script><p><em>For the linear model the MVU estimator is efficient in that it attains the CRLB.</em></p>
-<h2 id="Linear-model-·-nonwhite-noise"><a href="#Linear-model-·-nonwhite-noise" class="headerlink" title="Linear model · nonwhite noise"></a>Linear model · nonwhite noise</h2><p>A more general form of the linear model allows for noise that is not white. The general linear model assumes that</p>
+<h2 id="Linear-model-·-general"><a href="#Linear-model-·-general" class="headerlink" title="Linear model · general"></a>Linear model · general</h2><p>A more general form of the linear model allows for noise that is not white. The general linear model assumes that</p>
 <script type="math/tex; mode=display">
 \mathbf w \sim N(\mathbf 0, \mathbf C)</script><p>where $\mathbf C$ is not necessarily a scaled identity matrix. The MVU estimator is</p>
 <script type="math/tex; mode=display">
@@ -876,6 +877,91 @@ h_{L-1}
 \Rightarrow
 
 \mathbf{Y}=\mathbf{H}\boldsymbol{\theta}+\mathbf{N}</script><p>$\left[<br> \begin{matrix}<br>S<br>  \end{matrix}<br>\right]$ is the combination of $e^{-j\frac{2\pi}{N}kl}$ and $S(k)$.</p>
+<hr>
+<h1 id="Maximum-Likelihood-Estimation"><a href="#Maximum-Likelihood-Estimation" class="headerlink" title="Maximum Likelihood Estimation"></a>Maximum Likelihood Estimation</h1><h2 id="Scalar-parameter-1"><a href="#Scalar-parameter-1" class="headerlink" title="Scalar parameter"></a>Scalar parameter</h2><p>The MLE for a scalar parameter is defined to be <em>the value of $\theta​$ that maximizes $p(\mathbf{x};\theta)​$</em> for $\mathbf{x}​$ fixed, i.e., the value that maximizes the likelihood function.</p>
+<p><em>The method defines a maximum likelihood estimate:</em></p>
+<script type="math/tex; mode=display">
+\hat{\theta}_{MLE}\in \{ \mathop{\arg\max}_{\theta}p(\mathbf{x};\theta) \}</script><p><em>if a maximum exists.</em></p>
+<blockquote>
+<p><strong>Relation to Bayesian inference:</strong><br>The maximum a posteriori estimate:</p>
+<script type="math/tex; mode=display">
+\hat{\theta}_{MAP}\in \{ \mathop{\arg\max}_{\theta}p(\theta\ |\ \mathbf{x}) \}</script><p>Bayes’ theorem:</p>
+<script type="math/tex; mode=display">
+p(\theta\ |\ x_1,x_2,...,x_n)=\frac{p(x_1, x_2,...,x_n\ | \ \theta)\ > p(\theta)}{p(x_1, x_2,...,x_n)}</script><p>when the prior $p(\theta)$ is a uniform distribution, <em>MAP</em> is the same as <em>MLE</em>.</p>
+</blockquote>
+<p><strong>Theorem 1 (Asymptotic Properties of the MLE):</strong></p>
+<p>From the asymptotic distribution, the MLE is seen to be asymptotically unbiased and asymptotically attains the CRLB. It is therefore <strong><em>asymptotically efficient</em></strong>, and hence <strong><em>asymptotically optimal</em></strong>.</p>
+<p><strong>Theorem 2 (Invariance Property of the MLE)</strong></p>
+<p>Similar to “Cramer-Rao Lower Bound/ Scalar parameter · transformation”</p>
+<p><em>The MLE of the parameter $\alpha = g(\theta)$, where the PDF $p(\mathbf{x}; \theta)$ is parameterized by $\theta$, is given by</em></p>
+<script type="math/tex; mode=display">
+\hat{\alpha}=g(\hat{\theta})</script><p><em>where $\hat{\theta}$ is the MLE of $\theta$.</em></p>
+<h2 id="Numerical-Determination"><a href="#Numerical-Determination" class="headerlink" title="Numerical Determination"></a>Numerical Determination</h2><p>We attempt to solve the equation:</p>
+<script type="math/tex; mode=display">
+g(\theta)=\frac{\partial  \ln p(\mathbf{x}; \theta)}{\partial \theta}</script><p>Then, if $g(\theta)$ is approximately linear near $\theta_0$, we can approximate it by (<em>Taylor</em> series):</p>
+<script type="math/tex; mode=display">
+g(\theta)\approx g(\theta_0)+\frac{dg(\theta)}{d\theta}|_{\theta=\theta_0}(\theta-\theta_0)</script><p><img src="/assets/1560249863674.png" alt="1560249863674"></p>
+<hr>
+<h1 id="Least-Squares"><a href="#Least-Squares" class="headerlink" title="Least Squares"></a>Least Squares</h1><h2 id="Linear-Least-Squares"><a href="#Linear-Least-Squares" class="headerlink" title="Linear Least Squares"></a>Linear Least Squares</h2><p>In applying the linear LS approach for a scalar parameter we must assume that</p>
+<script type="math/tex; mode=display">
+s[n]=\theta h[n]</script><p>where $h[n]$ is a known sequence and $s[n]$ is a purely deterministic signal. Due to observation noise or model inaccuracies we observe a perturbed version of $s[n]$, which we denote by $x[n]$. The LS error criterion becomes</p>
+<script type="math/tex; mode=display">
+J(\theta)=\sum_{n=0}^{N-1}(x[n]-\theta h[n])^2.</script><p>A minimization is readily shown to produce the LSE</p>
+<script type="math/tex; mode=display">
+\hat{\theta}=\frac{\sum_{n=0}^{N-1}x[n]h[n]}{\sum_{n=0}^{N-1}h^2[n]}.</script><p>This equation is similar to $\frac{R(xy)}{R(x)}$.</p>
+<font face="Segoe Print" color="#D87093" size="4">class note: Conclusion of estimation methods</font>
+
+<ul>
+<li>CRLB:<ul>
+<li>Condition:<ul>
+<li>know the PDF $p(\mathbf{x};\theta)$</li>
+<li>the “regularity” condition $E[\frac{\partial \ \ln p(\mathbf{x};\theta)}{\partial \theta}]=0 \ \ \ \ for\ all\ \theta$</li>
+</ul>
+</li>
+<li>Estimator: MVU</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Linear Model:<ul>
+<li>Condition:<ul>
+<li>know the PDF $p(\mathbf{x};\theta)​$</li>
+<li>the distribution is gaussian</li>
+<li>can use the form: $\mathbf x = \mathbf H \boldsymbol \theta + \mathbf w$</li>
+</ul>
+</li>
+<li>Estimator: MVU</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>MLE:<ul>
+<li>Condition:<ul>
+<li>know the PDF $p(\mathbf{x};\theta)$</li>
+</ul>
+</li>
+<li>Estimator: <ul>
+<li>if  $p(\mathbf{x};\theta)$ is gaussian, then MVU</li>
+<li>if  $p(\mathbf{x};\theta)$ is not gaussian, then asymptotically MVU</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>LSE:<ul>
+<li>Condition:<ul>
+<li>none</li>
+</ul>
+</li>
+<li>Estimator: <ul>
+<li>if  $p(\mathbf{x};\theta)​$ is gaussian, then MVU</li>
+<li>if  $p(\mathbf{x};\theta)$ is not gaussian, then whether it’s MVU is unclear because we don’t have statistics of $\mathbf{x}$ </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -1086,7 +1172,7 @@ h_{L-1}
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-Signal-Basic"><span class="nav-number">1.</span> <span class="nav-text">Random Signal Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Review"><span class="nav-number">1.1.</span> <span class="nav-text">Review</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution"><span class="nav-number">1.1.1.</span> <span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moment-and-Cumulant"><span class="nav-number">1.1.2.</span> <span class="nav-text">Moment and Cumulant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Statistical-independence-and-irrelevance"><span class="nav-number">1.1.3.</span> <span class="nav-text">Statistical independence and irrelevance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characteristic-function"><span class="nav-number">1.2.</span> <span class="nav-text">Characteristic function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distribution-model"><span class="nav-number">1.3.</span> <span class="nav-text">Distribution model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Easy-ones"><span class="nav-number">1.3.1.</span> <span class="nav-text">Easy ones</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-distribution"><span class="nav-number">1.3.2.</span> <span class="nav-text">Gaussian distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chi-2-distribution"><span class="nav-number">1.3.3.</span> <span class="nav-text">$\chi^2$ distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rayleigh-distribution"><span class="nav-number">1.3.4.</span> <span class="nav-text">Rayleigh distribution</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stochastic-Process"><span class="nav-number">2.</span> <span class="nav-text">Stochastic Process</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-random-variable-to-stochastic-process"><span class="nav-number">2.1.</span> <span class="nav-text">From random variable to stochastic process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stochastic-process-definition"><span class="nav-number">2.1.1.</span> <span class="nav-text">Stochastic process definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numerical-characteristic"><span class="nav-number">2.1.3.</span> <span class="nav-text">Numerical characteristic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stationary-process-and-ergodicity"><span class="nav-number">2.2.</span> <span class="nav-text">Stationary process and ergodicity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Strictly-stationary-process"><span class="nav-number">2.2.1.</span> <span class="nav-text">Strictly stationary process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weakly-stationary-process"><span class="nav-number">2.2.2.</span> <span class="nav-text">Weakly stationary process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ergodicity"><span class="nav-number">2.2.3.</span> <span class="nav-text">Ergodicity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Power-spectrum-density-PSD"><span class="nav-number">2.3.</span> <span class="nav-text">Power spectrum density (PSD)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-definition"><span class="nav-number">2.3.1.</span> <span class="nav-text">PSD definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-and-autocorrelation"><span class="nav-number">2.3.2.</span> <span class="nav-text">PSD and autocorrelation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gaussian-process-and-white-noise"><span class="nav-number">2.4.</span> <span class="nav-text">Gaussian process and white noise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-process"><span class="nav-number">2.4.1.</span> <span class="nav-text">Gaussian process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#White-noise"><span class="nav-number">2.4.2.</span> <span class="nav-text">White noise</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-response"><span class="nav-number">3.</span> <span class="nav-text">System response</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PDF"><span class="nav-number">3.1.</span> <span class="nav-text">PDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Expectation-and-autocorrelation"><span class="nav-number">3.2.</span> <span class="nav-text">Expectation and autocorrelation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PSD"><span class="nav-number">3.3.</span> <span class="nav-text">PSD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-of-Estimation-Theory"><span class="nav-number">4.</span> <span class="nav-text">Introduction of Estimation Theory</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Estimation-in-signal-processing"><span class="nav-number">4.1.</span> <span class="nav-text">Estimation in signal processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-mathematical-estimation-problem"><span class="nav-number">4.2.</span> <span class="nav-text">The mathematical estimation problem</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Minimum-Variance-Unbiased-Estimation"><span class="nav-number">5.</span> <span class="nav-text">Minimum Variance Unbiased Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unbiased-estimation"><span class="nav-number">5.1.</span> <span class="nav-text">Unbiased estimation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimum-Variance-Criterion"><span class="nav-number">5.2.</span> <span class="nav-text">Minimum Variance Criterion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cramer-Rao-Lower-Bound"><span class="nav-number">6.</span> <span class="nav-text">Cramer-Rao Lower Bound</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Efficiency"><span class="nav-number">6.1.</span> <span class="nav-text">Efficiency</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalar-parameter"><span class="nav-number">6.2.</span> <span class="nav-text">Scalar parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalar-parameter-·-transformation"><span class="nav-number">6.3.</span> <span class="nav-text">Scalar parameter · transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-parameter"><span class="nav-number">6.4.</span> <span class="nav-text">Vector parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-parameter-·-transformation"><span class="nav-number">6.5.</span> <span class="nav-text">Vector parameter · transformation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linear-Model"><span class="nav-number">7.</span> <span class="nav-text">Linear Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-model-·-white-noise"><span class="nav-number">7.1.</span> <span class="nav-text">Linear model · white noise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-model-·-nonwhite-noise"><span class="nav-number">7.2.</span> <span class="nav-text">Linear model · nonwhite noise</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-Signal-Basic"><span class="nav-number">1.</span> <span class="nav-text">Random Signal Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Review"><span class="nav-number">1.1.</span> <span class="nav-text">Review</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution"><span class="nav-number">1.1.1.</span> <span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moment-and-Cumulant"><span class="nav-number">1.1.2.</span> <span class="nav-text">Moment and Cumulant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Statistical-independence-and-irrelevance"><span class="nav-number">1.1.3.</span> <span class="nav-text">Statistical independence and irrelevance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characteristic-function"><span class="nav-number">1.2.</span> <span class="nav-text">Characteristic function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distribution-model"><span class="nav-number">1.3.</span> <span class="nav-text">Distribution model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Easy-ones"><span class="nav-number">1.3.1.</span> <span class="nav-text">Easy ones</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-distribution"><span class="nav-number">1.3.2.</span> <span class="nav-text">Gaussian distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chi-2-distribution"><span class="nav-number">1.3.3.</span> <span class="nav-text">$\chi^2$ distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rayleigh-distribution"><span class="nav-number">1.3.4.</span> <span class="nav-text">Rayleigh distribution</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stochastic-Process"><span class="nav-number">2.</span> <span class="nav-text">Stochastic Process</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-random-variable-to-stochastic-process"><span class="nav-number">2.1.</span> <span class="nav-text">From random variable to stochastic process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stochastic-process-definition"><span class="nav-number">2.1.1.</span> <span class="nav-text">Stochastic process definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numerical-characteristic"><span class="nav-number">2.1.3.</span> <span class="nav-text">Numerical characteristic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stationary-process-and-ergodicity"><span class="nav-number">2.2.</span> <span class="nav-text">Stationary process and ergodicity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Strictly-stationary-process"><span class="nav-number">2.2.1.</span> <span class="nav-text">Strictly stationary process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weakly-stationary-process"><span class="nav-number">2.2.2.</span> <span class="nav-text">Weakly stationary process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ergodicity"><span class="nav-number">2.2.3.</span> <span class="nav-text">Ergodicity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Power-spectrum-density-PSD"><span class="nav-number">2.3.</span> <span class="nav-text">Power spectrum density (PSD)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-definition"><span class="nav-number">2.3.1.</span> <span class="nav-text">PSD definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-and-autocorrelation"><span class="nav-number">2.3.2.</span> <span class="nav-text">PSD and autocorrelation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gaussian-process-and-white-noise"><span class="nav-number">2.4.</span> <span class="nav-text">Gaussian process and white noise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-process"><span class="nav-number">2.4.1.</span> <span class="nav-text">Gaussian process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#White-noise"><span class="nav-number">2.4.2.</span> <span class="nav-text">White noise</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-response"><span class="nav-number">3.</span> <span class="nav-text">System response</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PDF"><span class="nav-number">3.1.</span> <span class="nav-text">PDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Expectation-and-autocorrelation"><span class="nav-number">3.2.</span> <span class="nav-text">Expectation and autocorrelation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PSD"><span class="nav-number">3.3.</span> <span class="nav-text">PSD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-of-Estimation-Theory"><span class="nav-number">4.</span> <span class="nav-text">Introduction of Estimation Theory</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Estimation-in-signal-processing"><span class="nav-number">4.1.</span> <span class="nav-text">Estimation in signal processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-mathematical-estimation-problem"><span class="nav-number">4.2.</span> <span class="nav-text">The mathematical estimation problem</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Minimum-Variance-Unbiased-Estimation"><span class="nav-number">5.</span> <span class="nav-text">Minimum Variance Unbiased Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unbiased-estimation"><span class="nav-number">5.1.</span> <span class="nav-text">Unbiased estimation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimum-Variance-Criterion"><span class="nav-number">5.2.</span> <span class="nav-text">Minimum Variance Criterion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cramer-Rao-Lower-Bound"><span class="nav-number">6.</span> <span class="nav-text">Cramer-Rao Lower Bound</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Efficiency"><span class="nav-number">6.1.</span> <span class="nav-text">Efficiency</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalar-parameter"><span class="nav-number">6.2.</span> <span class="nav-text">Scalar parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalar-parameter-·-transformation"><span class="nav-number">6.3.</span> <span class="nav-text">Scalar parameter · transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-parameter"><span class="nav-number">6.4.</span> <span class="nav-text">Vector parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-parameter-·-transformation"><span class="nav-number">6.5.</span> <span class="nav-text">Vector parameter · transformation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linear-Model"><span class="nav-number">7.</span> <span class="nav-text">Linear Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-model-·-specific"><span class="nav-number">7.1.</span> <span class="nav-text">Linear model · specific</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-model-·-general"><span class="nav-number">7.2.</span> <span class="nav-text">Linear model · general</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Maximum-Likelihood-Estimation"><span class="nav-number">8.</span> <span class="nav-text">Maximum Likelihood Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalar-parameter-1"><span class="nav-number">8.1.</span> <span class="nav-text">Scalar parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Numerical-Determination"><span class="nav-number">8.2.</span> <span class="nav-text">Numerical Determination</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Least-Squares"><span class="nav-number">9.</span> <span class="nav-text">Least Squares</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Least-Squares"><span class="nav-number">9.1.</span> <span class="nav-text">Linear Least Squares</span></a></li></ol></li></ol></div>
             
 
           </div>
