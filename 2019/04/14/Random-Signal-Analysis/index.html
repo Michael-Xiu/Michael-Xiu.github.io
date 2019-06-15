@@ -92,9 +92,9 @@
 <meta property="og:image" content="http://yoursite.com/assets/1557196005851.png">
 <meta property="og:image" content="http://yoursite.com/assets/1558406463923.png">
 <meta property="og:image" content="http://yoursite.com/assets/1559615726536.png">
-<meta property="og:image" content="http://yoursite.com/assets/1559623836912.png">
+<meta property="og:image" content="http://yoursite.com/assets/OFDM.png">
 <meta property="og:image" content="http://yoursite.com/assets/1560249863674.png">
-<meta property="og:updated_time" content="2019-06-11T11:49:20.429Z">
+<meta property="og:updated_time" content="2019-06-15T15:30:58.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -823,8 +823,8 @@ h_{L-1}
 </ul>
 <font face="Segoe Print" color="#D87093" size="4">class note: Parellel channel estimation using linear model</font>
 
-<p>In OFDM system, one method of inserting pilot symbols is:</p>
-<p><img src="/assets/1559623836912.png" alt="1559623836912"></p>
+<p>In an OFDM system, we can estimate its channel based on pilot sequence in frequency domain and linear model. The length of signals in each step are shown as follow:</p>
+<p><img src="/assets/OFDM.png" alt="1560612568718"></p>
 <p>The whole system can be described as:</p>
 <script type="math/tex; mode=display">
 \left[
@@ -851,7 +851,7 @@ y(t-N+1)
   \end{matrix} 
 \right]
 \xrightarrow{FFT}
-Y(k)=(\sum_{l=0}^{L-1}{h_{l}}e^{-j\frac{2\pi}{N}kl})S(k)+N(k)</script><p>$S(k)$ are the pilot symbols which are evenly distributed in frequency domain. Then we can build a linear model to gain the MVU estimator:</p>
+Y(k)=(\sum_{l=0}^{L-1}{h_{l}}e^{-j\frac{2\pi}{N}kl})S(k)+N(k)</script><p>$S(k)$ are only the pilot symbols which are evenly distributed in frequency domain. Then we can build a linear model to gain the MVU estimator:</p>
 <script type="math/tex; mode=display">
 \left[
  \begin{matrix}
