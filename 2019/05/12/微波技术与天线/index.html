@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/st-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/st-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="microwave,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第1章 均匀传输线理论1.1 均匀传输线方程及其解均匀传输线组成的导波系统都可等效为均匀平行双导线系统。 传输线单位长串联阻抗：$Z=R+j\omega L$ 传输线单位长并联导纳：$Y=G+j\omega C$ 解： $U(z)=U_+(z)+U_-(z)=A_1e^{jkz}+A_2e^{-jkz}​$ $I(z)=I_+(z)+I_-(z)=\frac{1}{Z_0}({A_1}e^{jkz">
+<meta name="keywords" content="microwave">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Random Signal Analysis">
+<meta property="og:url" content="http://yoursite.com/2019/05/12/微波技术与天线/index.html">
+<meta property="og:site_name" content="Michael Xiu">
+<meta property="og:description" content="第1章 均匀传输线理论1.1 均匀传输线方程及其解均匀传输线组成的导波系统都可等效为均匀平行双导线系统。 传输线单位长串联阻抗：$Z=R+j\omega L$ 传输线单位长并联导纳：$Y=G+j\omega C$ 解： $U(z)=U_+(z)+U_-(z)=A_1e^{jkz}+A_2e^{-jkz}​$ $I(z)=I_+(z)+I_-(z)=\frac{1}{Z_0}({A_1}e^{jkz">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/assets/1558246149125.png">
+<meta property="og:image" content="http://yoursite.com/assets/1558246612898.png">
+<meta property="og:image" content="http://yoursite.com/assets/1558246699764.png">
+<meta property="og:image" content="http://yoursite.com/assets/1558250201059.png">
+<meta property="og:image" content="http://yoursite.com/assets/1558250238600.png">
+<meta property="og:image" content="http://yoursite.com/assets/1558261965016.png">
+<meta property="og:image" content="http://yoursite.com/assets/1560686543751.png">
+<meta property="og:image" content="http://yoursite.com/assets/1557644389589.png">
+<meta property="og:image" content="http://yoursite.com/assets/1560650625864.png">
+<meta property="og:image" content="http://yoursite.com/assets/1560651407155.png">
+<meta property="og:updated_time" content="2019-06-16T12:02:24.670Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Random Signal Analysis">
+<meta name="twitter:description" content="第1章 均匀传输线理论1.1 均匀传输线方程及其解均匀传输线组成的导波系统都可等效为均匀平行双导线系统。 传输线单位长串联阻抗：$Z=R+j\omega L$ 传输线单位长并联导纳：$Y=G+j\omega C$ 解： $U(z)=U_+(z)+U_-(z)=A_1e^{jkz}+A_2e^{-jkz}​$ $I(z)=I_+(z)+I_-(z)=\frac{1}{Z_0}({A_1}e^{jkz">
+<meta name="twitter:image" content="http://yoursite.com/assets/1558246149125.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/12/微波技术与天线/">
+
+
+
+
+
+  <title>Random Signal Analysis | Michael Xiu</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/Michael-Xiu" class="github-corner" aria-label="My GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#CABCBC; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Michael Xiu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/12/微波技术与天线/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Michael.Xiu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Michael Xiu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Random Signal Analysis</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-12T09:13:53+08:00">
+                2019-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  70 mins
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="第1章-均匀传输线理论"><a href="#第1章-均匀传输线理论" class="headerlink" title="第1章 均匀传输线理论"></a>第1章 均匀传输线理论</h1><h2 id="1-1-均匀传输线方程及其解"><a href="#1-1-均匀传输线方程及其解" class="headerlink" title="1.1 均匀传输线方程及其解"></a>1.1 均匀传输线方程及其解</h2><p>均匀传输线组成的导波系统都可等效为均匀平行双导线系统。</p>
+<p>传输线单位长串联阻抗：$Z=R+j\omega L$</p>
+<p>传输线单位长并联导纳：$Y=G+j\omega C$</p>
+<p>解：</p>
+<p>$U(z)=U_+(z)+U_-(z)=A_1e^{jkz}+A_2e^{-jkz}​$</p>
+<p>$I(z)=I_+(z)+I_-(z)=\frac{1}{Z_0}({A_1}e^{jkz}+A_2e^{-jkz})​$</p>
+<p>传输线上电压和电流以波的形式传播。</p>
+<p>工作参数：</p>
+<ul>
+<li><p>特性阻抗$Z_0$：传输线上导行波的电压电流比</p>
+<p>$Z_0=\sqrt{\frac{R+j\omega L}{G+j\omega C}}$；对于均匀无耗传输线，$R=G=0$，$Z_0=\sqrt{\frac{L}{C}}​$</p>
+</li>
+<li><p>传播常数$K$：导行波传播过程的衰减和相移参数</p>
+<p>$K = \beta - j \alpha$；对于无耗传输线，$R=G=0$，则$\alpha = 0$，此时$K=\beta=\omega \sqrt{LC}$</p>
+</li>
+<li><p>相速$v_p$：电压、电流入射波（或反射波）等相位面沿传播方向的速度</p>
+<p>$v_p=\frac{\omega}{\beta}$</p>
+</li>
+<li><p>波长$\lambda​$：$\lambda=\frac{2\pi}{\beta}=\frac{v_p}{f}$</p>
+</li>
+</ul>
+<h2 id="1-2-传输线阻抗与状态参量"><a href="#1-2-传输线阻抗与状态参量" class="headerlink" title="1.2 传输线阻抗与状态参量"></a>1.2 传输线阻抗与状态参量</h2><p>传输线上任意一点的电压与电流值比称为该点的阻抗。</p>
+<ul>
+<li><p>输入阻抗： $Z_{in}(z)=Z_0\frac{Z_1+jZ_0tan(\beta)z}{Z_0+jZ_1tan(\beta)z}$， $Z_0$为无耗传输线的特征阻抗，$Z_1$为终端负载阻抗。</p>
+<p>无耗传输线上任意一点的输入阻抗与观察点的位置、特性阻抗、终端负载阻抗与工作频率有关，具有$\lambda /2​$重复性。</p>
+</li>
+</ul>
+<ul>
+<li><p>反射系数：通常用电压反射系数，记作$\Gamma (z)=\frac{U-(z)}{U_+(z)}=|\Gamma_1|e^{j(\phi_1-2\beta z)}​$ ，其中终端反射系数$\Gamma_1=\frac{Z_1-Z_0}{Z_1+Z_0}​$</p>
+<p>对均匀无耗传输线来说，任意点反射系数大小相等，只有相位具有$\lambda /2$重复性。当$Z1=Z_0$，负载终端无反射，称为负载匹配。</p>
+</li>
+</ul>
+<ul>
+<li>输入阻抗与反射系数的关系：$Z_{in}(z) = Z_0\frac{1+\Gamma(z)}{1-\Gamma(z)}​$</li>
+</ul>
+<ul>
+<li><p>驻波比：终端不匹配时，线上形成驻波。对于无耗传输线，沿线给点的电压和电流振幅不同，以$\lambda /2$周期变化。为描述驻波的大小，引入电压驻波比，定义为波腹点与波节点电压振幅之比。 $\rho=\frac{|U|_{max}}{|U|_} = \frac{1+|\Gamma_1|}{1-|\Gamma_1|}$</p>
+<p>当$|\Gamma_1|=0$，无反射，$\rho=1$；当$|\Gamma_1|=1$，全反射，$\rho=\infty​$。</p>
+</li>
+</ul>
+<h2 id="1-3-无耗传输线的状态分析"><a href="#1-3-无耗传输线的状态分析" class="headerlink" title="1.3 无耗传输线的状态分析"></a>1.3 无耗传输线的状态分析</h2><ul>
+<li>行波状态：$|\Gamma_1|=0$，无反射</li>
+</ul>
+<ul>
+<li>纯驻波状态：$|\Gamma_1|=1$，分为三种状态<ul>
+<li>负载短路$Z_1=0$：负载电压min，$z=n\lambda/2​$处为电压波节点</li>
+<li>负载开路$Z_1=\infty$：负载电压max，$z=n\lambda/2$处为电压波腹点</li>
+<li>负载为纯电抗$Z_1=jX_1$：此时终端既不是波腹也不是波节</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>行驻波状态：当微波传输线终端接任意复数阻抗负载时，有信号源入射的电磁波功率一部分被终端负载吸收，另一部分则被反射。</p>
+<p>传输线上任意点输入阻抗表达式为：</p>
+<script type="math/tex; mode=display">
+Z_{in}(z)=Z_0\frac{Z_1+jZ_0tan(\beta z)}{Z_0+jZ_1tan(\beta z)}</script><p>波腹点位置为：</p>
+<script type="math/tex; mode=display">
+Z_{max}=\frac{\lambda }{4\pi}\phi_1+n\frac{\lambda}{2}</script><p>波腹点阻抗为纯电阻：</p>
+<script type="math/tex; mode=display">
+R_{max}=Z_0\rho</script><p>波节点位置为：</p>
+<script type="math/tex; mode=display">
+Z_{min}=\frac{\lambda }{4\pi}\phi_1+(2n\pm 1)\frac{\lambda}{4}</script><p>波节点阻抗为纯电阻：</p>
+<script type="math/tex; mode=display">
+R_{min}=\frac{Z_0}{\rho}</script></li>
+</ul>
+<p>无耗传输线上距离为$\lambda /4$的任意两点处阻抗的乘积均等于传输线特性阻抗的平方，这种特性称之为$\lambda /4$阻抗变换性。</p>
+<h2 id="1-4-传输线的传输功率、效率和损耗"><a href="#1-4-传输线的传输功率、效率和损耗" class="headerlink" title="1.4 传输线的传输功率、效率和损耗"></a>1.4 传输线的传输功率、效率和损耗</h2><p>当负载与传输线匹配时，传输效率最高。</p>
+<ul>
+<li>回波损耗：入射波功率与反射波功率之比 $L_r(z)=10\ lg\frac{P_{in}}{P_r}\  dB$</li>
+<li>插入损耗：入射波功率与传输功率之比 $L_{i}=10\ lg \frac{P_{in}}{P_t}\ dB$</li>
+</ul>
+<h2 id="1-5-阻抗匹配"><a href="#1-5-阻抗匹配" class="headerlink" title="1.5 阻抗匹配"></a>1.5 阻抗匹配</h2><h3 id="传输线上的三种匹配状态"><a href="#传输线上的三种匹配状态" class="headerlink" title="传输线上的三种匹配状态"></a>传输线上的三种匹配状态</h3><ul>
+<li>负载阻抗匹配：负载阻抗等于传输线的特性阻抗</li>
+<li>源阻抗匹配：电源的内阻等于传输线的特性阻抗</li>
+<li>共轭阻抗匹配：信源内阻为 $Z_g = R_g+jX_g$，当 $Z_{in}=Z_g^*$ 时负载得到最大功率值</li>
+</ul>
+<h3 id="阻抗匹配的方法"><a href="#阻抗匹配的方法" class="headerlink" title="阻抗匹配的方法"></a>阻抗匹配的方法</h3><p>一方面应用阻抗匹配器使信源输出端达到共轭匹配，另一方面应用阻抗匹配器使负载与传输线特性阻抗相匹配。信源端一般采用隔离器，因此重点讨论负载匹配的方法。</p>
+<p><img src="/assets/1558246149125.png" alt="1558246149125"></p>
+<ul>
+<li><p>$\mathbf{\lambda / 4}$ <strong>阻抗变换器法</strong>：</p>
+<ul>
+<li><p>当负载阻抗为纯电阻$R_1$且其值与传输线特性阻抗$Z_0$不相等时，可在两者之间加接一节长为$\lambda / 4$、特性阻抗为$Z_{01}$的传输线实现匹配。由无耗传输线输入阻抗公式可得：$Z_{01}=\sqrt{Z_0R_1}$。</p>
+<p><img src="/assets/1558246612898.png" alt="1558246612898"></p>
+</li>
+<li><p>当负载是复阻抗，则先在负载与变换器之间加一段传输线，使变换器的终端为纯电阻，然后用$\lambda/4$阻抗匹配器实现匹配。</p>
+<p><img src="/assets/1558246699764.png" alt="1558246699764"></p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="第2章-规则金属波导"><a href="#第2章-规则金属波导" class="headerlink" title="第2章 规则金属波导"></a>第2章 规则金属波导</h1><p>第1章从路的观点出发，分析了均匀传输线的基本参数和工作状态，比较适用于同轴线等双导体系统。</p>
+<p>对由均匀填充介质的金属波导管组成的规则金属波导，一般采用场分析法。</p>
+<h2 id="2-1-导波原理"><a href="#2-1-导波原理" class="headerlink" title="2.1 导波原理"></a>2.1 导波原理</h2><p><img src="/assets/1558250201059.png" alt="1558250201059"></p>
+<h3 id="规则金属管内的电磁波"><a href="#规则金属管内的电磁波" class="headerlink" title="规则金属管内的电磁波"></a>规则金属管内的电磁波</h3><p>通过电磁场理论，对无源自由空间电场$E$ 和磁场$H$ 求解矢量亥姆霍茨方程，通过分离变量法等再结合边界条件，可求得纵向分量$E_z$和$H_z$，进而求出场的横向分量$E_x$、$E_y$、$H_x$、$H_y​$。</p>
+<p>有以下结论：</p>
+<ul>
+<li>满足上述方程和边界条件的解有很多，每一个解对应一个模式，不同的模式具有不同的传输特性</li>
+<li>$k_c​$称为截止波数，当相移常数$\beta = 0​$时，因$\beta=\sqrt{k^2-k_c^2}​$，所以$k_c = k​$。该参数与导波系统的参数有关。</li>
+</ul>
+<h3 id="传输特性"><a href="#传输特性" class="headerlink" title="传输特性"></a>传输特性</h3><ul>
+<li><p>相移常数$\beta$和截止波数$k_c$</p>
+<script type="math/tex; mode=display">
+\beta = \sqrt{k^2-k_c^2}，\ \ k=\omega \sqrt{\mu \varepsilon}</script></li>
+<li><p>相速$v_p​$与波导波长$\lambda_g​$</p>
+<p>电磁波在波导中传播，其等相位面移动速率称为相速：</p>
+<script type="math/tex; mode=display">
+v_p=\frac{\omega}{\beta}</script><p>导行波的波长称为波导波长，与波数的关系式为：</p>
+<script type="math/tex; mode=display">
+\lambda_g = \frac{2\pi}{\beta}</script></li>
+<li><p>波阻抗</p>
+<p>定义某个模式的横向电场和横向磁场之比，即：[注：只有横向电磁场对坡印廷矢量有贡献]</p>
+<script type="math/tex; mode=display">
+Z=\frac{E_t}{H_t}</script></li>
+</ul>
+<h3 id="导行波的分类"><a href="#导行波的分类" class="headerlink" title="导行波的分类"></a>导行波的分类</h3><p>用以约束或导引电磁波能量沿某一定方向传输的结构称为导波结构，在其中传输的波称为导行波（Guided Wave）。根据截止波数$k_c$的不同可将导行波分为三种情况：</p>
+<ul>
+<li><p>$k_c^2=0​$：</p>
+<p>根据$E_x$、$E_y$、$H_x$、$H_y$的公式可知，此时必有$E_z = 0$和$H_z=0$，即只有横向电磁场，称为<strong>横电磁波（TEM波）</strong></p>
+</li>
+</ul>
+<ul>
+<li><p>$k_c^2&gt;0$：</p>
+<p>这时$E_z$和$H_z$不能同时为0：</p>
+<ul>
+<li>$E_z\ne 0​$而$H_z=0​$，称为<strong>磁场纯横向波（TM波）</strong></li>
+<li>$E_z =  0$而$H_z\ne 0$，称为<strong>电场纯横向波（TE波）</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-矩形波导"><a href="#2-2-矩形波导" class="headerlink" title="2.2 矩形波导"></a>2.2 矩形波导</h2><p>通常将由金属材料制成的、矩形截面的、内充空气的规则金属波导称为矩形波导。</p>
+<p><img src="/assets/1558250238600.png" alt="1558250238600"></p>
+<h3 id="矩形波导中的场"><a href="#矩形波导中的场" class="headerlink" title="矩形波导中的场"></a>矩形波导中的场</h3><p>矩形金属波导中只能存在TE波和TM波。</p>
+<script type="math/tex; mode=display">
+k_c=\sqrt{(\frac{m\pi}{a})^2+(\frac{n\pi}{b})^2}</script><p>$m$ 和 $n$ 分别代表 TE波 沿 $x$ 方向和 $y$ 方向分布的半波个数，一组 $mn$ 对应一种TE波，称为$TE_{mn} \ / \ TM_{mn}$模</p>
+<p>注：如果是TEM波，那么能量是直着传；但如果是TE波，意味着磁场是斜着的，因此能量会在波导内不断反射前行</p>
+<h3 id="主模-TE-10-的特性"><a href="#主模-TE-10-的特性" class="headerlink" title="主模$TE_{10}$的特性"></a>主模$TE_{10}$的特性</h3><p><img src="/assets/1558261965016.png" alt="1558261965016"></p>
+<ul>
+<li><p>截止波数：（代入 $TE$ 波的 $k_c$ 定义）</p>
+<script type="math/tex; mode=display">
+k_c=\frac{\pi}{a}</script></li>
+<li><p>截止波长：</p>
+<script type="math/tex; mode=display">
+\lambda{c}=\frac{2\pi}{k_c}=2a</script></li>
+<li><p>相移常数：</p>
+<script type="math/tex; mode=display">
+\beta=k\sqrt{1-\frac{k_c^2}{k^2}} \Rightarrow \frac{2\pi}{\lambda}\sqrt{1-(\frac{\lambda}{2a})^2}</script></li>
+<li><p>波导波长：</p>
+<script type="math/tex; mode=display">
+\lambda_g=\frac{2\pi}{\beta}=\frac{\lambda}{\sqrt{1-(\frac{\lambda}{2a})^2}}</script></li>
+<li><p>群速：</p>
+<script type="math/tex; mode=display">
+v_p=\frac{\omega}{\beta}=\frac{v}{\sqrt{1-(\frac{\lambda}{2a})^2}}</script></li>
+</ul>
+<hr>
+<h1 id="第4章-微波网络基础"><a href="#第4章-微波网络基础" class="headerlink" title="第4章 微波网络基础"></a>第4章 微波网络基础</h1><p>微波网络是在前面分析场分布的基础上，用路的分析方法将微波元件等效为电抗或电阻元件，将实际的导波传输系统等效为传输线，从而将实际的微波系统简化为微波网络。</p>
+<h2 id="4-1-等效传输线"><a href="#4-1-等效传输线" class="headerlink" title="4.1 等效传输线"></a>4.1 等效传输线</h2><p>模式等效传输线： 不均匀性的存在使传输系统出现多模传输，但高次模通常不能在传输系统中传输，属于局部场。在离开不均匀处较远的地方设置参考面，从而将不均匀性问题化为等效网络来处理。</p>
+<h2 id="4-3-双端口网络的阻抗与转移矩阵"><a href="#4-3-双端口网络的阻抗与转移矩阵" class="headerlink" title="4.3 双端口网络的阻抗与转移矩阵"></a>4.3 双端口网络的阻抗与转移矩阵</h2><p><img src="/assets/1560686543751.png" alt="1560686543751"></p>
+<ul>
+<li>阻抗矩阵<strong>$Z$</strong>：<script type="math/tex; mode=display">
+\left[
+ \begin{matrix}
+   U_1\\
+   U_2
+  \end{matrix} 
+\right]
+=
+\left[
+ \begin{matrix}
+   Z_{11} & Z_{12}\\
+   Z_{21} & Z_{22}
+  \end{matrix} 
+\right]
+\left[
+ \begin{matrix}
+   I_1\\
+   I_2
+  \end{matrix} 
+\right]</script></li>
+</ul>
+<ul>
+<li><p>导纳矩阵<strong>$Y$</strong>：</p>
+<script type="math/tex; mode=display">
+\left[
+ \begin{matrix}
+   I_1\\
+   I_2
+  \end{matrix} 
+\right]
+=
+\left[
+ \begin{matrix}
+   Y_{11} & Y_{12}\\
+   Y_{21} & Y_{22}
+  \end{matrix} 
+\right]
+\left[
+ \begin{matrix}
+   U_1\\
+   U_2
+  \end{matrix} 
+\right]</script></li>
+<li><p>转移矩阵<strong>$ABCD$</strong>：</p>
+<script type="math/tex; mode=display">
+\left[
+ \begin{matrix}
+   U_1\\
+   I_1
+  \end{matrix} 
+\right]
+=
+\left[
+ \begin{matrix}
+   A & B\\
+   C & D
+  \end{matrix} 
+\right]
+\left[
+ \begin{matrix}
+   U_2\\
+   -I_2
+  \end{matrix} 
+\right]</script><p>n个双端口网络级联，有 $[A] = [A_1][A_2]…[A_n]$</p>
+<p>输入阻抗：$Z_{in}=\frac{AZ_1+B}{CZ_1+D}$，$Z_1$为输出端负载。</p>
+</li>
+</ul>
+<h2 id="4-4-散射矩阵与传输矩阵"><a href="#4-4-散射矩阵与传输矩阵" class="headerlink" title="4.4 散射矩阵与传输矩阵"></a>4.4 散射矩阵与传输矩阵</h2><p>前面三种网络矩阵建立在$U, I$基础之上，微波频率下失去明确的物理意义，另外要求端口开路/短路难以实现。由于可以测量入射波和反射波的相对大小和相对相位，散射矩阵和传输矩阵就是基于<strong><em>入射波/反射波</em></strong> 基础的。</p>
+<p><img src="/assets/1557644389589.png" alt="1557644389589"></p>
+<p>定义$a_i$为入射波电压的归一化值，其有效值的平方等于入射波功率；定义$b_i$为入射波电压的归一化值，其有效值的平方等于反射波功率。这样端口1的归一化电压可表示为$u_1=a_1+b_1$，归一化电流可表示$i_1=a_1-b_1$。(?)</p>
+<ul>
+<li>散射矩阵<strong>$S$</strong>：<script type="math/tex; mode=display">
+\left[
+ \begin{matrix}
+   b_1\\
+   b_2
+  \end{matrix} 
+\right]
+=
+\left[
+ \begin{matrix}
+   S_{11} & S_{12}\\
+   S_{21} & S_{22}
+  \end{matrix} 
+\right]
+\left[
+ \begin{matrix}
+   a_1\\
+   a_2
+  \end{matrix} 
+\right]</script>参数建立在端口接匹配负载基础上的反射系数或传输系数。</li>
+</ul>
+<ul>
+<li>传输矩阵<strong>$T$</strong>：<script type="math/tex; mode=display">
+\left[
+ \begin{matrix}
+   a_1\\
+   b_1
+  \end{matrix} 
+\right]
+=
+\left[
+ \begin{matrix}
+   T_{11} & T_{12}\\
+   T_{21} & T_{22}
+  \end{matrix} 
+\right]
+\left[
+ \begin{matrix}
+   b_2\\
+   a_2
+  \end{matrix} 
+\right]</script>传输矩阵用于网络级联时比较方便。</li>
+</ul>
+<hr>
+<h1 id="第5章-微波元器件"><a href="#第5章-微波元器件" class="headerlink" title="第5章 微波元器件"></a>第5章 微波元器件</h1><hr>
+<h1 id="第6章-天线辐射与接收的基本理论"><a href="#第6章-天线辐射与接收的基本理论" class="headerlink" title="第6章 天线辐射与接收的基本理论"></a>第6章 天线辐射与接收的基本理论</h1><h2 id="6-1-概论"><a href="#6-1-概论" class="headerlink" title="6.1 概论"></a>6.1 概论</h2><p>用来辐射和接收无线电波的装置称为天线，发射机产生的已调制的高频电流能量（或导波能量）经馈线传输到发射天线，通过天线将其转换为某种极化的电磁波能量。</p>
+<p>天线的四个最基本功能：</p>
+<ol>
+<li>尽可能多将导波能量转为电磁波能量</li>
+<li>具有方向性</li>
+<li>有适当的极化</li>
+<li>有足够的工作频带</li>
+</ol>
+<h2 id="6-2-电基本振子的辐射"><a href="#6-2-电基本振子的辐射" class="headerlink" title="6.2 电基本振子的辐射"></a>6.2 电基本振子的辐射</h2><p>电基本振子是一段长度 $l$ 远小于波长、电流 $I$ 振幅均匀分布、相位相同的直线电流元。它是线天线的基本组成部分。</p>
+<h2 id="6-3-天线的电参数"><a href="#6-3-天线的电参数" class="headerlink" title="6.3 天线的电参数"></a>6.3 天线的电参数</h2><p>天线的电参数就是能定量表征其能量转换和定向辐射能力的量。</p>
+<h3 id="天线方向图及其有关参数"><a href="#天线方向图及其有关参数" class="headerlink" title="天线方向图及其有关参数"></a>天线方向图及其有关参数</h3><p>天线方向图是指离天线一定距离处，辐射场的相对场强（归一化模值）随方向变化的曲线图。</p>
+<ol>
+<li>$E$ 平面，即电场矢量所在平面。对于沿 $z$ 轴放置的电基本振子而言，子午平面就是 $E​$ 平面。</li>
+<li>$H​$ 平面，即磁场矢量所在平面。对于沿 $z​$ 轴放置的电基本振子而言，赤道平面就是 $H​$ 平面。</li>
+</ol>
+<p>e.g. 沿 $z$ 轴放置的电基本振子的 $E$ 平面和 $H​$ 平面：</p>
+<p><img src="/assets/1560650625864.png" alt="1560650625864"></p>
+<p><img src="/assets/1560651407155.png" alt="1560651407155"></p>
+<ul>
+<li><p>主瓣宽度：衡量天线的最大辐射区域的尖锐程度的物理量。在场强方向途中，等于最大场强的 $1/\sqrt{2}$ 两点之间的宽度，称为半功率波瓣宽度。</p>
+</li>
+<li><p>旁瓣电平：离主瓣最近且电平最高的第一旁瓣电平，一般以分贝表示。旁瓣电平尽可能低。</p>
+</li>
+<li><p>前后比：最大辐射方向电平与其相反方向电平之比，一般以分贝表示。</p>
+</li>
+</ul>
+<ul>
+<li>方向系数 $D$：在离天线某一距离处，天线在最大辐射方向上的辐射功率流密度 $S_{max}$ 与相同辐射功率的无方向性天线在同一距离处的辐射功率功率流密度 $S_0$ 之比。</li>
+</ul>
+<script type="math/tex; mode=display">
+D=\frac{S_{max}}{S_0}=\frac{|E_{max}|^2}{|E_0|^2}</script><h3 id="天线效率"><a href="#天线效率" class="headerlink" title="天线效率"></a>天线效率</h3><p>天线效率定义为天线辐射功率与输入功率之比，记为 $\eta_{A}​$ ，即</p>
+<script type="math/tex; mode=display">
+\eta_A=\frac{P_{\Sigma}}{P_i}=\frac{P_\Sigma}{P_\Sigma+P_l}</script><p>$P_i$ 为输入功率，$P_l$ 为欧姆损耗。</p>
+<p>辐射功率与辐射电阻的关系为：</p>
+<script type="math/tex; mode=display">
+P_\Sigma=\frac{1}{2}I_m^2 R_\Sigma</script><p>天线效率与辐射电阻 $R_\Sigma$ 和 $R_l$ 的关系：</p>
+<script type="math/tex; mode=display">
+\eta_A=\frac{R_{\Sigma}}{R_{\Sigma}+R_l}</script><h3 id="增益系数"><a href="#增益系数" class="headerlink" title="增益系数"></a>增益系数</h3><p>增益系数是综合衡量天线能量转换和方向特性的参数，记为 $G$ ：</p>
+<script type="math/tex; mode=display">
+G=D \cdot \eta_A</script><h2 id="6-4-接收天线理论"><a href="#6-4-接收天线理论" class="headerlink" title="6.4 接收天线理论"></a>6.4 接收天线理论</h2><h3 id="天线接收功率"><a href="#天线接收功率" class="headerlink" title="天线接收功率"></a>天线接收功率</h3><script type="math/tex; mode=display">
+P=P_\Sigma+P_L+P_l</script><p>其中， $P_\Sigma$ 为接收天线的再辐射功率； $P_L$ 为负载吸收的功率； $P_l$ 为导线和媒质的损耗功率。</p>
+<h3 id="有效接收面积"><a href="#有效接收面积" class="headerlink" title="有效接收面积"></a>有效接收面积</h3><p>有效接收面积是衡量一个天线接收无线电波能力的重要指标。它的定义为：当天线以最大接收方向对准来波方向进行接收时，接收天线传送到匹配负载的平均功率为  $P_{Lmax}$ ，并假设此功率是由一块与来波方向相垂直的面积所截获，则这个面积称为接收天线的有效接收面积，记为 $A_e$：</p>
+<script type="math/tex; mode=display">
+A_e=\frac{P_{Lmax}}{S_{av}}</script><p>其中， $S_{av}$ 为入射到天线上电磁波的时间平均功率流密度。</p>
+<script type="math/tex; mode=display">
+A_e=\frac{D\lambda^2}{4\pi}</script><hr>
+<h1 id="第7章-电波传播概论"><a href="#第7章-电波传播概论" class="headerlink" title="第7章 电波传播概论"></a>第7章 电波传播概论</h1><h2 id="7-1-电波传播的基本概念"><a href="#7-1-电波传播的基本概念" class="headerlink" title="7.1 电波传播的基本概念"></a>7.1 电波传播的基本概念</h2><p>发射天线的输入功率为 $P_i​$ ，辐射功率为 $P_\Sigma​$ ，若以 $G_i​$ 表示实际天线的增益系数；接收天线的增益系数为 $G_R​$ ，有效接收面积为 $A_e​$ ，则在距离发射天线 $r​$ 处的接收天线所接收的功率为：</p>
+<script type="math/tex; mode=display">
+P_R=S_0 \cdot A_e = \frac{P_iG_i}{4 \pi r^2}\cdot \frac{\lambda^2G_R}{4\pi}</script><p>将输入功率与接收功率之比定义为自由空间的基本传输损耗，即</p>
+<script type="math/tex; mode=display">
+L_{bf}=\frac{P_i}{P_R}=(\frac{4\pi r}{\lambda})^2 \cdot \frac{1}{G_i G_R}</script>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/microwave/" rel="tag"># microwave</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/14/Random-Signal-Analysis/" rel="next" title="Random Signal Analysis">
+                <i class="fa fa-chevron-left"></i> Random Signal Analysis
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Michael.Xiu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Michael-Xiu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/xiao-li-dou-dan/activities" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-paper-plane"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xiushj@mail2.sysu.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/shengjie.xiu.3" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/michael.xiu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:Shengjie Xiu?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第1章-均匀传输线理论"><span class="nav-text">第1章 均匀传输线理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-均匀传输线方程及其解"><span class="nav-text">1.1 均匀传输线方程及其解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-传输线阻抗与状态参量"><span class="nav-text">1.2 传输线阻抗与状态参量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-无耗传输线的状态分析"><span class="nav-text">1.3 无耗传输线的状态分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-传输线的传输功率、效率和损耗"><span class="nav-text">1.4 传输线的传输功率、效率和损耗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-阻抗匹配"><span class="nav-text">1.5 阻抗匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传输线上的三种匹配状态"><span class="nav-text">传输线上的三种匹配状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻抗匹配的方法"><span class="nav-text">阻抗匹配的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第2章-规则金属波导"><span class="nav-text">第2章 规则金属波导</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-导波原理"><span class="nav-text">2.1 导波原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#规则金属管内的电磁波"><span class="nav-text">规则金属管内的电磁波</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输特性"><span class="nav-text">传输特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导行波的分类"><span class="nav-text">导行波的分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-矩形波导"><span class="nav-text">2.2 矩形波导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩形波导中的场"><span class="nav-text">矩形波导中的场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主模-TE-10-的特性"><span class="nav-text">主模$TE_{10}$的特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第4章-微波网络基础"><span class="nav-text">第4章 微波网络基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-等效传输线"><span class="nav-text">4.1 等效传输线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-双端口网络的阻抗与转移矩阵"><span class="nav-text">4.3 双端口网络的阻抗与转移矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-散射矩阵与传输矩阵"><span class="nav-text">4.4 散射矩阵与传输矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第5章-微波元器件"><span class="nav-text">第5章 微波元器件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第6章-天线辐射与接收的基本理论"><span class="nav-text">第6章 天线辐射与接收的基本理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-概论"><span class="nav-text">6.1 概论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-电基本振子的辐射"><span class="nav-text">6.2 电基本振子的辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-天线的电参数"><span class="nav-text">6.3 天线的电参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#天线方向图及其有关参数"><span class="nav-text">天线方向图及其有关参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#天线效率"><span class="nav-text">天线效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增益系数"><span class="nav-text">增益系数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-接收天线理论"><span class="nav-text">6.4 接收天线理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#天线接收功率"><span class="nav-text">天线接收功率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有效接收面积"><span class="nav-text">有效接收面积</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第7章-电波传播概论"><span class="nav-text">第7章 电波传播概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-电波传播的基本概念"><span class="nav-text">7.1 电波传播的基本概念</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Michael Xiu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
