@@ -94,7 +94,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/1559615726536.png">
 <meta property="og:image" content="http://yoursite.com/assets/OFDM.png">
 <meta property="og:image" content="http://yoursite.com/assets/1560249863674.png">
-<meta property="og:updated_time" content="2019-06-15T15:30:58.133Z">
+<meta property="og:updated_time" content="2019-06-22T03:24:37.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -829,35 +829,35 @@ h_{L-1}
 <script type="math/tex; mode=display">
 \left[
  \begin{matrix}
-S(k)\\
+S(0)\\
 \vdots \\
-S(k-N+1)
+S(L+N-1)
   \end{matrix} 
 \right]
 \xrightarrow{IFFT}
 \left[
  \begin{matrix}
-x(t)\\
+x(0)\\
 \vdots \\
-x(t-N+1)
+x(L+N-1)
   \end{matrix} 
 \right]
 \xrightarrow{channel}
 \left[
  \begin{matrix}
-y(t)\\
+y(0)\\
 \vdots \\
-y(t-N+1)
+y(L+N-1)
   \end{matrix} 
 \right]
 \xrightarrow{FFT}
-Y(k)=(\sum_{l=0}^{L-1}{h_{l}}e^{-j\frac{2\pi}{N}kl})S(k)+N(k)</script><p>$S(k)$ are only the pilot symbols which are evenly distributed in frequency domain. Then we can build a linear model to gain the MVU estimator:</p>
+Y(k)=(\sum_{l=0}^{L-1}{h_{l}}e^{-j\frac{2\pi}{N}kl})S(k)+N(k)</script><p>$L$ is the length of original signal and $N​$ is the length of pilot sequences. Then we can build a linear model to gain the MVU estimator:</p>
 <script type="math/tex; mode=display">
 \left[
  \begin{matrix}
-Y(k)\\
+Y(P_0)\\
 \vdots \\
-y(k-N+1)
+Y(P_{N-1})
   \end{matrix} 
 \right]=
 \left[
@@ -876,7 +876,7 @@ h_{L-1}
 
 \Rightarrow
 
-\mathbf{Y}=\mathbf{H}\boldsymbol{\theta}+\mathbf{N}</script><p>$\left[<br> \begin{matrix}<br>S<br>  \end{matrix}<br>\right]$ is the combination of $e^{-j\frac{2\pi}{N}kl}$ and $S(k)$.</p>
+\mathbf{Y}=\mathbf{H}\boldsymbol{\theta}+\mathbf{N}</script><p>$P$ is the pilot sequence and $\left[<br> \begin{matrix}<br>S<br>  \end{matrix}<br>\right]$ is the combination of $e^{-j\frac{2\pi}{N}kl}$ and $S(k)$.</p>
 <hr>
 <h1 id="Maximum-Likelihood-Estimation"><a href="#Maximum-Likelihood-Estimation" class="headerlink" title="Maximum Likelihood Estimation"></a>Maximum Likelihood Estimation</h1><h2 id="Scalar-parameter-1"><a href="#Scalar-parameter-1" class="headerlink" title="Scalar parameter"></a>Scalar parameter</h2><p>The MLE for a scalar parameter is defined to be <em>the value of $\theta​$ that maximizes $p(\mathbf{x};\theta)​$</em> for $\mathbf{x}​$ fixed, i.e., the value that maximizes the likelihood function.</p>
 <p><em>The method defines a maximum likelihood estimate:</em></p>
