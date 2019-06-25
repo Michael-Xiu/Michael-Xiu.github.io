@@ -90,11 +90,15 @@
 <meta property="og:image" content="http://yoursite.com/assets/1555224354383.png">
 <meta property="og:image" content="http://yoursite.com/assets/1555225278092.png">
 <meta property="og:image" content="http://yoursite.com/assets/1557196005851.png">
+<meta property="og:image" content="http://yoursite.com/assets/1561431198657.png">
+<meta property="og:image" content="http://yoursite.com/assets/1561431789698.png">
+<meta property="og:image" content="http://yoursite.com/assets/1561432334694.png">
+<meta property="og:image" content="http://yoursite.com/assets/1561432801456.png">
 <meta property="og:image" content="http://yoursite.com/assets/1558406463923.png">
 <meta property="og:image" content="http://yoursite.com/assets/1559615726536.png">
 <meta property="og:image" content="http://yoursite.com/assets/OFDM.png">
 <meta property="og:image" content="http://yoursite.com/assets/1560249863674.png">
-<meta property="og:updated_time" content="2019-06-22T03:24:37.776Z">
+<meta property="og:updated_time" content="2019-06-25T03:25:24.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -339,7 +343,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  45 mins
+                  65 mins
                 </span>
               
             </div>
@@ -520,29 +524,29 @@
 <h2 id="Stationary-process-and-ergodicity"><a href="#Stationary-process-and-ergodicity" class="headerlink" title="Stationary process and ergodicity"></a>Stationary process and ergodicity</h2><h3 id="Strictly-stationary-process"><a href="#Strictly-stationary-process" class="headerlink" title="Strictly stationary process"></a>Strictly stationary process</h3><script type="math/tex; mode=display">
 f_X(x_1,x_2,...,x_n;t_1,t_2,...,t_n)=f_X(x_1,x_2,...,x_n;t_1+\tau,t_2+\tau,...,t_n+\tau)</script><p>This is the definition of n-th strictly stationary process and its PDF doesn’t vary with the time.</p>
 <font face="Segoe Print" color="#D87093" size="4">class note:</font>
+> n here means the number of points.
+>
+> Strictly stationary process $\Rightarrow​$ Expectation and variance are irrelevant with t. 
+>
+> Expectation and variance are irrelevant with t. + Gaussian process (PDF determined by 1~2-nd moment) $\Rightarrow$ Strictly stationary process.
 
-<p>&gt;</p>
-<blockquote>
-<p>n here means the number of points.</p>
-<p>Strictly stationary process $\Rightarrow​$ Expectation and variance are irrelevant with t. </p>
-<p>Expectation and variance are irrelevant with t. + Gaussian process (PDF determined by 1~2-nd moment) $\Rightarrow$ Strictly stationary process.</p>
-</blockquote>
-<h3 id="Weakly-stationary-process"><a href="#Weakly-stationary-process" class="headerlink" title="Weakly stationary process"></a>Weakly stationary process</h3><script type="math/tex; mode=display">
-E[X(t)]=m_X(t)=m_X</script><script type="math/tex; mode=display">
-E_X[t_1,t_2] = R_X(\tau)</script><script type="math/tex; mode=display">
-E[X^2(t)]<\infty</script><p>Weakly stationary process is 2-nd stationary. In contrast, strictly stationary process is n-th stationary.</p>
-<h3 id="Ergodicity"><a href="#Ergodicity" class="headerlink" title="Ergodicity"></a>Ergodicity</h3><ul>
-<li><p>cond1: $\overline{X(t)} = \lim_{T \rightarrow \infty}\frac{1}{2T}\int\limits_{-T}^{T}X(t)dt\ \ = \ \ E[X(t)]=m_X​$</p>
-</li>
-<li><p>cond2: $\overline{X(t)X(t+\tau)} = \lim_{T \rightarrow \infty}\frac{1}{2T}\int\limits_{-T}^{T}X(t)X(t+\tau)dt\ \ = \ \ E[X(t)X(t+\tau)]=R_X(\tau)$</p>
-</li>
-<li><p>cond3: Weakly stationary process</p>
-</li>
-</ul>
-<p>In total: <strong>Time average = Phase average</strong> (Phase refers to the <em>Value</em> axis)</p>
-<blockquote>
-<p>In probability theory, an ergodic dynamical system is one that, broadly speaking, has the same behavior averaged over time as averaged over the space of all the system’s states in its phase space. </p>
-</blockquote>
+
+
+### Weakly stationary process
+
+$$
+E[X(t)]=m_X(t)=m_X
+$$
+
+$$
+E_X[t_1,t_2] = R_X(\tau)
+$$
+
+$$
+E[X^2(t)]<\infty $$ weakly stationary process is 2-nd stationary. in contrast, strictly n-th ### ergodicity - cond1: $\overline{x(t)}="\lim_{T" \rightarrow \infty}\frac{1}{2t}\int\limits_{-t}^{t}x(t)dt\ \="\" e[x(t)]="m_X​$" cond2: $\overline{x(t)x(t+\tau)}="\lim_{T" \infty}\frac{1}{2t}\int\limits_{-t}^{t}x(t)x(t+\tau)dt\ e[x(t)x(t+\tau)]="R_X(\tau)$" cond3: total: **time average="Phase" average** (phase refers to the *value* axis)> In probability theory, an ergodic dynamical system is one that, broadly speaking, has the same behavior averaged over time as averaged over the space of all the system's states in its phase space. 
+
+
+
 <font face="Segoe Print" color="#D87093" size="4">class note:</font>
 
 <blockquote>
@@ -636,7 +640,7 @@ R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><font face="Segoe Print" color="#D87
 <p><br><font face="Segoe Print" color="#4CABEE" size="3">Wired Channel:</font> It is relevant to transmission bandwidth and signal bandwidth. If we know $h(t)$, we can design a reverse system for equalization.</p>
 <p><br><font face="Segoe Print" color="#4CABEE" size="3">Wireless Channel:</font> It is irrelevant to bandwidth and allows a wide bandwidth. It is relevant to multipath propagation which will bring ISI in a high speed. Here there are 3 methods to estimate this channel:</p>
 <ul>
-<li><strong>Training sequence</strong> (pilot sequence): [know input &amp; output | Cross-correlation] We know $R_{XY}(\tau)$ and $R_X(\tau)$ of $R_{XY}(\tau)=R_X(\tau)*h(\tau)$, it is easy to gain $h(\tau)$. <a href="https://en.wikipedia.org/wiki/Channel_state_information" target="_blank" rel="noopener">Channel state information</a> </li>
+<li><strong>Training sequence</strong> (pilot sequence): [know input &amp; output | Cross-correlation] We know $R_{XY}(\tau)$ and $R_X(\tau)$ of $R_{XY}(\tau)=R_X(\tau)*h(\tau)$, it is easy to gain $h(\tau)​$. <a href="https://en.wikipedia.org/wiki/Channel_state_information" target="_blank" rel="noopener">Channel state information</a> </li>
 </ul>
 <p><br><font face="Segoe Print" color="#FFC300" size="3">  White Assumption:</font> </p>
 <ul>
@@ -645,19 +649,36 @@ R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><font face="Segoe Print" color="#D87
 <li><p><strong>Model based estimation</strong>: [know output | PSD] Assuming that $x(t)$ is <em>i.i.d.</em> and 2nd white. Then we have  $S_X(\omega)$ and $S_Y(\omega)$ which is short in most cases. There are several models to gain long but varied $|\hat{H}(\omega)|$</p>
 </li>
 </ul>
-<font face="Segoe Print" color="#FFC300" size="3">  Not White Assumption:</font> 
+<font face="Segoe Print" color="#FFC300" size="3">  LTI system models for random signals – AR, MA and ARMA models：</font> 
 
+<p><a href="https://www.gaussianwaves.com/2014/05/" target="_blank" rel="noopener">source</a></p>
+<p>Motivation: We want to describe the PSD of a signal $x[n]$ with the following model</p>
+<p><img src="/assets/1561431198657.png" alt="1561431198657"></p>
 <ul>
-<li><strong>Autoregressive model (<a href="https://en.wikipedia.org/wiki/Autoregressive_model" target="_blank" rel="noopener">AR</a>) </strong>: Sum of past $X_t$. </li>
+<li><strong>Autoregressive model (<a href="https://en.wikipedia.org/wiki/Autoregressive_model" target="_blank" rel="noopener">AR</a>) </strong>: Sum of past $x[n-k]$ + current source input $\omega [n]$</li>
 </ul>
 <script type="math/tex; mode=display">
-X_t=c+\varepsilon_t+\sum_{i=1}^{p}{\varphi_iX_{t-i}}</script><p>where $\varphi_i, … ,\varphi_p$ are the parameters of the model, $c$ is a constant, and $\varepsilon_t$ is white noise. </p>
+x[n]+a_1x[n-1]+a_2x[n-2]+...+a_Nx[n-N]=\omega[n]</script><p>where $a_i, … ,a_N​$ are the parameters of the model and $\omega [n]​$ is the source input white noise. </p>
+<p>The frequency response of the IIR filter is well known: <strong><em>$H(e^{jω})​$ is an all-poles system</em></strong></p>
+<script type="math/tex; mode=display">
+H(e^{j\omega})=\frac{1}{\sum_{k=0}^{N}a_ke^{-jk\omega}}, \ a_0=1</script><p>The PSD of $x[n]$ is:</p>
+<p><img src="/assets/1561431789698.png" alt="1561431789698"></p>
 <ul>
-<li><strong>Moving-average model (<a href="https://en.wikipedia.org/wiki/Moving-average_model" target="_blank" rel="noopener">MA</a>) </strong>: Sum of past <em>i.i.d.</em> $\varepsilon_t$ <script type="math/tex; mode=display">
-X_t=\mu+ \varepsilon_{t} + \sum_{i=1}^{q}{\theta_{i}\varepsilon_{t-i}}</script>where $\mu$ is the mean of the series, the $\theta_1,…,\theta_q$ are the parameters of the model and the $\varepsilon_t, \varepsilon_{t-1}, …, \varepsilon_{t-q}​$ are <em>i.i.d.</em> white noise.  <a href="https://www.youtube.com/watch?v=lUhtcP2SUsg" target="_blank" rel="noopener">video</a></li>
-<li><strong>Autoregressive–moving-average model (<a href="https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model" target="_blank" rel="noopener">ARMA</a>)</strong> : <script type="math/tex; mode=display">
-X_t=\mu+ \varepsilon_{t} + \sum_{i=1}^{p}{\varphi_iX_{t-i}}+ \sum_{i=1}^{q}{\theta_{i}\varepsilon_{t-i}}</script></li>
+<li><strong>Moving-average model (<a href="https://en.wikipedia.org/wiki/Moving-average_model" target="_blank" rel="noopener">MA</a>) </strong>: Sum of past and current source inputs <em>i.i.d.</em> $\omega[n-k]$ <script type="math/tex; mode=display">
+x[n]= b_0\omega[n]+b_1\omega[n-1]+b_2\omega[n-2]+...+b_M\omega[n-M]</script>where the $b_0,…,b_M$ are the parameters of the model and the $\omega[n], \omega[n-1], …, \omega[n-M]​$ are <em>i.i.d.</em> source inputs.  <a href="https://www.youtube.com/watch?v=lUhtcP2SUsg" target="_blank" rel="noopener">video</a></li>
 </ul>
+<p>The frequency response of the FIR filter is well known: <strong><em>$H(e^{jω})​$ is an all-zeros system</em></strong></p>
+<script type="math/tex; mode=display">
+H(e^{j\omega})=\sum_{k=0}^{M}b_k e^{-jk\omega}</script><p>The PSD of $x[n]$ is:</p>
+<p><img src="/assets/1561432334694.png" alt="1561432334694"></p>
+<ul>
+<li><strong>Autoregressive–moving-average model (<a href="https://en.wikipedia.org/wiki/Autoregressive%E2%80%93moving-average_model" target="_blank" rel="noopener">ARMA</a>)</strong> : <script type="math/tex; mode=display">
+x[n]+a_1x[n-1]+...+a_Nx[n-N] = b_0\omega[n]+b_1\omega[n-1]+...+b_M\omega[n-M]</script></li>
+</ul>
+<p>The frequency response of this generalized filter is well known: <strong><em>$H(e^{jω})$ is an pole-zero system</em></strong></p>
+<script type="math/tex; mode=display">
+H(e^{j\omega})=\frac{\sum_{k=0}^{M}b_k e^{-jk\omega}}{\sum_{k=0}^{N}a_ke^{-jk\omega}}, \ a_0=1</script><p>The PSD of $x[n]​$ is:</p>
+<p><img src="/assets/1561432801456.png" alt="1561432801456"></p>
 <hr>
 <h1 id="Introduction-of-Estimation-Theory"><a href="#Introduction-of-Estimation-Theory" class="headerlink" title="Introduction of Estimation Theory"></a>Introduction of Estimation Theory</h1><h2 id="Estimation-in-signal-processing"><a href="#Estimation-in-signal-processing" class="headerlink" title="Estimation in signal processing"></a>Estimation in signal processing</h2><p>Mathematically, we have the $N$-point data set ${x[0], x[1], … , x[N-1]}$ which depends on an unknown parameter $\theta$. We wish to determine $\theta$ based on the data or to define an estimator </p>
 <script type="math/tex; mode=display">
@@ -666,7 +687,7 @@ X_t=\mu+ \varepsilon_{t} + \sum_{i=1}^{p}{\varphi_iX_{t-i}}+ \sum_{i=1}^{q}{\the
 
 <blockquote>
 <p> Since $X​$ is a random variable, the estimation $\hat{\theta}​$ is also a random variable. However, the time series ${x[0], x[1], … , x[N-1]}​$ is a sample of $X​$ and thus $\hat{\theta}​$ gained from the $g​$ is a deterministic estimation. <strong>It is pretty important to bear in mind that every estimation based on specific input-output is only a sample.</strong></p>
- <font face="Segoe Print" color="#F56403" size="4">If we can improve the performance of random variable $\boldsymbol{\hat{\theta}}$, when we dealing with deterministic signals, we are more likely to gain a better deterministic estimation.</font>  
+ <font face="Segoe Print" color="#5E5CC" size="4">If we can improve the performance of random variable $\boldsymbol{\hat{\theta}}$, when we dealing with deterministic signals, we are more likely to gain a better deterministic estimation.</font>  
 
 
 
@@ -851,7 +872,7 @@ y(L+N-1)
   \end{matrix} 
 \right]
 \xrightarrow{FFT}
-Y(k)=(\sum_{l=0}^{L-1}{h_{l}}e^{-j\frac{2\pi}{N}kl})S(k)+N(k)</script><p>$L$ is the length of original signal and $N​$ is the length of pilot sequences. Then we can build a linear model to gain the MVU estimator:</p>
+Y(k)=(\sum_{l=0}^{N-1}{h_{l}}e^{-j\frac{2\pi}{N}kl})S(k)+N(k)</script><p>$L$ is the length of original signal and $N​$ is the length of pilot sequences. Then we can build a linear model to gain the MVU estimator:</p>
 <script type="math/tex; mode=display">
 \left[
  \begin{matrix}
@@ -962,7 +983,7 @@ J(\theta)=\sum_{n=0}^{N-1}(x[n]-\theta h[n])^2.</script><p>A minimization is rea
 </ul>
 </li>
 </ul>
-
+</\infty>
       
     </div>
     
@@ -1176,7 +1197,7 @@ J(\theta)=\sum_{n=0}^{N-1}(x[n]-\theta h[n])^2.</script><p>A minimization is rea
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-Signal-Basic"><span class="nav-text">Random Signal Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Review"><span class="nav-text">Review</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution"><span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moment-and-Cumulant"><span class="nav-text">Moment and Cumulant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Statistical-independence-and-irrelevance"><span class="nav-text">Statistical independence and irrelevance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characteristic-function"><span class="nav-text">Characteristic function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distribution-model"><span class="nav-text">Distribution model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Easy-ones"><span class="nav-text">Easy ones</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-distribution"><span class="nav-text">Gaussian distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chi-2-distribution"><span class="nav-text">$\chi^2$ distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rayleigh-distribution"><span class="nav-text">Rayleigh distribution</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stochastic-Process"><span class="nav-text">Stochastic Process</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-random-variable-to-stochastic-process"><span class="nav-text">From random variable to stochastic process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stochastic-process-definition"><span class="nav-text">Stochastic process definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution-1"><span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numerical-characteristic"><span class="nav-text">Numerical characteristic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stationary-process-and-ergodicity"><span class="nav-text">Stationary process and ergodicity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Strictly-stationary-process"><span class="nav-text">Strictly stationary process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weakly-stationary-process"><span class="nav-text">Weakly stationary process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ergodicity"><span class="nav-text">Ergodicity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Power-spectrum-density-PSD"><span class="nav-text">Power spectrum density (PSD)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-definition"><span class="nav-text">PSD definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-and-autocorrelation"><span class="nav-text">PSD and autocorrelation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gaussian-process-and-white-noise"><span class="nav-text">Gaussian process and white noise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-process"><span class="nav-text">Gaussian process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#White-noise"><span class="nav-text">White noise</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-response"><span class="nav-text">System response</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PDF"><span class="nav-text">PDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Expectation-and-autocorrelation"><span class="nav-text">Expectation and autocorrelation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PSD"><span class="nav-text">PSD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-of-Estimation-Theory"><span class="nav-text">Introduction of Estimation Theory</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Estimation-in-signal-processing"><span class="nav-text">Estimation in signal processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-mathematical-estimation-problem"><span class="nav-text">The mathematical estimation problem</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Minimum-Variance-Unbiased-Estimation"><span class="nav-text">Minimum Variance Unbiased Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unbiased-estimation"><span class="nav-text">Unbiased estimation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimum-Variance-Criterion"><span class="nav-text">Minimum Variance Criterion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cramer-Rao-Lower-Bound"><span class="nav-text">Cramer-Rao Lower Bound</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Efficiency"><span class="nav-text">Efficiency</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalar-parameter"><span class="nav-text">Scalar parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalar-parameter-·-transformation"><span class="nav-text">Scalar parameter · transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-parameter"><span class="nav-text">Vector parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-parameter-·-transformation"><span class="nav-text">Vector parameter · transformation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linear-Model"><span class="nav-text">Linear Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-model-·-specific"><span class="nav-text">Linear model · specific</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-model-·-general"><span class="nav-text">Linear model · general</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Maximum-Likelihood-Estimation"><span class="nav-text">Maximum Likelihood Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalar-parameter-1"><span class="nav-text">Scalar parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Numerical-Determination"><span class="nav-text">Numerical Determination</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Least-Squares"><span class="nav-text">Least Squares</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Least-Squares"><span class="nav-text">Linear Least Squares</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-Signal-Basic"><span class="nav-text">Random Signal Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Review"><span class="nav-text">Review</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution"><span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moment-and-Cumulant"><span class="nav-text">Moment and Cumulant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Statistical-independence-and-irrelevance"><span class="nav-text">Statistical independence and irrelevance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characteristic-function"><span class="nav-text">Characteristic function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distribution-model"><span class="nav-text">Distribution model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Easy-ones"><span class="nav-text">Easy ones</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-distribution"><span class="nav-text">Gaussian distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chi-2-distribution"><span class="nav-text">$\chi^2$ distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rayleigh-distribution"><span class="nav-text">Rayleigh distribution</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stochastic-Process"><span class="nav-text">Stochastic Process</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#From-random-variable-to-stochastic-process"><span class="nav-text">From random variable to stochastic process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stochastic-process-definition"><span class="nav-text">Stochastic process definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-distribution-1"><span class="nav-text">Probability distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numerical-characteristic"><span class="nav-text">Numerical characteristic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stationary-process-and-ergodicity"><span class="nav-text">Stationary process and ergodicity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Strictly-stationary-process"><span class="nav-text">Strictly stationary process</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Power-spectrum-density-PSD"><span class="nav-text">Power spectrum density (PSD)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-definition"><span class="nav-text">PSD definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PSD-and-autocorrelation"><span class="nav-text">PSD and autocorrelation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gaussian-process-and-white-noise"><span class="nav-text">Gaussian process and white noise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gaussian-process"><span class="nav-text">Gaussian process</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#White-noise"><span class="nav-text">White noise</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-response"><span class="nav-text">System response</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PDF"><span class="nav-text">PDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Expectation-and-autocorrelation"><span class="nav-text">Expectation and autocorrelation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PSD"><span class="nav-text">PSD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-of-Estimation-Theory"><span class="nav-text">Introduction of Estimation Theory</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Estimation-in-signal-processing"><span class="nav-text">Estimation in signal processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-mathematical-estimation-problem"><span class="nav-text">The mathematical estimation problem</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Minimum-Variance-Unbiased-Estimation"><span class="nav-text">Minimum Variance Unbiased Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unbiased-estimation"><span class="nav-text">Unbiased estimation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimum-Variance-Criterion"><span class="nav-text">Minimum Variance Criterion</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cramer-Rao-Lower-Bound"><span class="nav-text">Cramer-Rao Lower Bound</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Efficiency"><span class="nav-text">Efficiency</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalar-parameter"><span class="nav-text">Scalar parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalar-parameter-·-transformation"><span class="nav-text">Scalar parameter · transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-parameter"><span class="nav-text">Vector parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-parameter-·-transformation"><span class="nav-text">Vector parameter · transformation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linear-Model"><span class="nav-text">Linear Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-model-·-specific"><span class="nav-text">Linear model · specific</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-model-·-general"><span class="nav-text">Linear model · general</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Maximum-Likelihood-Estimation"><span class="nav-text">Maximum Likelihood Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalar-parameter-1"><span class="nav-text">Scalar parameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Numerical-Determination"><span class="nav-text">Numerical Determination</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Least-Squares"><span class="nav-text">Least Squares</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Least-Squares"><span class="nav-text">Linear Least Squares</span></a></li></ol></li></ol></div>
             
 
           </div>
