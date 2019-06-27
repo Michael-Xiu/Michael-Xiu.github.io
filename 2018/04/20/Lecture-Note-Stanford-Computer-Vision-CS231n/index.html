@@ -83,105 +83,105 @@
 <meta name="keywords" content="machine learning,deep learning,computer vision">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lecture Note: Stanford Computer Vision CS231n">
-<meta property="og:url" content="http://michaelxiu.com/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/index.html">
+<meta property="og:url" content="http://Michael-Xiu.github.io/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/index.html">
 <meta property="og:site_name" content="Michael Xiu">
 <meta property="og:description" content="Welcome to my note on CS231n! In this note, I summarize the key points in this course with my comments. Supplemental tutorials by other experts are also provided to grasp a deeper understanding of thi">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://michaelxiu.com/assets/1554984314649.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1554984357707.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1554984349744.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1554984460281.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1554984462447.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118508595.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118552268.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118575182.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118582290.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118592815.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118605355.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118623788.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118680783.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118709172.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118794967.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118806486.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118849229.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133574839.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555118917150.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119008677.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119128151.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119160397.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119174931.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119213571.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119227647.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119258638.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119342625.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119352934.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119367698.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119372127.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119382650.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119394524.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119498617.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119505538.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119516346.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119527090.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119537205.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119551909.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119555642.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119570314.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119589676.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119594158.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119608528.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119613678.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119618224.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119640784.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119653249.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119668121.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119711313.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119783184.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119792452.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119796862.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119848477.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119853711.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119972395.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119989779.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555119995684.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120002164.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120015106.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120022198.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120028724.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120106146.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120118130.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120146461.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120188357.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120214331.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120221498.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120337423.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120362800.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120423547.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120433535.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120455605.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555120502804.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133283816.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133292966.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133306241.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133327076.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133353270.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133370237.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133380565.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133385970.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133843377.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133888631.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133893376.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133918629.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133932966.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133948185.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133961173.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133965121.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/1555133970425.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1554984314649.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1554984357707.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1554984349744.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1554984460281.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1554984462447.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118508595.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118552268.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118575182.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118582290.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118592815.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118605355.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118623788.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118680783.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118709172.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118794967.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118806486.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118849229.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133574839.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555118917150.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119008677.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119128151.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119160397.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119174931.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119213571.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119227647.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119258638.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119342625.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119352934.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119367698.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119372127.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119382650.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119394524.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119498617.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119505538.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119516346.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119527090.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119537205.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119551909.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119555642.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119570314.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119589676.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119594158.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119608528.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119613678.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119618224.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119640784.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119653249.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119668121.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119711313.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119783184.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119792452.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119796862.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119848477.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119853711.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119972395.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119989779.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555119995684.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120002164.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120015106.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120022198.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120028724.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120106146.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120118130.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120146461.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120188357.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120214331.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120221498.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120337423.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120362800.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120423547.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120433535.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120455605.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555120502804.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133283816.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133292966.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133306241.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133327076.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133353270.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133370237.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133380565.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133385970.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133843377.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133888631.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133893376.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133918629.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133932966.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133948185.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133961173.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133965121.png">
+<meta property="og:image" content="http://michael-xiu.github.io/assets/1555133970425.png">
 <meta property="og:updated_time" content="2019-04-13T05:56:48.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lecture Note: Stanford Computer Vision CS231n">
 <meta name="twitter:description" content="Welcome to my note on CS231n! In this note, I summarize the key points in this course with my comments. Supplemental tutorials by other experts are also provided to grasp a deeper understanding of thi">
-<meta name="twitter:image" content="http://michaelxiu.com/assets/1554984314649.png">
+<meta name="twitter:image" content="http://michael-xiu.github.io/assets/1554984314649.png">
 
 
 
@@ -211,7 +211,7 @@
 
 
 
-  <link rel="canonical" href="http://michaelxiu.com/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/">
+  <link rel="canonical" href="http://Michael-Xiu.github.io/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/">
 
 
 
@@ -336,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://michaelxiu.com/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/">
+    <link itemprop="mainEntityOfPage" href="http://Michael-Xiu.github.io/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Michael.Xiu">
