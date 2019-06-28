@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://michaelxiu.com/assets/OFDM.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1560249863674.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/cminmax.PNG">
-<meta property="og:updated_time" content="2019-06-28T06:16:47.789Z">
+<meta property="og:updated_time" content="2019-06-28T15:20:39.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -857,7 +857,7 @@ h_{L-1}
  \begin{matrix}
 S(0)\\
 \vdots \\
-S(L+N-1)
+S(M+N-1)
   \end{matrix} 
 \right]
 \xrightarrow{IFFT}
@@ -865,7 +865,7 @@ S(L+N-1)
  \begin{matrix}
 x(0)\\
 \vdots \\
-x(L+N-1)
+x(M+N-1)
   \end{matrix} 
 \right]
 \xrightarrow{channel}
@@ -873,11 +873,11 @@ x(L+N-1)
  \begin{matrix}
 y(0)\\
 \vdots \\
-y(L+N-1)
+y(M+N-1)
   \end{matrix} 
 \right]
 \xrightarrow{FFT}
-Y(k)=(\sum_{l=0}^{N-1}{h_{l}}e^{-j\frac{2\pi}{N}kl})S(k)+N(k)</script><p>$L$ is the length of original signal and $N​$ is the length of pilot sequences. Then we can build a linear model to gain the MVU estimator:</p>
+Y(k)=(\sum_{l=0}^{L-1}{h_{l}}e^{-j\frac{2\pi}{L}kl})S(k)+N(k)</script><p>$M​$ is the length of original signal, $N​$ is the length of pilot sequences and $L​$ is the length of channel. Then we can build a linear model to gain the MVU estimator:</p>
 <script type="math/tex; mode=display">
 \left[
  \begin{matrix}
@@ -902,7 +902,7 @@ h_{L-1}
 
 \Rightarrow
 
-\mathbf{Y}=\mathbf{H}\boldsymbol{\theta}+\mathbf{N}</script><p>$P$ is the pilot sequence and $\left[<br> \begin{matrix}<br>S<br>  \end{matrix}<br>\right]$ is the combination of $e^{-j\frac{2\pi}{N}kl}$ and $S(k)$.</p>
+\mathbf{Y}=\mathbf{H}\boldsymbol{\theta}+\mathbf{N}</script><p>$P$ is the pilot sequence and $\left[<br> \begin{matrix}<br>S<br>  \end{matrix}<br>\right]$ is the combination of $e^{-j\frac{2\pi}{L}kl}$ and $S(k)$.</p>
 <hr>
 <h1 id="Maximum-Likelihood-Estimation"><a href="#Maximum-Likelihood-Estimation" class="headerlink" title="Maximum Likelihood Estimation"></a>Maximum Likelihood Estimation</h1><h2 id="Scalar-parameter-1"><a href="#Scalar-parameter-1" class="headerlink" title="Scalar parameter"></a>Scalar parameter</h2><p>The MLE for a scalar parameter is defined to be <em>the value of $\theta​$ that maximizes $p(\mathbf{x};\theta)​$</em> for $\mathbf{x}​$ fixed, i.e., the value that maximizes the likelihood function.</p>
 <p><em>The method defines a maximum likelihood estimate:</em></p>
@@ -1018,7 +1018,7 @@ Bayes\ risk: R=E(C)=\sum_{i=0}^{1}{\sum_{j=0}^{1}{C_{ij} P(H_i|H_j) P(H_j)}}</sc
 <p>Minimax Hypothesis Testing Formulation:</p>
 <script type="math/tex; mode=display">
 \mathop{min}_{}(\mathop{max}_{P(H_{i/j})}(R))</script><p> <img src="/assets/cminmax.PNG" alt="1561529930748"></p>
-<p>“a” is the minimum Bayesian risk when $P(H_{1}) \in [0,1]$. Once we assume that the prior probability $P(H_1)=P_{1g}$,   $P_{FA}$ and $P_M$ are known. and “a” will be reshaped as “b”, which may leads to huge risk when the exact $P_{1}$ is far different from $P_{1g}$. </p>
+<p>“a” is the minimum Bayesian risk when $P(H_{1}) \in [0,1]$. Once we assume that the prior probability $P(H_1)=P_{1g}$,   $P_{FA}$ and $P_M$ are known. and “a” will be reshaped as “b”, which may leads to huge risk when the exact $P_{1}$ is far different from $P_{1g}​$. </p>
 <p><strong>Minimax Hypothesis Testing</strong> tends to assume that $P(H_1)=P_{1g}^{*}$.</p>
 
       
