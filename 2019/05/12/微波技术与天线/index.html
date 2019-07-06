@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://michaelxiu.com/assets/1561703616981.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1561706931410.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1561707102972.png">
-<meta property="og:updated_time" content="2019-06-28T08:28:14.271Z">
+<meta property="og:updated_time" content="2019-07-03T07:20:45.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微波技术与天线">
 <meta name="twitter:description" content="Welcome">
@@ -355,7 +355,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  135 mins
+                  140 mins
                 </span>
               
             </div>
@@ -395,8 +395,8 @@
 <li>介质传输线：电磁波沿传输线表面传播</li>
 </ul>
 <h2 id="1-1-均匀传输线方程及其解"><a href="#1-1-均匀传输线方程及其解" class="headerlink" title="1.1 均匀传输线方程及其解"></a>1.1 均匀传输线方程及其解</h2><p>均匀传输线组成的导波系统都可等效为均匀平行双导线系统。</p>
-<p>传输线单位长串联阻抗：$Z=R+j\omega L$</p>
-<p>传输线单位长并联导纳：$Y=G+j\omega C$</p>
+<p>传输线单位长串联阻抗：$Z=R+j\omega L$  &lt;电感是串联的&gt;</p>
+<p>传输线单位长并联导纳：$Y=G+j\omega C​$  &lt;电容是并联的&gt;</p>
 <p>解：</p>
 <p>$U(z)=U_+(z)+U_-(z)=A_1e^{jkz}+A_2e^{-jkz}​$</p>
 <p>$I(z)=I_+(z)+I_-(z)=\frac{1}{Z_0}({A_1}e^{jkz}+A_2e^{-jkz})​$</p>
@@ -406,7 +406,7 @@
 <li>特性阻抗$Z_0​$：传输线上导行波的电压电流比。其倒数为特性导纳，用 $Y_0​$ 表示</li>
 </ul>
 <script type="math/tex; mode=display">
-Z_0=\sqrt{\frac{R+j\omega L}{G+j\omega C}}</script><p>​    对于均匀无耗传输线，$R=G=0​$：</p>
+Z_0=\sqrt{\frac{R+j\omega L}{G+j\omega C}}  \ \ <L-\mu; C-\varepsilon></script><p>​    对于均匀无耗传输线，$R=G=0​$：</p>
 <script type="math/tex; mode=display">
 Z_0=\sqrt{\frac{L}{C}}</script><p>​    常用的同轴线的特性阻抗为 50 $\Omega$ 和 70 $\Omega$</p>
 <ul>
@@ -415,20 +415,20 @@ Z_0=\sqrt{\frac{L}{C}}</script><p>​    常用的同轴线的特性阻抗为 50
 \gamma=j\beta, \ \beta=\omega\sqrt{LC}</script></li>
 </ul>
 <ul>
-<li><p>相速$v_p$：电压、电流入射波（或反射波）等相位面沿传播方向的速度【相速 $rad/s$ = 每秒经过的相位 $(rad/s)$ / 相移常数 $(rad/m)$】</p>
+<li><p>相速$v_p$：电压、电流入射波（或反射波）等相位面沿传播方向的速度【相速 $m/s$ = 每秒经过的相位 $(rad/s)$ / 相移常数 $(rad/m)$】</p>
 <script type="math/tex; mode=display">
 v_p=\frac{\omega}{\beta}</script></li>
 <li><p>波长$\lambda$：</p>
 </li>
 </ul>
 <script type="math/tex; mode=display">
-\lambda=\frac{2\pi}{\beta}=\frac{v_p}{f}=\frac{\lambda_0}{\sqrt{\varepsilon_{r}}}</script><h2 id="1-2-传输线阻抗与状态参量"><a href="#1-2-传输线阻抗与状态参量" class="headerlink" title="1.2 传输线阻抗与状态参量"></a>1.2 传输线阻抗与状态参量</h2><p>传输线上任意一点的电压与电流值比称为该点的阻抗。</p>
+\lambda=\frac{2\pi}{\beta}(=\frac{v_p}{f}=\frac{\lambda_0}{\sqrt{\varepsilon_{r}}}）</script><h2 id="1-2-传输线阻抗与状态参量"><a href="#1-2-传输线阻抗与状态参量" class="headerlink" title="1.2 传输线阻抗与状态参量"></a>1.2 传输线阻抗与状态参量</h2><p>传输线上任意一点的电压与电流值比称为该点的阻抗。</p>
 <ul>
 <li><p>输入阻抗：</p>
 <script type="math/tex; mode=display">
-Z_{in}(z)=Z_0\frac{Z_l+jZ_0tan(\beta z)}{Z_0+jZ_l tan(\beta z)}</script><p>$Z_0$为无耗传输线的特征阻抗，$Z_l$为终端负载阻抗。</p>
+Z_{in}(z)=Z_0\frac{Z_l+jZ_0tan(\beta z)}{Z_0+jZ_l tan(\beta z)}</script><p>$Z_0​$为无耗传输线的特征阻抗，$Z_l​$为终端负载阻抗。</p>
 <ul>
-<li>无耗传输线上任意一点的输入阻抗与观察点的位置、特性阻抗、终端负载阻抗与工作频率有关，具有$\lambda /2​$重复性。</li>
+<li>无耗传输线上任意一点的输入阻抗与观察点的位置、特性阻抗、终端负载阻抗与工作频率有关，<strong>具有$\lambda /2$重复性</strong>。</li>
 <li>若 $Z_l​$ 为复数，则传输线上任意点处输入阻抗一般也为复数，但若长度合适，也可变换为实数。传输线的阻抗变换特性。</li>
 </ul>
 <p><img src="/assets/1561192924382.png" alt="1561192924382"></p>
@@ -437,29 +437,29 @@ Z_{in}(z)=Z_0\frac{Z_l+jZ_0tan(\beta z)}{Z_0+jZ_l tan(\beta z)}</script><p>$Z_0$
 <ul>
 <li>反射系数：终端反射系数：<script type="math/tex; mode=display">
 \Gamma_1=\frac{Z_l-Z_0}{Z_l+Z_0}=|\Gamma_1|e^{j \phi_l}</script>任意点反射系数可用终端反射系数表示为：<script type="math/tex; mode=display">
-\Gamma (z)=|\Gamma_1|e^{j(\phi_l-2\beta z)}</script>对均匀无耗传输线来说，任意点反射系数大小相等，只有相位具有$\lambda /2$重复性。当$Z_l=Z_0$，负载终端无反射，称为负载匹配。</li>
+\Gamma (z)=|\Gamma_1|e^{j(\phi_l-2\beta z)}  \ \ <从终端向传输线为-z方向，具有重复性></script>对均匀无耗传输线来说，任意点反射系数大小相等，<strong>只有相位具有$\lambda /2​$重复性</strong>。当$Z_l=Z_0​$，负载终端无反射，称为负载匹配。</li>
 </ul>
 <ul>
 <li><p>输入阻抗与反射系数的关系：</p>
 <script type="math/tex; mode=display">
-Z_{in}(z) = Z_0\frac{1+\Gamma(z)}{1-\Gamma(z)}</script></li>
+Z_{in}(z) = Z_0\frac{1+\Gamma(z)}{1-\Gamma(z)}  \ \ <Z_{in}(z) \geqslant Z_0 ></script></li>
 <li><p>驻波比：终端不匹配时，线上形成驻波。对于无耗传输线，沿线给点的电压和电流振幅不同，以$\lambda /2$周期变化。为描述驻波的大小，引入电压驻波比，定义为波腹点与波节点电压振幅之比。</p>
 <script type="math/tex; mode=display">
-\rho=\frac{|U|_{max}}{|U|_{min}} = \frac{1+|\Gamma_1|}{1-|\Gamma_1|}</script></li>
+\rho=\frac{|U|_{max}}{|U|_{min}} = \frac{1+|\Gamma_1|}{1-|\Gamma_1|} \ \ <|\Gamma_1|\geqslant 1></script></li>
 </ul>
 <script type="math/tex; mode=display">
-  |\Gamma_1|=\frac{\rho-1}{\rho+1}</script><p>  当$|\Gamma_1|=0$，无反射，$\rho=1$；当$|\Gamma_1|=1$，全反射，$\rho=\infty$。</p>
+|\Gamma_1|=\frac{\rho-1}{\rho+1} \ \ <|\Gamma_1|\leqslant 1></script><p>  当$|\Gamma_1|=0​$，无反射，$\rho=1​$；当$|\Gamma_1|=1​$，全反射，$\rho=\infty​$。</p>
 <h2 id="1-3-无耗传输线的状态分析"><a href="#1-3-无耗传输线的状态分析" class="headerlink" title="1.3 无耗传输线的状态分析"></a>1.3 无耗传输线的状态分析</h2><ul>
-<li>行波状态：$|\Gamma_1|=0$，无反射。电压电流振幅不变；电压电流同相；各点阻抗等于特性阻抗。</li>
+<li>行波状态：$|\Gamma_1|=0$，无反射。电压电流振幅不变；电压电流同相；<strong>各点阻抗等于特性阻抗</strong>。</li>
 </ul>
 <ul>
-<li><p>纯驻波状态：$|\Gamma_1|=1$，分为三种状态</p>
+<li><p>纯驻波状态：$|\Gamma_1|=1​$，分为三种状态</p>
 <ul>
 <li>负载短路$Z_1=0$：负载电压min，$z=n\lambda/2​$处为电压波节点</li>
-<li>负载开路$Z_1=\infty$：负载电压max，$z=n\lambda/2$处为电压波腹点</li>
+<li>负载开路$Z_1=\infty​$：负载电压max，$z=n\lambda/2​$处为电压波腹点</li>
 <li>负载为纯电抗$Z_1=jX_1$：此时终端既不是波腹也不是波节</li>
 </ul>
-<p>沿线各点电压、电流在时间和空间上相差均为 $\pi/2$ ，故它们不能用于微波功率的传输，其输入阻抗为纯电抗特性（代入 $Z_{in}(z)$ 可知）。</p>
+<p>沿线各点电压、电流在时间和空间上相差均为 $\pi/2​$ ，故它们不能用于微波功率的传输，其输入阻抗为纯电抗特性（代入 $Z_{in}(z)​$ 可知）。</p>
 </li>
 </ul>
 <ul>
@@ -468,29 +468,33 @@ Z_{in}(z) = Z_0\frac{1+\Gamma(z)}{1-\Gamma(z)}</script></li>
 <script type="math/tex; mode=display">
 Z_{in}(z)=Z_0\frac{Z_1+jZ_0tan(\beta z)}{Z_0+jZ_1tan(\beta z)}</script><p>波腹点位置为：</p>
 <script type="math/tex; mode=display">
-Z_{max}=\frac{\lambda }{4\pi}\phi_1+n\frac{\lambda}{2}</script><p>波腹点阻抗为<strong>纯电阻</strong>：</p>
+Z_{max}=\frac{\lambda }{4\pi}\phi_l+n\frac{\lambda}{2}，n=0,...</script><p>波腹点阻抗为<strong>纯电阻</strong>：</p>
 <script type="math/tex; mode=display">
 R_{max}=Z_0\rho</script><p>波节点位置为：</p>
 <script type="math/tex; mode=display">
-Z_{min}=\frac{\lambda }{4\pi}\phi_1+(2n\pm 1)\frac{\lambda}{4}</script><p>波节点阻抗为<strong>纯电阻</strong>：</p>
+Z_{min}=\frac{\lambda }{4\pi}\phi_1+(2n\pm 1)\frac{\lambda}{4}，n=0,...</script><p>波节点阻抗为<strong>纯电阻</strong>：</p>
 <script type="math/tex; mode=display">
 R_{min}=\frac{Z_0}{\rho}</script></li>
 </ul>
-<p>无耗传输线上距离为$\lambda /4​$的任意两点处阻抗的乘积均等于传输线特性阻抗的平方，这种特性称之为$\lambda /4​$阻抗变换性。</p>
+<p>无耗传输线上距离为$\lambda /4$的任意两点处阻抗的乘积均等于传输线特性阻抗的平方，这种特性称之为<strong>$\lambda /4$阻抗变换性</strong>。</p>
+<blockquote>
+<p>$\lambda /2$重复性：输入阻抗，反射系数</p>
+<p>$\lambda /4$阻抗变换性：阻抗乘积等于特性阻抗平方</p>
+</blockquote>
 <h2 id="1-4-传输线的传输功率、效率和损耗"><a href="#1-4-传输线的传输功率、效率和损耗" class="headerlink" title="1.4 传输线的传输功率、效率和损耗"></a>1.4 传输线的传输功率、效率和损耗</h2><h3 id="传输功率与效率"><a href="#传输功率与效率" class="headerlink" title="传输功率与效率"></a>传输功率与效率</h3><p>传输功率：</p>
 <script type="math/tex; mode=display">
 P_t(z)=P_{in}(z)-P_r(z) \\
 P_r(z)=|\Gamma_1|^2e^{-4az}P_{in}(z)</script><p>设传输总长为 $l​$ ，传输效率：</p>
 <script type="math/tex; mode=display">
-\eta=\frac{负载吸收功率 P_t(0)}{始端传输动律P_t(l)}=\frac{1-|\Gamma_1|^2}{e^{2al}[1-|\Gamma_1|^2e^{-4al}]}</script><p>传输效率取决于：<strong>传输线损耗、终端匹配情况</strong> 。当负载与传输线匹配时，传输效率最高。</p>
+\eta=\frac{负载吸收功率 P_t(0)}{始端传输功率P_t(l)}=\frac{1-|\Gamma_1|^2}{e^{2al}[1-|\Gamma_1|^2e^{-4al}]}</script><p>传输效率取决于：<strong>传输线损耗、终端匹配情况</strong> 。当负载与传输线匹配时，传输效率最高。</p>
 <h3 id="回波损耗与插入损耗"><a href="#回波损耗与插入损耗" class="headerlink" title="回波损耗与插入损耗"></a>回波损耗与插入损耗</h3><p>传输线的损耗可分为：回波损耗和插入损耗</p>
 <ul>
 <li><p>&lt;增大&gt; 回波损耗：入射波功率与反射波功率之比 </p>
 <script type="math/tex; mode=display">
-L_r(z)=10\lg \frac{P_{in}}{P_r}\  dB=（无耗） -20\lg |\Gamma_1|\ dB</script></li>
+L_r(z)=10\lg \frac{P_{in}}{P_r}\  dB=（无耗） -20\lg |\Gamma_1|\ dB  \ \ <\frac{U_r}{U_{in}}=\Gamma_1></script></li>
 <li><p>&lt;减小&gt; 插入损耗：入射波功率与传输功率之比</p>
 <script type="math/tex; mode=display">
-L_{i}=10\ lg \frac{P_{in}}{P_t}\ dB = （无耗）10\lg \frac{1}{1-|\Gamma_1|^2}</script></li>
+L_{i}=10\ lg \frac{P_{in}}{P_t}\ dB = （无耗）10\lg \frac{1}{1-|\Gamma_1|^2}  \ \ <P_t=P_{in}-P_{r}></script></li>
 </ul>
 <h2 id="1-5-阻抗匹配"><a href="#1-5-阻抗匹配" class="headerlink" title="1.5 阻抗匹配"></a>1.5 阻抗匹配</h2><h3 id="传输线上的三种匹配状态"><a href="#传输线上的三种匹配状态" class="headerlink" title="传输线上的三种匹配状态"></a>传输线上的三种匹配状态</h3><ul>
 <li>负载阻抗匹配：负载阻抗等于传输线的特性阻抗</li>
@@ -571,7 +575,7 @@ L_{i}=10\ lg \frac{P_{in}}{P_t}\ dB = （无耗）10\lg \frac{1}{1-|\Gamma_1|^2}
 </table>
 </div>
 <p>相速：$v_p=\frac{\omega}{\beta}​$</p>
-<p>群速：$v_g=\frac{d\omega}{d\beta}$</p>
+<p>群速：$v_g=\frac{d\omega}{d\beta}​$</p>
 <font face="Segoe Print" color="#D87093" size="4">-------------------------------------------</font>
 
 
@@ -579,13 +583,13 @@ L_{i}=10\ lg \frac{P_{in}}{P_t}\ dB = （无耗）10\lg \frac{1}{1-|\Gamma_1|^2}
 
 
 <h2 id="2-1-导波原理"><a href="#2-1-导波原理" class="headerlink" title="2.1 导波原理"></a>2.1 导波原理</h2><p><img src="/assets/1558250201059.png" alt="1558250201059"></p>
-<h3 id="规则金属管内的电磁波"><a href="#规则金属管内的电磁波" class="headerlink" title="规则金属管内的电磁波"></a>规则金属管内的电磁波</h3><p>通过电磁场理论，对无源自由空间电场$E$ 和磁场$H$ 求解矢量亥姆霍茨方程，通过分离变量法等再结合边界条件，可求得纵向分量$E_z$和$H_z$，进而求出场的横向分量$E_x$、$E_y$、$H_x$、$H_y​$。</p>
+<h3 id="规则金属管内的电磁波"><a href="#规则金属管内的电磁波" class="headerlink" title="规则金属管内的电磁波"></a>规则金属管内的电磁波</h3><p>通过电磁场理论，对无源自由空间电场 $E$ 和磁场 $H$ 求解矢量亥姆霍茨方程，通过分离变量法等再结合边界条件，可求得纵向分量 $E_z$ 和 $H_z$ ，进而求出场的横向分量 $E_x$、$E_y$、$H_x$、$H_y$。</p>
 <p>有以下结论：</p>
 <ul>
 <li>满足上述方程和边界条件的解有很多，每一个解对应一个模式，不同的模式具有不同的传输特性</li>
 </ul>
 <h3 id="传输特性"><a href="#传输特性" class="headerlink" title="传输特性"></a>传输特性</h3><ul>
-<li><p>相移常数 $\beta​$ ：</p>
+<li><p>相移常数 $\beta$ ：</p>
 <script type="math/tex; mode=display">
 \beta = \sqrt{k^2-k_c^2}，\ \ k=\omega \sqrt{\mu \varepsilon}</script><p>截止波数 $k_c​$ ：因为当 $\beta = 0​$， 即导波系统截止时，有 $k_c=k​$ ，因此称 $k_c​$ 为截止波数。该参数是一个与导波系统横截面形状、尺寸及传输模式有关的参量。</p>
 <p>波数 $k​$：$k = \frac{2\pi}{\lambda}​$ 。波数是波长的倒数，另一种描述频率的方式，含义是每单位长度内，波的数量。</p>
@@ -614,7 +618,7 @@ Z=\frac{E_t}{H_t}</script></li>
 <p>这时$E_z$和$H_z$不能同时为0：</p>
 <ul>
 <li>$E_z\ne 0​$而$H_z=0​$，称为<strong>磁场纯横向波（TM波）</strong></li>
-<li>$E_z =  0$而$H_z\ne 0$，称为<strong>电场纯横向波（TE波）</strong></li>
+<li>$E_z =  0​$而$H_z\ne 0​$，称为<strong>电场纯横向波（TE波）</strong></li>
 </ul>
 </li>
 </ul>
@@ -753,14 +757,14 @@ i_2=\frac{I_2}{\sqrt{Y_{e2}}}, \ u_2=U_2\sqrt{Y_{e2}}</script><h3 id="转移矩�
   \end{matrix} 
 \right]</script><p>对于互易网络有 $AD-BC=ad-bc=1$</p>
 <p>对于对称网路有 $a=d$</p>
-<p>n个双端口网络级联，有 $[A] = [A_1][A_2]…[A_n]$</p>
-<p>输入阻抗：</p>
+<p>n个双端口网络级联，有 $[A] = [A_1][A_2]…[A_n]​$</p>
+<p><strong>输入阻抗：</strong> <em>（转移矩阵特有）</em></p>
 <script type="math/tex; mode=display">
-Z_{in}=\frac{AZ_1+B}{CZ_1+D}</script><p>$Z_1$为输出端负载。</p>
-<h2 id="4-4-散射矩阵与传输矩阵"><a href="#4-4-散射矩阵与传输矩阵" class="headerlink" title="4.4 散射矩阵与传输矩阵"></a>4.4 散射矩阵与传输矩阵</h2><p>前面三种网络矩阵建立在$U, I$基础之上，微波频率下失去明确的物理意义，另外要求端口开路/短路难以实现。由于可以测量入射波和反射波的相对大小和相对相位，散射矩阵和传输矩阵就是基于<strong><em>入射波/反射波</em></strong> 基础的。</p>
+Z_{in}=\frac{AZ_l+B}{CZ_l+D}</script><p>$Z_l​$为输出端负载。</p>
+<h2 id="4-4-散射矩阵与传输矩阵"><a href="#4-4-散射矩阵与传输矩阵" class="headerlink" title="4.4 散射矩阵与传输矩阵"></a>4.4 散射矩阵与传输矩阵</h2><p>前面三种网络矩阵建立在$U, I​$基础之上，微波频率下失去明确的物理意义，另外要求端口开路/短路难以实现。由于可以测量入射波和反射波的相对大小和相对相位，散射矩阵和传输矩阵就是基于<strong><em>入射波/反射波</em></strong> 基础的。</p>
 <p><img src="/assets/1561282317135.png" alt="1561282317135"></p>
-<p>定义$a_i​$为入射波电压的归一化值，其有效值的平方等于入射波功率；定义$b_i​$为反射波电压的归一化值，其有效值的平方等于反射波功率。这样端口1的归一化电压可表示为$u_1=a_1+b_1​$，归一化电流可表示$i_1=a_1-b_1​$。【小写表明为归一化】</p>
-<h3 id="散射矩阵-S"><a href="#散射矩阵-S" class="headerlink" title="散射矩阵$S$"></a>散射矩阵<strong>$S$</strong></h3><p>&lt;入射在左；反射在右；系数为各种散射&gt;</p>
+<p>定义 $a_i$ 为<strong>入射波电压的归一化值</strong>，其有效值的平方等于入射波功率；定义 $b_i$ 为<strong>反射波电压的归一化值</strong>，其有效值的平方等于反射波功率。这样端口1的归一化电压可表示为 $u_1=a_1+b_1$，归一化电流可表示 $i_1=a_1-b_1​$。【小写表明为归一化】</p>
+<h3 id="散射矩阵-S"><a href="#散射矩阵-S" class="headerlink" title="散射矩阵$S$"></a>散射矩阵<strong>$S$</strong></h3><p>&lt;入射在右；反射在左；系数为各种散射&gt;</p>
 <script type="math/tex; mode=display">
 \left[
  \begin{matrix}
@@ -780,10 +784,10 @@ Z_{in}=\frac{AZ_1+B}{CZ_1+D}</script><p>$Z_1$为输出端负载。</p>
    a_1\\
    a_2
   \end{matrix} 
-\right]</script><p>参数建立在端口接匹配负载基础上的反射系数或传输系数。<strong>$S_{11}$ 为端口1的反射系数</strong>，$S_{22}$ 为端口2的反射系数，$S_{12}$ 为端口2到端口1的反向传输系数，$S_{21}​$ 为端口1到端口2的正向传输系数。</p>
+\right]</script><p>参数建立在端口接匹配负载基础上的反射系数或传输系数。<strong>$S_{11}​$ 为端口1的反射系数</strong>，$S_{22}​$ 为端口2的反射系数，$S_{12}​$ 为端口2到端口1的反向传输系数，$S_{21}​$ 为端口1到端口2的正向传输系数。</p>
 <p>互易网络：$S_{12}=S_{21}​$</p>
 <p>对称网络：$S_{11}=S_{22}​$</p>
-<p>无耗网络：$[S]^{转置共轭}[S]=[E]$</p>
+<p><strong>无耗网络</strong>：$[S]^{共轭转置}[S]=[E]$   <em>(散射矩阵特有)</em></p>
 <p>回波损耗：$L_r=20\lg |\frac{a_1}{b_1}|=-20\lg |S_{11}|​$</p>
 <p>插入损耗：$L_i=20\lg |\frac{a_1}{b_2}|=20\lg |S_{21}|​$</p>
 <h3 id="传输矩阵-T"><a href="#传输矩阵-T" class="headerlink" title="传输矩阵$T$"></a>传输矩阵<strong>$T$</strong></h3><p>&lt;左侧在左；右侧在右；系数为如何转移&gt;</p>
@@ -816,10 +820,16 @@ Z_{in}=\frac{AZ_1+B}{CZ_1+D}</script><p>$Z_1$为输出端负载。</p>
 <p>$[S]$ 与 $[\bar{z}][\bar{y}]$ 的转换, $[S]$ 与 $[a]​$ 的转换：</p>
 <p><img src="/assets/1561364910797.png" alt="1561364910797"></p>
 <p><img src="/assets/1561337784500.png" alt="1561337784500"></p>
+<p>短截线 $[A]$： &lt;开路&gt;</p>
+<p>$U(z)=e^{j\beta z}+e^{-j\beta z}​$</p>
+<p>$I(z)=\frac{e^{j\beta z}}{Z_0}-\frac{e^{-j\beta z}}{Z_0}$</p>
+<p>&lt;短路&gt;</p>
+<p>$U(z)=e^{j\beta z}-e^{-j\beta z}$</p>
+<p>$I(z)=\frac{e^{j\beta z}}{Z_0}+\frac{e^{-j\beta z}}{Z_0}$</p>
 <hr>
 <h1 id="第5章-微波元器件"><a href="#第5章-微波元器件" class="headerlink" title="第5章 微波元器件"></a>第5章 微波元器件</h1><h2 id="5-1-连接匹配元件"><a href="#5-1-连接匹配元件" class="headerlink" title="5.1 连接匹配元件"></a>5.1 连接匹配元件</h2><p>三大类：</p>
 <ol>
-<li>终端负载元件：连接在传输系统终端实现终端短路、匹配或标准失陪等功能</li>
+<li>终端负载元件：连接在传输系统终端实现终端短路、匹配或标准失配等功能</li>
 <li>微波连接原件：将两个微波系统按一定的要求连接起来</li>
 <li>阻抗匹配元器件：调整传输系统与终端之间阻抗匹配</li>
 </ol>
@@ -832,7 +842,7 @@ Z_{in}=\frac{AZ_1+B}{CZ_1+D}</script><p>$Z_1$为输出端负载。</p>
 <li><p>波导接头：接触不良时，接触电阻大，纵向电流经过连接处时会产生很大大功率损耗（扼流法兰接头利用 $\lambda / 4​$ 阻抗变换解决）；电磁波在接触不良时反射很大。</p>
 </li>
 <li><p>理想衰减器：</p>
-<p>&lt;互易&gt;</p>
+<p>&lt;互易&gt; 本来是 $e^{- \gamma l}=e^{-(\alpha+j \beta)l}​$ ，因 $\alpha \gg \beta​$ </p>
 <script type="math/tex; mode=display">
 [S_\alpha]=
 \left[
@@ -843,7 +853,7 @@ Z_{in}=\frac{AZ_1+B}{CZ_1+D}</script><p>$Z_1$为输出端负载。</p>
 \right]</script></li>
 </ul>
 <ul>
-<li>理想相移元件：<script type="math/tex; mode=display">
+<li>理想相移元件：本来是 $e^{-\gamma l}=e^{-(\alpha+j \beta)l}$ ，因 $\alpha =0$ ，$\theta=\beta l = \frac{2\pi}{\lambda_g}l$ <script type="math/tex; mode=display">
 [S_\theta]=
 \left[
  \begin{matrix}
@@ -852,9 +862,19 @@ Z_{in}=\frac{AZ_1+B}{CZ_1+D}</script><p>$Z_1$为输出端负载。</p>
   \end{matrix} 
 \right]</script></li>
 </ul>
+<ul>
+<li>理想隔离器：<script type="math/tex; mode=display">
+[S]=
+\left[
+ \begin{matrix}
+   0 & 0\\
+   1 & 0
+  \end{matrix} 
+\right]</script></li>
+</ul>
 <h3 id="阻抗匹配元件"><a href="#阻抗匹配元件" class="headerlink" title="阻抗匹配元件"></a>阻抗匹配元件</h3><ul>
 <li>螺钉调配器：螺钉是低功率微波装置中普遍采用的调谐和匹配元件，它是在波导宽边中央插入可调螺钉作为调配元件。多个相距一定距离的螺钉可构成螺钉阻抗调配器。（支节调配原理）</li>
-<li>多阶梯阻抗变换器：组成多个 $\lambda / 4$ 阻抗匹配器，从而扩宽频带。</li>
+<li>多阶梯阻抗变换器：组成多个 $\lambda / 4​$ 阻抗匹配器，从而扩宽频带。</li>
 </ul>
 <h2 id="5-2-功率分配与合成器件"><a href="#5-2-功率分配与合成器件" class="headerlink" title="5.2 功率分配与合成器件"></a>5.2 功率分配与合成器件</h2><p>两大类：</p>
 <ol>
@@ -864,18 +884,20 @@ Z_{in}=\frac{AZ_1+B}{CZ_1+D}</script><p>$Z_1$为输出端负载。</p>
 <p>这些元件一般为线性多端口互易网络。</p>
 <h3 id="定向耦合器"><a href="#定向耦合器" class="headerlink" title="定向耦合器"></a>定向耦合器</h3><p><img src="/assets/1561356869468.png" alt="1561356869468"></p>
 <p>定向耦合器是四端口网络，端口“①”为输入端，端口“②”为直通输出端，端口“③”为耦合输出端，端口“④”为隔离端。“①、②”是主线；“③、④”是副线。</p>
+<p>p.s.: 耦合指从主线上取能量，例如从天线发射的主线上取少部分能量进行监测。</p>
 <ul>
-<li><p>耦合度：</p>
-<script type="math/tex; mode=display">
+<li>耦合度：<script type="math/tex; mode=display">
 C=10\lg\frac{P_1}{P_3}=20\lg\frac{1}{|S_{13}|}\ dB</script></li>
-<li><p>隔离度：</p>
-<script type="math/tex; mode=display">
+</ul>
+<ul>
+<li>隔离度：<script type="math/tex; mode=display">
 I=10\lg\frac{P_1}{P_4}=20\lg\frac{1}{|S_{14}|}\ dB</script></li>
 </ul>
 <ul>
-<li><p>定向度：</p>
-<script type="math/tex; mode=display">
+<li>定向度：<script type="math/tex; mode=display">
 D=10\lg\frac{P_3}{P_4}=20\lg|\frac{S_{13}}{S_{14}}|\ dB</script></li>
+</ul>
+<ul>
 <li><p>输入驻波比：</p>
 <p>端口“②、③、④”都接匹配负载时的输入端口“①”的驻波比</p>
 <script type="math/tex; mode=display">
@@ -898,7 +920,7 @@ D=10\lg\frac{P_3}{P_4}=20\lg|\frac{S_{13}}{S_{14}}|\ dB</script></li>
 \right]</script><p>例如 $S_{41}=\frac{b_4}{a_1}= -j​$ 即从①输入在④端口有输出且相位滞后$-90^\circ​$：两个方向一个为 $-90^\circ​$ ， 一个为 $-450^\circ​$ ，同向叠加且滞后 $-90^\circ​$ 。</p>
 <h3 id="波导分支器"><a href="#波导分支器" class="headerlink" title="波导分支器"></a>波导分支器</h3><p>例：E - T 分支</p>
 <p><img src="/assets/1561359311512.png" alt="1561359311512"></p>
-<p>其轴线平行于主波导的 $TE_{10}$ 模的电场方向。当微波信号从端口“③”输入时, 平均地分给端口“①、②”, 但两端口是等幅反相的; 当信号从端口“①、②”反相激励时, 则在端口“③”合成输出最大; 而当同相激励端口“①、②”时, 端口“③”将无输出。</p>
+<p>其轴线平行于主波导的 $TE_{10}​$ 模的电场方向。当微波信号从端口“③”输入时, 平均地分给端口“①、②”, 但两端口是等幅反相的; 当信号从端口“①、②”反相激励时, 则在端口“③”合成输出最大; 而当同相激励端口“①、②”时, 端口“③”将无输出。</p>
 <p>例：H - T 分支</p>
 <p><img src="/assets/1561359384462.png" alt="1561359384462"></p>
 <p>其轴线平行于主波导的 $TE_{10}$ 模的磁场方向。当微波信号从端口“③”输入时, 平均地分给端口“①、②”, 这两端口得到的是等幅同相的 $TE_{10}​$ 波; 当在端口“①、②”同相激励时, 端口“③”合成输出最大, 而当反相激励时端口“③”将无输出。</p>
