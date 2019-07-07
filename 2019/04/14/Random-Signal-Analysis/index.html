@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://michaelxiu.com/assets/OFDM.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1560249863674.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/cminmax.PNG">
-<meta property="og:updated_time" content="2019-07-07T05:58:26.996Z">
+<meta property="og:updated_time" content="2019-07-07T06:49:40.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -624,7 +624,7 @@ R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><font face="Segoe Print" color="#D87
 </ul>
 <h2 id="Expectation-and-autocorrelation"><a href="#Expectation-and-autocorrelation" class="headerlink" title="Expectation and autocorrelation"></a>Expectation and autocorrelation</h2><ul>
 <li>Expectation: $E[Y(t)] = m_X\int\limits_{-\infty}^{+\infty}h(\tau)d\tau = m_Y $</li>
-<li>Autocorrelation: $R_Y(\tau)=R_X(\tau)\ast h(-\tau) \ast h(\tau)$ [Tips: $h(\tau)$ is from output so autocorrelation (2nd) of Y has 2 $h(\tau)​$]</li>
+<li>Autocorrelation: $R_Y(\tau)=R_X(\tau)\ast h(-\tau) \ast h(\tau)​$ [Tips: $h(\tau)​$ is from output so autocorrelation (2nd) of Y has 2 $h(\tau)​$]</li>
 <li>Cross-correlation: $R_{XY}(\tau)=R_X(\tau) \ast h(\tau)​$</li>
 </ul>
 <font face="Segoe Print" color="#D87093" size="4">class note:</font>
@@ -645,13 +645,13 @@ R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><font face="Segoe Print" color="#D87
 <p><br><font face="Segoe Print" color="#4CABEE" size="3">Wired Channel:</font> It is relevant to transmission bandwidth and signal bandwidth. If we know $h(t)$, we can design a reverse system for equalization.</p>
 <p><br><font face="Segoe Print" color="#4CABEE" size="3">Wireless Channel:</font> It is irrelevant to bandwidth and allows a wide bandwidth. It is relevant to multipath propagation which will bring ISI in a high speed. Here there are 3 methods to estimate this channel:</p>
 <ul>
-<li><strong>Training sequence</strong> (pilot sequence): [know input &amp; output | Cross-correlation] We know $R_{XY}(\tau)$ and $R_X(\tau)$ of $R_{XY}(\tau)=R_X(\tau)*h(\tau)$, it is easy to gain $h(\tau)​$. <a href="https://en.wikipedia.org/wiki/Channel_state_information" target="_blank" rel="noopener">Channel state information</a> </li>
+<li><strong>Training sequence</strong> (pilot sequence): [know input &amp; output | Cross-correlation] We know $R_{XY}(\tau)$ and $R_X(\tau)$ of $R_{XY}(\tau)=R_X(\tau)*h(\tau)$, it is easy to gain $h(\tau)$ with amplitude and phase information. <a href="https://en.wikipedia.org/wiki/Channel_state_information" target="_blank" rel="noopener">Channel state information</a> </li>
 </ul>
 <p><br><font face="Segoe Print" color="#FFC300" size="3">  White Assumption:</font> </p>
 <ul>
-<li><p><strong>Blind channel estimation</strong>: [know output | Cross-correlation] Assuming that $x(t)$ is <em>i.i.d.</em> and 2nd white. Thus, $R_X=\delta(t)$. Based on the definition of cross-correlation, we can estimate the $|\hat{H}(\omega)| = c |H(\omega)|$, which is only the amplitude spectrum.</p>
+<li><p><strong>Blind channel estimation</strong>: [know output | Cross-correlation] Assuming that $x(t)$ is <em>i.i.d.</em> and 2nd white. Thus, $R_X=\delta(t)$. Based on the definition of cross-correlation $R_Y(\tau)=R_X(\tau)\ast h(-\tau) \ast h(\tau)$, we can estimate the $|\hat{H}(\omega)| = c |H(\omega)|​$, which is only the amplitude spectrum.</p>
 </li>
-<li><p><strong>Model based estimation</strong>: [know output | PSD] Assuming that $x(t)$ is <em>i.i.d.</em> and 2nd white. Then we have  $S_X(\omega)$ and $S_Y(\omega)$ which is short in most cases. There are several models to gain long but varied $|\hat{H}(\omega)|$</p>
+<li><p><strong>Model based estimation</strong>: [know output | PSD] Assuming that $x(t)$ is <em>i.i.d.</em> and 2nd white. Then we have  $S_X(\omega)$ and $S_Y(\omega)$ which is short in most cases. There are several models to gain long but varied $|\hat{H}(\omega)|​$, which is only the amplitude spectrum.</p>
 </li>
 </ul>
 <font face="Segoe Print" color="#FFC300" size="3">  LTI system models for random signals – AR, MA and ARMA models：</font> 
