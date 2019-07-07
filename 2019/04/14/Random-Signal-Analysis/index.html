@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://michaelxiu.com/assets/OFDM.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1560249863674.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/cminmax.PNG">
-<meta property="og:updated_time" content="2019-07-07T06:49:40.919Z">
+<meta property="og:updated_time" content="2019-07-07T11:22:22.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -344,7 +344,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  50 mins
+                  45 mins
                 </span>
               
             </div>
@@ -808,7 +808,8 @@ M\ positive\ semidefinite \Leftrightarrow {\displaystyle x^{\textsf {T}}Mx\geq 0
 <script type="math/tex; mode=display">
 \boldsymbol{\hat{\theta}}=(\mathbf{H}^T \mathbf C^{-1} \mathbf{H})^{-1}\mathbf{H}^T \mathbf C^{-1} \mathbf x</script><p>The biggest difference with “Linear model · white noise” is that the estimator requires statistics of the noise. The covariance matrix of $\boldsymbol{\hat{\theta}}$ is</p>
 <script type="math/tex; mode=display">
-\mathbf{C_{\boldsymbol{\hat{\theta}}}}=(\mathbf{H}^T \mathbf C^{-1} \mathbf{H})^{-1}.</script><font face="Segoe Print" color="#D87093" size="4">class note: Serial channel estimation using linear model</font>  
+\mathbf{C_{\boldsymbol{\hat{\theta}}}}=(\mathbf{H}^T \mathbf C^{-1} \mathbf{H})^{-1}.</script><p>For the general linear model the MVU estimator is efficient in that it attains the CRLB. </p>
+<font face="Segoe Print" color="#D87093" size="4">class note: Serial channel estimation using linear model</font>  
 
 <p>This method is based on <strong>Training sequence</strong>.</p>
 <p><img src="/assets/1559615726536.png" alt="1559615726536"></p>
@@ -914,7 +915,7 @@ h_{L-1}
 <script type="math/tex; mode=display">
 \hat{\theta}_{MAP}\in \{ \mathop{\arg\max}_{\theta}p(\theta\ |\ \mathbf{x}) \}</script><p>Bayes’ theorem:</p>
 <script type="math/tex; mode=display">
-p(\theta\ |\ x_1,x_2,...,x_n)=\frac{p(x_1, x_2,...,x_n\ | \ \theta)\ > p(\theta)}{p(x_1, x_2,...,x_n)}</script><p>when the prior $p(\theta)$ is a uniform distribution, <em>MAP</em> is the same as <em>MLE</em>.</p>
+p(\theta\ |\ x_1,x_2,...,x_n)=\frac{p(x_1, x_2,...,x_n\ | \ \theta)\  p(\theta)}{p(x_1, x_2,...,x_n)}</script><p>when the prior $p(\theta)​$ is a uniform distribution, <em>MAP</em> is the same as <em>MLE</em>.</p>
 </blockquote>
 <p><strong>Theorem 1 (Asymptotic Properties of the MLE):</strong></p>
 <p>From the asymptotic distribution, the MLE is seen to be asymptotically unbiased and asymptotically attains the CRLB. It is therefore <strong><em>asymptotically efficient</em></strong>, and hence <strong><em>asymptotically optimal</em></strong>.</p>
@@ -939,37 +940,54 @@ J(\theta)=\sum_{n=0}^{N-1}(x[n]-\theta h[n])^2.</script><p>A minimization is rea
 <font face="Segoe Print" color="#D87093" size="4">class note: Conclusion of estimation methods</font>
 
 <ul>
-<li>CRLB:<ul>
-<li>Condition:<ul>
-<li>know the PDF $p(\mathbf{x};\theta)$</li>
-<li>the “regularity” condition $E[\frac{\partial \ \ln p(\mathbf{x};\theta)}{\partial \theta}]=0 \ \ \ \ for\ all\ \theta$</li>
+<li><p>CRLB:</p>
+<ul>
+<li><p>Condition:</p>
+<ul>
+<li>know the PDF $p(\mathbf{x};\theta)​$</li>
+<li>the “regularity” condition $E[\frac{\partial \ \ln p(\mathbf{x};\theta)}{\partial \theta}]=0 \ \ \ \ for\ all\ \theta​$</li>
 </ul>
 </li>
-<li>Estimator: MVU</li>
+<li><p>Estimator: if $ \frac{\partial \ \ln p(\mathbf{x};\theta)}{\partial \theta}=I(\theta)(g(\mathbf{x})-\theta)) $</p>
+<ul>
+<li>Scalar parameter: efficient (MVU)</li>
+<li>Vector parameter with full rank: efficient (MVU)</li>
+<li>Vector parameter without full rank: inefficient</li>
+<li>Scalar / Vector parameter · transformation: asymptotically efficient </li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <ul>
-<li>Linear Model:<ul>
-<li>Condition:<ul>
+<li><p>Linear Model:</p>
+<ul>
+<li><p>Condition:</p>
+<ul>
 <li>know the PDF $p(\mathbf{x};\theta)​$</li>
 <li>the distribution is gaussian</li>
-<li>can use the form: $\mathbf x = \mathbf H \boldsymbol \theta + \mathbf w$</li>
+<li>can use the form: $\mathbf x = \mathbf H \boldsymbol \theta + \mathbf w​$</li>
 </ul>
 </li>
-<li>Estimator: MVU</li>
+<li><p>Estimator: </p>
+<ul>
+<li>specific / general: efficient (MVU)</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <ul>
-<li>MLE:<ul>
-<li>Condition:<ul>
+<li><p>MLE:</p>
+<ul>
+<li><p>Condition:</p>
+<ul>
 <li>know the PDF $p(\mathbf{x};\theta)$</li>
 </ul>
 </li>
 <li>Estimator: <ul>
-<li>if  $p(\mathbf{x};\theta)$ is gaussian, then MVU</li>
-<li>if  $p(\mathbf{x};\theta)$ is not gaussian, then asymptotically MVU</li>
+<li>if  $p(\mathbf{x};\theta)​$ is gaussian, then MVU</li>
+<li>if  $p(\mathbf{x};\theta)$ is not gaussian, then asymptotically efficient and asymptotically MVU</li>
 </ul>
 </li>
 </ul>
@@ -982,8 +1000,8 @@ J(\theta)=\sum_{n=0}^{N-1}(x[n]-\theta h[n])^2.</script><p>A minimization is rea
 </ul>
 </li>
 <li>Estimator: <ul>
-<li>if  $p(\mathbf{x};\theta)​$ is gaussian, then MVU</li>
-<li>if  $p(\mathbf{x};\theta)$ is not gaussian, then whether it’s MVU is unclear because we don’t have statistics of $\mathbf{x}$ </li>
+<li>if  $p(\mathbf{x};\theta)$ is gaussian, then efficient (MVU)</li>
+<li>if  $p(\mathbf{x};\theta)​$ is not gaussian, then whether it’s MVU is unclear because we don’t have statistics of $\mathbf{x}​$ </li>
 </ul>
 </li>
 </ul>
