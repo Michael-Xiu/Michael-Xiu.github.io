@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://michaelxiu.com/assets/OFDM.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1560249863674.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/cminmax.PNG">
-<meta property="og:updated_time" content="2019-06-28T15:20:39.233Z">
+<meta property="og:updated_time" content="2019-07-07T05:58:26.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -488,7 +488,7 @@
 </blockquote>
 <p>In short, a stochastic process has two dimensions - <strong>Time</strong> and <strong>Value</strong>. At a specific time, the value is a random variable. This random variable may be determined by time $t$, which means at another specific time, the random variable may differ. </p>
 <p>P.S. Probability distribution and numerical characteristics describe the random variable in the <em>Value</em> axis. There is no random variables along the <em>Time</em> axis but properties of random variables change along the <em>Time</em> axis. <em>1D</em> means one random variable and <em>2D</em> means two random variables in different times.</p>
-<h3 id="Probability-distribution-1"><a href="#Probability-distribution-1" class="headerlink" title="Probability distribution"></a>Probability distribution</h3><p>In 1D <em>(one variable $x$ given two specific time $t$)</em>, </p>
+<h3 id="Probability-distribution-1"><a href="#Probability-distribution-1" class="headerlink" title="Probability distribution"></a>Probability distribution</h3><p>In 1D <em>(one variable $x$ given one specific time $t$)</em>, </p>
 <ul>
 <li><p><strong>CDF</strong>: $ F_{X}(x_1,t_1)=P(X(t_1)\leq x_1)$</p>
 </li>
@@ -533,12 +533,12 @@ f_X(x_1,x_2,...,x_n;t_1,t_2,...,t_n)=f_X(x_1,x_2,...,x_n;t_1+\tau,t_2+\tau,...,t
 </blockquote>
 <h3 id="Weakly-stationary-process"><a href="#Weakly-stationary-process" class="headerlink" title="Weakly stationary process"></a>Weakly stationary process</h3><script type="math/tex; mode=display">
 E[X(t)]=m_X(t)=m_X</script><script type="math/tex; mode=display">
-E_X[t_1,t_2] = R_X(\tau)</script><script type="math/tex; mode=display">
+R_X[t_1,t_2] = R_X(\tau)</script><script type="math/tex; mode=display">
 E[X^2(t)]<\infty</script><p>Weakly stationary process is 2-nd stationary. In contrast, strictly stationary process is n-th stationary.</p>
 <h3 id="Ergodicity"><a href="#Ergodicity" class="headerlink" title="Ergodicity"></a>Ergodicity</h3><ul>
 <li><p>cond1: $\overline{X(t)} = \lim_{T \rightarrow \infty}\frac{1}{2T}\int\limits_{-T}^{T}X(t)dt\ \ = \ \ E[X(t)]=m_X​$</p>
 </li>
-<li><p>cond2: $\overline{X(t)X(t+\tau)} = \lim_{T \rightarrow \infty}\frac{1}{2T}\int\limits_{-T}^{T}X(t)X(t+\tau)dt\ \ = \ \ E[X(t)X(t+\tau)]=R_X(\tau)$</p>
+<li><p>cond2: $\overline{X(t)X(t+\tau)} = \lim_{T \rightarrow \infty}\frac{1}{2T}\int\limits_{-T}^{T}X(t)X(t+\tau)dt\ \ = \ \ E[X(t)X(t+\tau)]=R_X(\tau)​$</p>
 </li>
 <li><p>cond3: Weakly stationary process</p>
 </li>
@@ -663,15 +663,16 @@ R_N(\tau)=\frac{N_0}{2}\delta(\tau)</script><font face="Segoe Print" color="#D87
 <li><strong>Autoregressive model (<a href="https://en.wikipedia.org/wiki/Autoregressive_model" target="_blank" rel="noopener">AR</a>) </strong>: Sum of past $x[n-k]$ + current source input $\omega [n]$</li>
 </ul>
 <script type="math/tex; mode=display">
-x[n]+a_1x[n-1]+a_2x[n-2]+...+a_Nx[n-N]=\omega[n]</script><p>where $a_i, … ,a_N​$ are the parameters of the model and $\omega [n]​$ is the source input white noise. </p>
+x[n]+a_1x[n-1]+a_2x[n-2]+...+a_Nx[n-N]=\omega[n]</script><p>where $a_i, … ,a_N$ are the parameters of the model and $\omega [n]$ is the source input white noise. </p>
 <p>The frequency response of the IIR filter is well known: <strong><em>$H(e^{jω})​$ is an all-poles system</em></strong></p>
 <script type="math/tex; mode=display">
 H(e^{j\omega})=\frac{1}{\sum_{k=0}^{N}a_ke^{-jk\omega}}, \ a_0=1</script><p>The PSD of $x[n]$ is:</p>
 <p><img src="/assets/1561431789698.png" alt="1561431789698"></p>
 <ul>
 <li><strong>Moving-average model (<a href="https://en.wikipedia.org/wiki/Moving-average_model" target="_blank" rel="noopener">MA</a>) </strong>: Sum of past and current source inputs <em>i.i.d.</em> $\omega[n-k]$ <script type="math/tex; mode=display">
-x[n]= b_0\omega[n]+b_1\omega[n-1]+b_2\omega[n-2]+...+b_M\omega[n-M]</script>where the $b_0,…,b_M$ are the parameters of the model and the $\omega[n], \omega[n-1], …, \omega[n-M]​$ are <em>i.i.d.</em> source inputs.  <a href="https://www.youtube.com/watch?v=lUhtcP2SUsg" target="_blank" rel="noopener">video</a></li>
+x[n]= b_0\omega[n]+b_1\omega[n-1]+b_2\omega[n-2]+...+b_M\omega[n-M]</script></li>
 </ul>
+<p>where the $b_0,…,b_M$ are the parameters of the model and the $\omega[n], \omega[n-1], …, \omega[n-M]​$ are <em>i.i.d.</em> source inputs.  <a href="https://www.youtube.com/watch?v=lUhtcP2SUsg" target="_blank" rel="noopener">video</a></p>
 <p>The frequency response of the FIR filter is well known: <strong><em>$H(e^{jω})​$ is an all-zeros system</em></strong></p>
 <script type="math/tex; mode=display">
 H(e^{j\omega})=\sum_{k=0}^{M}b_k e^{-jk\omega}</script><p>The PSD of $x[n]$ is:</p>
