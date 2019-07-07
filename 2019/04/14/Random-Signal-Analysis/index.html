@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://michaelxiu.com/assets/OFDM.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1560249863674.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/cminmax.PNG">
-<meta property="og:updated_time" content="2019-07-07T11:22:22.998Z">
+<meta property="og:updated_time" content="2019-07-07T13:06:18.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Random Signal Analysis">
 <meta name="twitter:description" content="This is an updating note on random signal analysis.">
@@ -415,7 +415,7 @@
 </blockquote>
 <p>In 2D case:</p>
 <ul>
-<li>The <em>(n+k)</em>-th <strong>mixed ordinary moment</strong>:  $m_{nk}=E[X^nY^k]$; when n=1, k=1, called relevant moment $R_{XY}$ .</li>
+<li>The <em>(n+k)</em>-th <strong>mixed ordinary moment</strong>:  $m_{nk}=E[X^nY^k]​$; when n=1, k=1, called relevant moment $R_{XY}​$ .</li>
 <li>The <em>(n+k)</em>-th <strong>mixed central moment</strong>:  $\mu_{nk}=E\{(X-E[X])^n(Y-E[Y])^k\}$; when n=1, k=1, called covariance $C_{XY}$</li>
 <li><strong>Correlation Coefficient</strong>: $r_{X,Y}=\frac{cov(X,Y)}{\sigma_{X}\sigma_{Y}}$, where $cov(X,Y)$ is the 2nd mixed central moment called covariance and $\sigma​$ is standard deviations. It is a measure of the linear correlation between two variables.<br><img src="/assets/1555225278092.png" alt="1555225278092"></li>
 </ul>
@@ -428,11 +428,11 @@
 \textbf{X}\ and\ \textbf{Y}\ are\ statistically\ independent \Leftrightarrow f_{XY}(x,y)=f_{X}(x)\bullet f_{Y}(y)</script></li>
 </ul>
 <ul>
-<li><strong>Irrelevance</strong> (In short of linear irrelevance): $r_{XY}=0​$. We gain $R_{XY}=E[XY]=E[X]E[Y]​$.</li>
+<li><strong>Irrelevance</strong> (In short of linear irrelevance): $r_{XY}=0$. We gain $R_{XY}=E[XY]=E[X]E[Y]​$.  (2nd central moment = 0)</li>
 </ul>
 <p>Generally speaking, Statistical Independence $\Rightarrow​$ Irrelevance. As for gaussian random variables, Statistical Independence $\Leftrightarrow​$ Irrelevance.</p>
 <ul>
-<li><strong>Orthogonality</strong>: $R_{XY}=E[XY]=0$</li>
+<li><strong>Orthogonality</strong>: $R_{XY}=E[XY]=0$ (2nd ordinary moment = 0)</li>
 </ul>
 <hr>
 <h2 id="Characteristic-function"><a href="#Characteristic-function" class="headerlink" title="Characteristic function"></a>Characteristic function</h2><blockquote>
@@ -752,9 +752,9 @@ var(\hat{\theta})\geq \frac{1}{-E[\frac{\partial^2 \ \ln p(\mathbf{x};\theta)}{\
 <script type="math/tex; mode=display">
 I(\theta)=-E[\frac{\partial^2 \ \ln p(\mathbf{x};\theta)}{\partial \theta^2}]</script><p>The more information, the lower the bound.</p>
 <p>3)</p>
-<p><em>Furthermore, an unbiased estimator may be found that attains the bound for all $\theta$ if and only if</em> </p>
+<p><em>Furthermore, an unbiased estimator may be found that attains the bound for all $\theta​$ if and only if</em> </p>
 <script type="math/tex; mode=display">
-\frac{\partial \ \ln p(\mathbf{x};\theta)}{\partial \theta}=I(\theta)(g(\mathbf{x})-\theta))</script><p><em>for some functions $g$ and $I$. That estimator, which is the MVU estimator, is $\hat{\theta}=g(\mathbf{x})$, and the minimum variance is $1/I(\theta)$.</em></p>
+\frac{\partial \ \ln p(\mathbf{x};\theta)}{\partial \theta}=I(\theta)(g(\mathbf{x})-\theta)</script><p><em>for some functions $g$ and $I$. That estimator, which is the MVU estimator, is $\hat{\theta}=g(\mathbf{x})$, and the minimum variance is $1/I(\theta)$.</em></p>
 <p><img src="/assets/1558406463923.png" alt="1558406463923"></p>
 <h2 id="Scalar-parameter-·-transformation"><a href="#Scalar-parameter-·-transformation" class="headerlink" title="Scalar parameter · transformation"></a>Scalar parameter · transformation</h2><p><strong>Situation: The parameter we wish to estimate is a function of some more fundamental parameter.</strong></p>
 <p>Although efficiency is reserved only over linear transformations, it is approximately maintained over nonlinear transformations <strong>if the data record is large enough (Asymptotic efficiency)</strong>. This has great practical significance in that we are frequently interested in estimating functions of parameters.</p>
@@ -786,7 +786,7 @@ M\ positive\ semidefinite \Leftrightarrow {\displaystyle x^{\textsf {T}}Mx\geq 0
 <p>3)</p>
 <p><em>Furthermore, an unbiased estimator may be found that attains the bound in that $\mathbf{C_{\boldsymbol{ \hat{\theta}}}}=\mathbf{I}^{-1}(\boldsymbol {\theta})​$ if and only if</em></p>
 <script type="math/tex; mode=display">
-\frac{\partial \ \ln p(\mathbf{x};\boldsymbol \theta)}{\partial \boldsymbol \theta}=\mathbf{I}(\boldsymbol {\theta})(\mathbf g(\mathbf{x})-\boldsymbol \theta))</script><p><em>for some p-dimensional function $\mathbf g$ and some $p \times p$ matrix $\mathbf I$. That estimator, which is the MVU estimator, is $\boldsymbol {\hat {\theta}} = \mathbf g(\mathbf{x})$, and its covariance matrix is $\mathbf{I}^{-1}(\boldsymbol {\theta})$.</em></p>
+\frac{\partial \ \ln p(\mathbf{x};\boldsymbol \theta)}{\partial \boldsymbol \theta}=\mathbf{I}(\boldsymbol {\theta})(\mathbf g(\mathbf{x})-\boldsymbol \theta)</script><p><em>for some p-dimensional function $\mathbf g​$ and some $p \times p​$ matrix $\mathbf I​$. That estimator, which is the MVU estimator, is $\boldsymbol {\hat {\theta}} = \mathbf g(\mathbf{x})​$, and its covariance matrix is $\mathbf{I}^{-1}(\boldsymbol {\theta})​$.</em></p>
 <h2 id="Vector-parameter-·-transformation"><a href="#Vector-parameter-·-transformation" class="headerlink" title="Vector parameter · transformation"></a>Vector parameter · transformation</h2><p>Similar to “Scalar parameter · transformation”.</p>
 <hr>
 <h1 id="Linear-Model"><a href="#Linear-Model" class="headerlink" title="Linear Model"></a>Linear Model</h1><font face="Segoe Print" color="#D87093" size="4">class note: why we need Linear Model?</font>  
@@ -948,7 +948,7 @@ J(\theta)=\sum_{n=0}^{N-1}(x[n]-\theta h[n])^2.</script><p>A minimization is rea
 <li>the “regularity” condition $E[\frac{\partial \ \ln p(\mathbf{x};\theta)}{\partial \theta}]=0 \ \ \ \ for\ all\ \theta​$</li>
 </ul>
 </li>
-<li><p>Estimator: if $ \frac{\partial \ \ln p(\mathbf{x};\theta)}{\partial \theta}=I(\theta)(g(\mathbf{x})-\theta)) $</p>
+<li><p>Estimator: if $ \frac{\partial \ \ln p(\mathbf{x};\theta)}{\partial \theta}=I(\theta)(g(\mathbf{x})-\theta) $</p>
 <ul>
 <li>Scalar parameter: efficient (MVU)</li>
 <li>Vector parameter with full rank: efficient (MVU)</li>
