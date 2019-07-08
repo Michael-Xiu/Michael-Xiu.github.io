@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://michaelxiu.com/assets/1561703616981.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1561706931410.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1561707102972.png">
-<meta property="og:updated_time" content="2019-07-08T10:55:49.982Z">
+<meta property="og:updated_time" content="2019-07-08T12:24:31.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微波技术与天线">
 <meta name="twitter:description" content="Welcome">
@@ -398,8 +398,8 @@
 <p>传输线单位长串联阻抗：$Z=R+j\omega L$  &lt;电感是串联的&gt;</p>
 <p>传输线单位长并联导纳：$Y=G+j\omega C​$  &lt;电容是并联的&gt;</p>
 <p>解：</p>
-<p>$U(z)=U_+(z)+U_-(z)=A_1e^{jkz}+A_2e^{-jkz}​$</p>
-<p>$I(z)=I_+(z)+I_-(z)=\frac{1}{Z_0}({A_1}e^{jkz}+A_2e^{-jkz})​$</p>
+<p>$U(z)=U_+(z)+U_-(z)=A_1e^{jkz}+A_2e^{-jkz}$ 定义 $z=0$ 在负载，正方向向左，向右传播为 $e^{jkz}$ 。</p>
+<p>$I(z)=I_+(z)+I_-(z)=\frac{1}{Z_0}({A_1}e^{jkz}-A_2e^{-jkz})​$</p>
 <p>传输线上电压和电流以波的形式传播，在任一点的电压或电流均由沿 $-z$ 方向传播的行波（入射波）和沿 $+z$ 方向传播的行波（反射波）叠加而成。</p>
 <p>工作参数：</p>
 <ul>
@@ -437,7 +437,7 @@ Z_{in}(z)=Z_0\frac{Z_l+jZ_0tan(\beta z)}{Z_0+jZ_l tan(\beta z)}</script><p>$Z_0�
 <ul>
 <li>反射系数：终端反射系数：<script type="math/tex; mode=display">
 \Gamma_1=\frac{Z_l-Z_0}{Z_l+Z_0}=|\Gamma_1|e^{j \phi_l}</script>任意点反射系数可用终端反射系数表示为：<script type="math/tex; mode=display">
-\Gamma (z)=|\Gamma_1|e^{j(\phi_l-2\beta z)}  \ \ <从终端向传输线为-z方向，具有重复性></script>对均匀无耗传输线来说，任意点反射系数大小相等，<strong>只有相位具有$\lambda /2​$重复性</strong>。当$Z_l=Z_0​$，负载终端无反射，称为负载匹配。</li>
+\Gamma (z)=|\Gamma_1|e^{j(\phi_l-2\beta z)}  \ \ <从终端向传输线为z方向，具有重复性></script>对均匀无耗传输线来说，任意点反射系数大小相等，<strong>只有相位具有$\lambda /2​$重复性</strong>。当$Z_l=Z_0​$，负载终端无反射，称为负载匹配。</li>
 </ul>
 <ul>
 <li>输入阻抗与反射系数的关系：<script type="math/tex; mode=display">
@@ -472,7 +472,7 @@ Z_{max}=\frac{\lambda }{4\pi}\phi_l+n\frac{\lambda}{2}，n=0,...</script><p>波�
 <script type="math/tex; mode=display">
 R_{max}=Z_0\rho</script><p>波节点位置为：</p>
 <script type="math/tex; mode=display">
-Z_{min}=\frac{\lambda }{4\pi}\phi_1+(2n\pm 1)\frac{\lambda}{4}，n=0,...</script><p>波节点阻抗为<strong>纯电阻</strong>：</p>
+Z_{min}=\frac{\lambda }{4\pi}\phi_1 \pm n\frac{\lambda}{2} \pm \frac{\lambda}{4}，n=0,...</script><p>波节点阻抗为<strong>纯电阻</strong>：</p>
 <script type="math/tex; mode=display">
 R_{min}=\frac{Z_0}{\rho}</script></li>
 </ul>
@@ -506,15 +506,13 @@ L_{i}=10\ lg \frac{P_{in}}{P_t}\ dB = （无耗）10\lg \frac{1}{1-|\Gamma_1|^2}
 <ul>
 <li><p>$\mathbf{\lambda / 4}$ <strong>阻抗变换器法</strong>：</p>
 <ul>
-<li><p>当负载阻抗为纯电阻$R_1$且其值与传输线特性阻抗$Z_0$不相等时，可在两者之间加接一节长为$\lambda / 4$、特性阻抗为$Z_{01}$的传输线实现匹配。由无耗传输线输入阻抗公式可得：$Z_{01}=\sqrt{Z_0R_1}$。</p>
+<li><p>当负载阻抗为纯电阻$R_1​$且其值与传输线特性阻抗$Z_0​$不相等时，可在两者之间加接一节长为$\lambda / 4​$、特性阻抗为$Z_{01}​$的传输线实现匹配。由无耗传输线输入阻抗公式可得：$Z_{01}=\sqrt{Z_0R_1}​$。</p>
 <p><img src="/assets/1558246612898.png" alt="1558246612898"></p>
 </li>
 <li><p>当负载是复阻抗，则先在负载与变换器之间加一段传输线，使变换器的终端为纯电阻，然后用$\lambda/4$阻抗匹配器实现匹配。</p>
 <p><img src="/assets/1558246699764.png" alt="1558246699764"></p>
 </li>
 </ul>
-</li>
-<li><p>（支节调配原理）</p>
 </li>
 </ul>
 <hr>
@@ -560,8 +558,8 @@ L_{i}=10\ lg \frac{P_{in}}{P_t}\ dB = （无耗）10\lg \frac{1}{1-|\Gamma_1|^2}
 </thead>
 <tbody>
 <tr>
-<td>波数 $k$ ： $k = \frac{2\pi}{\lambda}​$，（自由空间）每单位长度波的数量</td>
-<td>自由空间波长：$\lambda = \frac{2\pi}{k}$</td>
+<td>波数 $k$ ： $k = \frac{2\pi}{\lambda}$，（自由空间）每单位长度波的数量</td>
+<td>自由空间波长（工作波长）：$\lambda = \frac{2\pi}{k}$</td>
 </tr>
 <tr>
 <td>截止波数 $k_c$</td>
