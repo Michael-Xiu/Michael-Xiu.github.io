@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://michaelxiu.com/assets/1561703616981.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1561706931410.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1561707102972.png">
-<meta property="og:updated_time" content="2019-07-03T07:20:45.701Z">
+<meta property="og:updated_time" content="2019-07-08T10:55:49.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微波技术与天线">
 <meta name="twitter:description" content="Welcome">
@@ -355,7 +355,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  140 mins
+                  150 mins
                 </span>
               
             </div>
@@ -440,15 +440,15 @@ Z_{in}(z)=Z_0\frac{Z_l+jZ_0tan(\beta z)}{Z_0+jZ_l tan(\beta z)}</script><p>$Z_0�
 \Gamma (z)=|\Gamma_1|e^{j(\phi_l-2\beta z)}  \ \ <从终端向传输线为-z方向，具有重复性></script>对均匀无耗传输线来说，任意点反射系数大小相等，<strong>只有相位具有$\lambda /2​$重复性</strong>。当$Z_l=Z_0​$，负载终端无反射，称为负载匹配。</li>
 </ul>
 <ul>
-<li><p>输入阻抗与反射系数的关系：</p>
-<script type="math/tex; mode=display">
+<li>输入阻抗与反射系数的关系：<script type="math/tex; mode=display">
 Z_{in}(z) = Z_0\frac{1+\Gamma(z)}{1-\Gamma(z)}  \ \ <Z_{in}(z) \geqslant Z_0 ></script></li>
-<li><p>驻波比：终端不匹配时，线上形成驻波。对于无耗传输线，沿线给点的电压和电流振幅不同，以$\lambda /2$周期变化。为描述驻波的大小，引入电压驻波比，定义为波腹点与波节点电压振幅之比。</p>
-<script type="math/tex; mode=display">
+</ul>
+<ul>
+<li>驻波比：终端不匹配时，线上形成驻波。对于无耗传输线，沿线给点的电压和电流振幅不同，以$\lambda /2$周期变化。为描述驻波的大小，引入电压驻波比，定义为波腹点与波节点电压振幅之比。<script type="math/tex; mode=display">
 \rho=\frac{|U|_{max}}{|U|_{min}} = \frac{1+|\Gamma_1|}{1-|\Gamma_1|} \ \ <|\Gamma_1|\geqslant 1></script></li>
 </ul>
 <script type="math/tex; mode=display">
-|\Gamma_1|=\frac{\rho-1}{\rho+1} \ \ <|\Gamma_1|\leqslant 1></script><p>  当$|\Gamma_1|=0​$，无反射，$\rho=1​$；当$|\Gamma_1|=1​$，全反射，$\rho=\infty​$。</p>
+|\Gamma_1|=\frac{\rho-1}{\rho+1} \ \ <|\Gamma_1|\leqslant 1>当$|\Gamma_1|=0$，无反射，$\rho=1$；当$|\Gamma_1|=1$，全反射，$\rho=\infty$。</script><p>​    当$|\Gamma_1|=0$，无反射，$\rho=1$；当$|\Gamma_1|=1$，全反射，$\rho=\infty$。</p>
 <h2 id="1-3-无耗传输线的状态分析"><a href="#1-3-无耗传输线的状态分析" class="headerlink" title="1.3 无耗传输线的状态分析"></a>1.3 无耗传输线的状态分析</h2><ul>
 <li>行波状态：$|\Gamma_1|=0$，无反射。电压电流振幅不变；电压电流同相；<strong>各点阻抗等于特性阻抗</strong>。</li>
 </ul>
@@ -459,7 +459,7 @@ Z_{in}(z) = Z_0\frac{1+\Gamma(z)}{1-\Gamma(z)}  \ \ <Z_{in}(z) \geqslant Z_0 ></
 <li>负载开路$Z_1=\infty​$：负载电压max，$z=n\lambda/2​$处为电压波腹点</li>
 <li>负载为纯电抗$Z_1=jX_1$：此时终端既不是波腹也不是波节</li>
 </ul>
-<p>沿线各点电压、电流在时间和空间上相差均为 $\pi/2​$ ，故它们不能用于微波功率的传输，其输入阻抗为纯电抗特性（代入 $Z_{in}(z)​$ 可知）。</p>
+<p>沿线各点电压、电流在时间和空间上相差均为 $\pi/2$ ，故它们不能用于微波功率的传输，其输入阻抗为纯电抗特性（代入 $Z_{in}(z)$ 可知）。在 $0&lt;z&lt;\lambda/4$ 内，$Z_{in}=jz$ 相当于一个纯电感；在 $\lambda/4&lt;z&lt;\lambda/2$ 内，$Z_{in}=-jz​$ 相当于一个纯电容；</p>
 </li>
 </ul>
 <ul>
@@ -476,9 +476,9 @@ Z_{min}=\frac{\lambda }{4\pi}\phi_1+(2n\pm 1)\frac{\lambda}{4}，n=0,...</script
 <script type="math/tex; mode=display">
 R_{min}=\frac{Z_0}{\rho}</script></li>
 </ul>
-<p>无耗传输线上距离为$\lambda /4$的任意两点处阻抗的乘积均等于传输线特性阻抗的平方，这种特性称之为<strong>$\lambda /4$阻抗变换性</strong>。</p>
+<p>无耗传输线上距离为$\lambda /4$的任意两点处阻抗的乘积均等于传输线特性阻抗的平方，这种特性称之为<strong>$\lambda /4​$阻抗变换性</strong>。</p>
 <blockquote>
-<p>$\lambda /2$重复性：输入阻抗，反射系数</p>
+<p>$\lambda /2​$重复性：输入阻抗，反射系数</p>
 <p>$\lambda /4$阻抗变换性：阻抗乘积等于特性阻抗平方</p>
 </blockquote>
 <h2 id="1-4-传输线的传输功率、效率和损耗"><a href="#1-4-传输线的传输功率、效率和损耗" class="headerlink" title="1.4 传输线的传输功率、效率和损耗"></a>1.4 传输线的传输功率、效率和损耗</h2><h3 id="传输功率与效率"><a href="#传输功率与效率" class="headerlink" title="传输功率与效率"></a>传输功率与效率</h3><p>传输功率：</p>
@@ -784,7 +784,7 @@ Z_{in}=\frac{AZ_l+B}{CZ_l+D}</script><p>$Z_l​$为输出端负载。</p>
    a_1\\
    a_2
   \end{matrix} 
-\right]</script><p>参数建立在端口接匹配负载基础上的反射系数或传输系数。<strong>$S_{11}​$ 为端口1的反射系数</strong>，$S_{22}​$ 为端口2的反射系数，$S_{12}​$ 为端口2到端口1的反向传输系数，$S_{21}​$ 为端口1到端口2的正向传输系数。</p>
+\right]</script><p>参数建立在端口接匹配负载基础上的反射系数或传输系数。<strong>$S_{11}$ 表示端口2匹配时，端口1的反射系数</strong>，$S_{22}$ 为端口2的反射系数，$S_{12}$ 为端口2到端口1的反向传输系数，$S_{21}$ 为端口1到端口2的正向传输系数。</p>
 <p>互易网络：$S_{12}=S_{21}​$</p>
 <p>对称网络：$S_{11}=S_{22}​$</p>
 <p><strong>无耗网络</strong>：$[S]^{共轭转置}[S]=[E]$   <em>(散射矩阵特有)</em></p>
@@ -824,7 +824,7 @@ Z_{in}=\frac{AZ_l+B}{CZ_l+D}</script><p>$Z_l​$为输出端负载。</p>
 <p>$U(z)=e^{j\beta z}+e^{-j\beta z}​$</p>
 <p>$I(z)=\frac{e^{j\beta z}}{Z_0}-\frac{e^{-j\beta z}}{Z_0}$</p>
 <p>&lt;短路&gt;</p>
-<p>$U(z)=e^{j\beta z}-e^{-j\beta z}$</p>
+<p>$U(z)=e^{j\beta z}-e^{-j\beta z}​$</p>
 <p>$I(z)=\frac{e^{j\beta z}}{Z_0}+\frac{e^{-j\beta z}}{Z_0}$</p>
 <hr>
 <h1 id="第5章-微波元器件"><a href="#第5章-微波元器件" class="headerlink" title="第5章 微波元器件"></a>第5章 微波元器件</h1><h2 id="5-1-连接匹配元件"><a href="#5-1-连接匹配元件" class="headerlink" title="5.1 连接匹配元件"></a>5.1 连接匹配元件</h2><p>三大类：</p>
@@ -886,18 +886,15 @@ Z_{in}=\frac{AZ_l+B}{CZ_l+D}</script><p>$Z_l​$为输出端负载。</p>
 <p>定向耦合器是四端口网络，端口“①”为输入端，端口“②”为直通输出端，端口“③”为耦合输出端，端口“④”为隔离端。“①、②”是主线；“③、④”是副线。</p>
 <p>p.s.: 耦合指从主线上取能量，例如从天线发射的主线上取少部分能量进行监测。</p>
 <ul>
-<li>耦合度：<script type="math/tex; mode=display">
+<li><p>耦合度：</p>
+<script type="math/tex; mode=display">
 C=10\lg\frac{P_1}{P_3}=20\lg\frac{1}{|S_{13}|}\ dB</script></li>
-</ul>
-<ul>
-<li>隔离度：<script type="math/tex; mode=display">
+<li><p>隔离度：</p>
+<script type="math/tex; mode=display">
 I=10\lg\frac{P_1}{P_4}=20\lg\frac{1}{|S_{14}|}\ dB</script></li>
-</ul>
-<ul>
-<li>定向度：<script type="math/tex; mode=display">
+<li><p>定向度：</p>
+<script type="math/tex; mode=display">
 D=10\lg\frac{P_3}{P_4}=20\lg|\frac{S_{13}}{S_{14}}|\ dB</script></li>
-</ul>
-<ul>
 <li><p>输入驻波比：</p>
 <p>端口“②、③、④”都接匹配负载时的输入端口“①”的驻波比</p>
 <script type="math/tex; mode=display">
@@ -1002,15 +999,44 @@ E_{\theta 2}=E_m F(\theta, \phi) \frac{e^{-jkr_2}}{r_2}\\
 <script type="math/tex; mode=display">
 |F_E(\theta)|=|\frac{cos(\frac{\pi}{2}cos\theta)}{sin\theta}|\ |cos\frac{kd \ sin\theta \  + \zeta}{2}|</script><p><strong>二元阵的 $H$ 面方向图函数：</strong> （令 $\theta=\frac{\pi}{2}$）[两振子垂直平面]</p>
 <script type="math/tex; mode=display">
-|F_H(\varphi)|=|cos\frac{kd \ cos\varphi \  + \zeta}{2}|</script><h2 id="8-3-8-10-其他天线"><a href="#8-3-8-10-其他天线" class="headerlink" title="8.3-8.10 其他天线"></a>8.3-8.10 其他天线</h2><ul>
-<li><p>振子天线</p>
-<p><img src="/assets/1561706931410.png" alt="1561706931410"></p>
-</li>
-<li><p>引向天线</p>
-<p><img src="/assets/1561707102972.png" alt="1561707102972"></p>
-<p>​    反射器略长于半波长，因此呈感性，其感应电流滞后于感应电动势90°。振子位于反射器前方四分之一波长处，其感应电动势超前反射器的感应电动势90°，而因为振子谐振，所以振子的电动势同电流同相。因此振子电流超前反射器电流180°，而反射器电流所感应出的磁场落后电流90°，感应磁场在振子上感应的电动势比磁场本身落后90°。最终，反射器在振子上的感应电动势同振子自身的感应电动势同相，二者叠加增强。引向器也依据类似的原理加强了振子的感应电动势。</p>
-</li>
+|F_H(\varphi)|=|cos\frac{kd \ cos\varphi \  + \zeta}{2}|</script><h2 id="8-3振子天线"><a href="#8-3振子天线" class="headerlink" title="8.3振子天线"></a>8.3振子天线</h2><p><img src="/assets/1561706931410.png" alt="1561706931410"></p>
+<p>提高单极天线效率的方法：</p>
+<ul>
+<li>提高天线的辐射电阻：在顶端加容性负载或在底端加感性负载，提高了天线上波辅点的位置，等效增加天线的有效高度。</li>
+<li>降低损耗电阻</li>
 </ul>
+<h2 id="8-4引向天线与电视天线"><a href="#8-4引向天线与电视天线" class="headerlink" title="8.4引向天线与电视天线"></a>8.4引向天线与电视天线</h2><p><img src="/assets/1561707102972.png" alt="1561707102972"></p>
+<p>​    反射器略长于半波长，因此呈感性，其感应电流滞后于感应电动势90°。振子位于反射器前方四分之一波长处，其感应电动势超前反射器的感应电动势90°，而因为振子谐振，所以振子的电动势同电流同相。因此振子电流超前反射器电流180°，而反射器电流所感应出的磁场落后电流90°，感应磁场在振子上感应的电动势比磁场本身落后90°。最终，反射器在振子上的感应电动势同振子自身的感应电动势同相，二者叠加增强。引向器也依据类似的原理加强了振子的感应电动势。</p>
+<p>优点：方向性强，增益高。广泛用在米波和分米波段的电视接收天线。</p>
+<p>缺点：频带较窄</p>
+<p>电视发射天线的特点：</p>
+<ul>
+<li>频带范围宽</li>
+<li>采用水平极化，即天线及其辐射电场平行于地面。因工业干扰大多是垂直极化波</li>
+</ul>
+<h2 id="8-5-移动通信基站天线"><a href="#8-5-移动通信基站天线" class="headerlink" title="8.5 移动通信基站天线"></a>8.5 移动通信基站天线</h2><p>特点：</p>
+<ul>
+<li>为使用户在移动状态下使用方便，采用垂直极化</li>
+<li>增益高</li>
+</ul>
+<h2 id="8-6-螺旋天线"><a href="#8-6-螺旋天线" class="headerlink" title="8.6 螺旋天线"></a>8.6 螺旋天线</h2><p>螺旋天线是常用的圆极化天线。</p>
+<p>螺旋天线的辐射特性与螺旋的直径有密切关系。</p>
+<ol>
+<li>$d/\lambda&lt;0.18$ 法向模式：天线的最大辐射方向在螺线轴线垂直的平面内。辐射效率和增益低，超短波手持式通信机。</li>
+<li>$d/\lambda \approx 0.25\sim 0.45​$ 轴向模螺旋天线。一圈的周长接近一个波长，此时天线上的电流呈行波分布，则天线的辐射场呈圆极化，最大辐射方向沿轴线方向。</li>
+<li>$d/\lambda&gt; 0.5$ 圆锥型模式天线。</li>
+</ol>
+<h2 id="8-7-行波天线"><a href="#8-7-行波天线" class="headerlink" title="8.7 行波天线"></a>8.7 行波天线</h2><p>如果天线上电流分布是行波，则为行波天线。（振子型天线则是驻波）</p>
+<p>行波天线由导线末端接匹配负载来消除反射波</p>
+<p>优点：单向辐射特性、较高的增益、较宽的带宽、超短波波段</p>
+<p>缺点：能量被负载吸收，天线效率不高</p>
+<h2 id="8-8-宽频带天线"><a href="#8-8-宽频带天线" class="headerlink" title="8.8 宽频带天线"></a>8.8 宽频带天线</h2><p>平面等角螺旋天线：</p>
+<ul>
+<li>保持宽频带</li>
+<li>原极化特性</li>
+</ul>
+<h2 id="8-10-微带天线"><a href="#8-10-微带天线" class="headerlink" title="8.10 微带天线"></a>8.10 微带天线</h2><p>优点：一致性好，易于集成</p>
+<p>缺点：方向系数低，频带窄，损耗大，交叉极化大</p>
 
       
     </div>
@@ -1221,7 +1247,7 @@ E_{\theta 2}=E_m F(\theta, \phi) \frac{e^{-jkr_2}}{r_2}\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第1章-均匀传输线理论"><span class="nav-text">第1章 均匀传输线理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-均匀传输线方程及其解"><span class="nav-text">1.1 均匀传输线方程及其解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-传输线阻抗与状态参量"><span class="nav-text">1.2 传输线阻抗与状态参量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-无耗传输线的状态分析"><span class="nav-text">1.3 无耗传输线的状态分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-传输线的传输功率、效率和损耗"><span class="nav-text">1.4 传输线的传输功率、效率和损耗</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传输功率与效率"><span class="nav-text">传输功率与效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回波损耗与插入损耗"><span class="nav-text">回波损耗与插入损耗</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-阻抗匹配"><span class="nav-text">1.5 阻抗匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传输线上的三种匹配状态"><span class="nav-text">传输线上的三种匹配状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻抗匹配的方法"><span class="nav-text">阻抗匹配的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第2章-规则金属波导"><span class="nav-text">第2章 规则金属波导</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-导波原理"><span class="nav-text">2.1 导波原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#规则金属管内的电磁波"><span class="nav-text">规则金属管内的电磁波</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输特性"><span class="nav-text">传输特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导行波的分类"><span class="nav-text">导行波的分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-矩形波导"><span class="nav-text">2.2 矩形波导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩形波导中的场"><span class="nav-text">矩形波导中的场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主模-TE-10-的特性"><span class="nav-text">主模$TE_{10}$的特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第4章-微波网络基础"><span class="nav-text">第4章 微波网络基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-等效传输线"><span class="nav-text">4.1 等效传输线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模式等效传输线"><span class="nav-text">模式等效传输线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-双端口网络的阻抗与转移矩阵"><span class="nav-text">4.3 双端口网络的阻抗与转移矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#阻抗矩阵-Z"><span class="nav-text">阻抗矩阵$Z$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导纳矩阵-Y"><span class="nav-text">导纳矩阵$Y$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转移矩阵-ABCD"><span class="nav-text">转移矩阵$ABCD$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-散射矩阵与传输矩阵"><span class="nav-text">4.4 散射矩阵与传输矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#散射矩阵-S"><span class="nav-text">散射矩阵$S$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输矩阵-T"><span class="nav-text">传输矩阵$T$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#散射参量与其他参量之间的相互转换"><span class="nav-text">散射参量与其他参量之间的相互转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第5章-微波元器件"><span class="nav-text">第5章 微波元器件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-连接匹配元件"><span class="nav-text">5.1 连接匹配元件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终端匹配元件"><span class="nav-text">终端匹配元件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微波连接元件"><span class="nav-text">微波连接元件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻抗匹配元件"><span class="nav-text">阻抗匹配元件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-功率分配与合成器件"><span class="nav-text">5.2 功率分配与合成器件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定向耦合器"><span class="nav-text">定向耦合器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功率分配器"><span class="nav-text">功率分配器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#波导分支器"><span class="nav-text">波导分支器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-微波谐振器件"><span class="nav-text">5.3 微波谐振器件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩形空腔谐振器"><span class="nav-text">矩形空腔谐振器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第6章-天线辐射与接收的基本理论"><span class="nav-text">第6章 天线辐射与接收的基本理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-概论"><span class="nav-text">6.1 概论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-电基本振子的辐射"><span class="nav-text">6.2 电基本振子的辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-天线的电参数"><span class="nav-text">6.3 天线的电参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#天线方向图及其有关参数"><span class="nav-text">天线方向图及其有关参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#天线效率"><span class="nav-text">天线效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增益系数"><span class="nav-text">增益系数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-接收天线理论"><span class="nav-text">6.4 接收天线理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#天线接收功率"><span class="nav-text">天线接收功率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有效接收面积"><span class="nav-text">有效接收面积</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第7章-电波传播概论"><span class="nav-text">第7章 电波传播概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-电波传播的基本概念"><span class="nav-text">7.1 电波传播的基本概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第8章-线天线"><span class="nav-text">第8章 线天线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-阵列天线"><span class="nav-text">8.2 阵列天线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二元阵"><span class="nav-text">二元阵</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-8-10-其他天线"><span class="nav-text">8.3-8.10 其他天线</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论"><span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第1章-均匀传输线理论"><span class="nav-text">第1章 均匀传输线理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-均匀传输线方程及其解"><span class="nav-text">1.1 均匀传输线方程及其解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-传输线阻抗与状态参量"><span class="nav-text">1.2 传输线阻抗与状态参量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-无耗传输线的状态分析"><span class="nav-text">1.3 无耗传输线的状态分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-传输线的传输功率、效率和损耗"><span class="nav-text">1.4 传输线的传输功率、效率和损耗</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传输功率与效率"><span class="nav-text">传输功率与效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回波损耗与插入损耗"><span class="nav-text">回波损耗与插入损耗</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-阻抗匹配"><span class="nav-text">1.5 阻抗匹配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传输线上的三种匹配状态"><span class="nav-text">传输线上的三种匹配状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻抗匹配的方法"><span class="nav-text">阻抗匹配的方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第2章-规则金属波导"><span class="nav-text">第2章 规则金属波导</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-导波原理"><span class="nav-text">2.1 导波原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#规则金属管内的电磁波"><span class="nav-text">规则金属管内的电磁波</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输特性"><span class="nav-text">传输特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导行波的分类"><span class="nav-text">导行波的分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-矩形波导"><span class="nav-text">2.2 矩形波导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩形波导中的场"><span class="nav-text">矩形波导中的场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主模-TE-10-的特性"><span class="nav-text">主模$TE_{10}$的特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第4章-微波网络基础"><span class="nav-text">第4章 微波网络基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-等效传输线"><span class="nav-text">4.1 等效传输线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模式等效传输线"><span class="nav-text">模式等效传输线</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-双端口网络的阻抗与转移矩阵"><span class="nav-text">4.3 双端口网络的阻抗与转移矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#阻抗矩阵-Z"><span class="nav-text">阻抗矩阵$Z$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导纳矩阵-Y"><span class="nav-text">导纳矩阵$Y$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转移矩阵-ABCD"><span class="nav-text">转移矩阵$ABCD$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-散射矩阵与传输矩阵"><span class="nav-text">4.4 散射矩阵与传输矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#散射矩阵-S"><span class="nav-text">散射矩阵$S$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输矩阵-T"><span class="nav-text">传输矩阵$T$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#散射参量与其他参量之间的相互转换"><span class="nav-text">散射参量与其他参量之间的相互转换</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第5章-微波元器件"><span class="nav-text">第5章 微波元器件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-连接匹配元件"><span class="nav-text">5.1 连接匹配元件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终端匹配元件"><span class="nav-text">终端匹配元件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微波连接元件"><span class="nav-text">微波连接元件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#阻抗匹配元件"><span class="nav-text">阻抗匹配元件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-功率分配与合成器件"><span class="nav-text">5.2 功率分配与合成器件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定向耦合器"><span class="nav-text">定向耦合器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功率分配器"><span class="nav-text">功率分配器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#波导分支器"><span class="nav-text">波导分支器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-微波谐振器件"><span class="nav-text">5.3 微波谐振器件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩形空腔谐振器"><span class="nav-text">矩形空腔谐振器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第6章-天线辐射与接收的基本理论"><span class="nav-text">第6章 天线辐射与接收的基本理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-概论"><span class="nav-text">6.1 概论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-电基本振子的辐射"><span class="nav-text">6.2 电基本振子的辐射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-天线的电参数"><span class="nav-text">6.3 天线的电参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#天线方向图及其有关参数"><span class="nav-text">天线方向图及其有关参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#天线效率"><span class="nav-text">天线效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增益系数"><span class="nav-text">增益系数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-接收天线理论"><span class="nav-text">6.4 接收天线理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#天线接收功率"><span class="nav-text">天线接收功率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有效接收面积"><span class="nav-text">有效接收面积</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第7章-电波传播概论"><span class="nav-text">第7章 电波传播概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-电波传播的基本概念"><span class="nav-text">7.1 电波传播的基本概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第8章-线天线"><span class="nav-text">第8章 线天线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-阵列天线"><span class="nav-text">8.2 阵列天线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二元阵"><span class="nav-text">二元阵</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3振子天线"><span class="nav-text">8.3振子天线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-4引向天线与电视天线"><span class="nav-text">8.4引向天线与电视天线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-5-移动通信基站天线"><span class="nav-text">8.5 移动通信基站天线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-6-螺旋天线"><span class="nav-text">8.6 螺旋天线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-7-行波天线"><span class="nav-text">8.7 行波天线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-8-宽频带天线"><span class="nav-text">8.8 宽频带天线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-10-微带天线"><span class="nav-text">8.10 微带天线</span></a></li></ol></li></ol></div>
             
 
           </div>
