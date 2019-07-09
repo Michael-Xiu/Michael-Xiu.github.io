@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://michaelxiu.com/assets/1561703616981.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1561706931410.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/1561707102972.png">
-<meta property="og:updated_time" content="2019-07-08T12:24:31.972Z">
+<meta property="og:updated_time" content="2019-07-08T15:54:03.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微波技术与天线">
 <meta name="twitter:description" content="Welcome">
@@ -355,7 +355,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  150 mins
+                  155 mins
                 </span>
               
             </div>
@@ -395,8 +395,8 @@
 <li>介质传输线：电磁波沿传输线表面传播</li>
 </ul>
 <h2 id="1-1-均匀传输线方程及其解"><a href="#1-1-均匀传输线方程及其解" class="headerlink" title="1.1 均匀传输线方程及其解"></a>1.1 均匀传输线方程及其解</h2><p>均匀传输线组成的导波系统都可等效为均匀平行双导线系统。</p>
-<p>传输线单位长串联阻抗：$Z=R+j\omega L$  &lt;电感是串联的&gt;</p>
-<p>传输线单位长并联导纳：$Y=G+j\omega C​$  &lt;电容是并联的&gt;</p>
+<p>传输线单位长串联阻抗：$Z=R+j\omega L$  &lt;电感是串联的&gt; $Z=R+jX$</p>
+<p>传输线单位长并联导纳：$Y=G+j\omega C$  &lt;电容是并联的&gt;  $Y=G+jB$</p>
 <p>解：</p>
 <p>$U(z)=U_+(z)+U_-(z)=A_1e^{jkz}+A_2e^{-jkz}$ 定义 $z=0$ 在负载，正方向向左，向右传播为 $e^{jkz}$ 。</p>
 <p>$I(z)=I_+(z)+I_-(z)=\frac{1}{Z_0}({A_1}e^{jkz}-A_2e^{-jkz})​$</p>
@@ -440,11 +440,11 @@ Z_{in}(z)=Z_0\frac{Z_l+jZ_0tan(\beta z)}{Z_0+jZ_l tan(\beta z)}</script><p>$Z_0�
 \Gamma (z)=|\Gamma_1|e^{j(\phi_l-2\beta z)}  \ \ <从终端向传输线为z方向，具有重复性></script>对均匀无耗传输线来说，任意点反射系数大小相等，<strong>只有相位具有$\lambda /2​$重复性</strong>。当$Z_l=Z_0​$，负载终端无反射，称为负载匹配。</li>
 </ul>
 <ul>
-<li>输入阻抗与反射系数的关系：<script type="math/tex; mode=display">
+<li><p>输入阻抗与反射系数的关系：</p>
+<script type="math/tex; mode=display">
 Z_{in}(z) = Z_0\frac{1+\Gamma(z)}{1-\Gamma(z)}  \ \ <Z_{in}(z) \geqslant Z_0 ></script></li>
-</ul>
-<ul>
-<li>驻波比：终端不匹配时，线上形成驻波。对于无耗传输线，沿线给点的电压和电流振幅不同，以$\lambda /2$周期变化。为描述驻波的大小，引入电压驻波比，定义为波腹点与波节点电压振幅之比。<script type="math/tex; mode=display">
+<li><p>驻波比：终端不匹配时，线上形成驻波。对于无耗传输线，沿线给点的电压和电流振幅不同，以$\lambda /2$周期变化。为描述驻波的大小，引入电压驻波比，定义为波腹点与波节点电压振幅之比。</p>
+<script type="math/tex; mode=display">
 \rho=\frac{|U|_{max}}{|U|_{min}} = \frac{1+|\Gamma_1|}{1-|\Gamma_1|} \ \ <|\Gamma_1|\geqslant 1></script></li>
 </ul>
 <script type="math/tex; mode=display">
@@ -708,7 +708,7 @@ u_2=\frac{U_2}{\sqrt{Z_{e2}}}, \ i_2=I_2\sqrt{Z_{e2}}</script><h3 id="导纳矩�
    U_2
   \end{matrix} 
 \right]</script><p>对于互易网络有 $Y_{12}=Y_{21}​$</p>
-<p>对于对称网路有 $Y_{11}=Y_{22}$</p>
+<p>对于对称网路有 $Y_{11}=Y_{22}​$</p>
 <p>归一化：</p>
 <script type="math/tex; mode=display">
 [i]=[\bar{y}][u]\\
@@ -944,11 +944,11 @@ E_\theta=j\frac{k^2Il}{4\pi \omega\varepsilon_0r}（E_0） \ sin\theta (方向�
 <li>$E$ 平面，即电场矢量所在平面。对于沿 $z$ 轴放置的电基本振子而言，子午平面就是 $E​$ 平面。</li>
 <li>$H​$ 平面，即磁场矢量所在平面。对于沿 $z​$ 轴放置的电基本振子而言，赤道平面就是 $H​$ 平面。</li>
 </ol>
-<p>e.g. 沿 $z$ 轴放置的电基本振子的 $E$ 平面和 $H​$ 平面：</p>
+<p>e.g. 沿 $z​$ 轴放置的电基本振子的 $E​$ 平面和 $H​$ 平面：</p>
 <p><img src="/assets/1560650625864.png" alt="1560650625864"></p>
 <p><img src="/assets/1560651407155.png" alt="1560651407155"></p>
 <ul>
-<li><p>主瓣宽度：衡量天线的最大辐射区域的尖锐程度的物理量。在场强方向途中，等于最大场强的 $1/\sqrt{2}​$ 两点之间的宽度，称为半功率波瓣宽度。</p>
+<li><p>主瓣宽度：衡量天线的最大辐射区域的尖锐程度的物理量。在场强方向图中，等于最大场强的 $1/\sqrt{2}$ 两点之间的宽度，称为半功率波瓣宽度。</p>
 </li>
 <li><p>旁瓣电平：离主瓣最近且电平最高的第一旁瓣电平，一般以分贝表示。旁瓣电平尽可能低。</p>
 </li>
@@ -984,7 +984,7 @@ P_R=S_0 \cdot {A_e} =\frac{P_iG_i}{4 \pi r^2}\cdot \frac{\lambda^2 G_R}{4\pi}</s
 <script type="math/tex; mode=display">
 L_{bf}=\frac{P_i}{P_R}=(\frac{4\pi r}{\lambda})^2 \cdot \frac{1}{G_i G_R}</script><hr>
 <h1 id="第8章-线天线"><a href="#第8章-线天线" class="headerlink" title="第8章 线天线"></a>第8章 线天线</h1><h2 id="8-2-阵列天线"><a href="#8-2-阵列天线" class="headerlink" title="8.2 阵列天线"></a>8.2 阵列天线</h2><h3 id="二元阵"><a href="#二元阵" class="headerlink" title="二元阵"></a>二元阵</h3><p><img src="/assets/1561703616981.png" alt="1561703616981"></p>
-<p>​        设天线阵是由间距为 <em>d</em> 并沿 <em>x</em> 轴排列的两个相同的天线元所组成。假设天线元由振幅相等的电流所激励, 但天线元2的电流相位超前天线元1的角度为 <em>ζ</em>, 它们的远区电场是沿 <em>θ</em> 方向的, 于是有</p>
+<p>设天线阵是由间距为 <em>d</em> 并沿 <em>x</em> 轴排列的两个相同的天线元所组成。假设天线元由振幅相等的电流所激励, 但天线元2的电流相位超前天线元1的角度为 <em>ζ</em>, 它们的远区电场是沿 <em>θ</em> 方向的, 于是有</p>
 <script type="math/tex; mode=display">
 E_{\theta 1}=E_m F(\theta, \phi) \frac{e^{-jkr_1}}{r_1} \\
 E_{\theta 2}=E_m F(\theta, \phi) \frac{e^{-jkr_2}}{r_2}\\
