@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/st-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/st-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="R language,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="The summary of the basic operations in R which benefit my PhD study.">
+<meta name="keywords" content="R language">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R Coding Basics">
+<meta property="og:url" content="http://michaelxiu.com/2020/07/26/R-Coding-Basics/index.html">
+<meta property="og:site_name" content="Shengjie Xiu">
+<meta property="og:description" content="The summary of the basic operations in R which benefit my PhD study.">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-09-07T20:13:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="R Coding Basics">
+<meta name="twitter:description" content="The summary of the basic operations in R which benefit my PhD study.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://michaelxiu.com/2020/07/26/R-Coding-Basics/">
+
+
+
+
+
+  <title>R Coding Basics | Shengjie Xiu</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/Michael-Xiu" class="github-corner" aria-label="My GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#CABCBC; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Shengjie Xiu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="https://www.linkedin.com/in/shengjie-michael-xiu-210b8215a/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://michaelxiu.com/2020/07/26/R-Coding-Basics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shengjie.Xiu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shengjie Xiu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">R Coding Basics</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-26T17:52:00+08:00">
+                2020-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  20 mins
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>The summary of the basic operations in R which benefit my PhD study.</p>
+<a id="more"></a>
+<h1 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h1><p>Install:</p>
+<ul>
+<li><code>install.packages(&quot;xxx&quot;)</code></li>
+</ul>
+<p>Load in R:</p>
+<ul>
+<li><code>require(xxx)</code>: gives a confirmation message</li>
+<li><code>library(xxx)</code>: no message</li>
+</ul>
+<p><br></p>
+<h1 id="Graphics"><a href="#Graphics" class="headerlink" title="Graphics"></a>Graphics</h1><p>Simple plot: </p>
+<ul>
+<li><p><code>plot(x)</code>, <code>plot(x, y)</code>: automatically choose the best plot type</p>
+</li>
+<li><p><code>plot(fcn, xmin, xmax)</code>: plot the function <em>fcn</em></p>
+</li>
+</ul>
+<p>Bar chart:</p>
+<ul>
+<li><code>table(aFrame)</code>: to summarize the class for bar charts</li>
+<li><code>barplot()</code></li>
+</ul>
+<p>Histogram:</p>
+<ul>
+<li><code>hist()</code>: create a simple histogram</li>
+</ul>
+<p>Scatter plot:</p>
+<ul>
+<li><code>plot(x, y)</code></li>
+</ul>
+<p>Subplot:</p>
+<ol>
+<li><code>par(mfrow=c(#row, #col))</code>: set the graphical parameter</li>
+<li>plot separately</li>
+<li><code>par(mfrow=c(1, 1))</code>: restore graphic parameter</li>
+</ol>
+<p><br></p>
+<h1 id="Data-Analysis"><a href="#Data-Analysis" class="headerlink" title="Data Analysis"></a>Data Analysis</h1><p><code>summary()</code>:</p>
+<ul>
+<li><code>summary(iris$Species)</code>       # Categorical variable</li>
+<li><code>summary(iris$Sepal.Length)</code>  # Quantitative variable</li>
+<li><code>summary(iris)</code>               # Entire data frame</li>
+</ul>
+<blockquote>
+<p>iris is a dataset in <em>library(datasets)</em></p>
+</blockquote>
+<p><br></p>
+<p><code>describe()</code> from <em>psych</em> package:</p>
+<blockquote>
+<p>It gets more details. A complement for histogram or box plot.</p>
+<p>It only takes quantitative variables.</p>
+</blockquote>
+<p>output information: vars, n, mean, sd, median, trimmed, mad, min, max, range, skew, kurtosis, se</p>
+<p><br></p>
+<p>Selecting cases using <code>aFrame[condition1 &amp; condition2 ..]</code></p>
+<blockquote>
+<p>select by category or value or both</p>
+</blockquote>
+<p><br></p>
+<h1 id="Data-Formats"><a href="#Data-Formats" class="headerlink" title="Data Formats"></a>Data Formats</h1><p>In contrast to other programming languages like C and java in R, the variables are not declared as some data type. The variables are assigned with R-objects and the data type of the R-object becomes the data type of the variable. R-objects include <strong>vector</strong>, <strong>matrix/array</strong>, <strong>data frame</strong>, <strong>list</strong>, and <strong>factor</strong>.</p>
+<h2 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h2><ul>
+<li>all same data type</li>
+<li>The simplest of these objects is the <strong>vector object</strong> and there are six data types of these atomic vectors, also termed as six classes of vectors.<ul>
+<li>Logical</li>
+<li>Numeric</li>
+<li>Integer</li>
+<li>Complex</li>
+<li>Character</li>
+<li>Raw</li>
+</ul>
+</li>
+<li>define: <code>v &lt;- c(1, 2, 3, 4, 5)</code></li>
+</ul>
+<h2 id="Matrix-array"><a href="#Matrix-array" class="headerlink" title="Matrix/array"></a>Matrix/array</h2><ul>
+<li><p>two dimensions (array 3+D)</p>
+</li>
+<li><p>same data class</p>
+</li>
+<li>columns not named</li>
+<li>define:<ul>
+<li>matrix: <code>m &lt;- matrix(c(T, T, F, F, T, F), nrow = 2)</code></li>
+<li>array: <code>a &lt;- array(c(1:24), c(4, 3, 2))</code> # Give data, then dimensions (rows, columns, tables)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Data-frame"><a href="#Data-frame" class="headerlink" title="Data frame"></a>Data frame</h2><ul>
+<li>two dimensions and can have vectors of multiple types</li>
+<li>all same length</li>
+<li>closest R analogue to spreadsheet</li>
+<li>define: <code>df &lt;- as.data.frame(cbind(vNumeric, vCharacter, vLogical))</code> where vNumeric, vCharacter and vLogical are vectors of numeric, character and logical.</li>
+</ul>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><ul>
+<li>most flexible</li>
+<li>ordered collection of elements</li>
+<li>any class, length, or structure</li>
+<li>can include lists</li>
+<li>define: <code>list2 &lt;- list(vNumeric, vCharacter, vLogical, list1)</code> </li>
+</ul>
+<h2 id="Factor"><a href="#Factor" class="headerlink" title="Factor"></a>Factor</h2><blockquote>
+<p>It stores the vector along with the distinct values of the elements in the vector as labels. The labels are always character irrespective of whether it is numeric or character or Boolean etc. in the input vector. They are useful in statistical modeling.</p>
+</blockquote>
+<p>Refer to <a href="https://www.tutorialspoint.com/r/r_factors.htm" target="_blank" rel="noopener">R - Factors</a></p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data &lt;- c(<span class="string">"East"</span>,<span class="string">"West"</span>,<span class="string">"East"</span>,<span class="string">"North"</span>,<span class="string">"North"</span>,<span class="string">"East"</span>,<span class="string">"West"</span>,<span class="string">"West"</span>,<span class="string">"West"</span>,<span class="string">"East"</span>,<span class="string">"North"</span>)</span><br><span class="line">(factor_data &lt;- factor(data))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apply the factor function with required order of the level.</span></span><br><span class="line">new_order_data &lt;- factor(factor_data,levels = c(<span class="string">"East"</span>,<span class="string">"West"</span>,<span class="string">"North"</span>))</span><br></pre></td></tr></table></figure>
+<p>Result:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>] East West East North North East West West West East North</span><br><span class="line">Levels: East North West</span><br><span class="line">[<span class="number">1</span>] East West East North North East West West West East North</span><br><span class="line">Levels: East West North</span><br></pre></td></tr></table></figure></p>
+<h3 id="Factors-in-data-frame"><a href="#Factors-in-data-frame" class="headerlink" title="Factors in data frame"></a>Factors in data frame</h3><p>On creating any data frame with a column of text data, R treats the text column as categorical data and creates factors on it.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create the vectors for data frame.</span></span><br><span class="line">height &lt;- c(<span class="number">132</span>,<span class="number">151</span>,<span class="number">162</span>,<span class="number">139</span>,<span class="number">166</span>,<span class="number">147</span>,<span class="number">122</span>)</span><br><span class="line">weight &lt;- c(<span class="number">48</span>,<span class="number">49</span>,<span class="number">66</span>,<span class="number">53</span>,<span class="number">67</span>,<span class="number">52</span>,<span class="number">40</span>)</span><br><span class="line">gender &lt;- c(<span class="string">"male"</span>,<span class="string">"male"</span>,<span class="string">"female"</span>,<span class="string">"female"</span>,<span class="string">"male"</span>,<span class="string">"female"</span>,<span class="string">"male"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create the data frame.</span></span><br><span class="line">input_data &lt;- data.frame(height,weight,gender)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Test if the gender column is a factor.</span></span><br><span class="line">print(is.factor(input_data$gender))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print the gender column so see the levels.</span></span><br><span class="line">print(input_data$gender)</span><br></pre></td></tr></table></figure>
+<p>Result:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>] <span class="literal">TRUE</span></span><br><span class="line">[<span class="number">1</span>] male male female female male female male  </span><br><span class="line">Levels: female male</span><br></pre></td></tr></table></figure></p>
+<h2 id="Coercing-types"><a href="#Coercing-types" class="headerlink" title="Coercing types"></a>Coercing types</h2><p>Coerce numeric to integer:</p>
+<ul>
+<li><code>coerce3 &lt;- as.integer(5)</code></li>
+</ul>
+<p>Coerce character to numeric:</p>
+<ul>
+<li><code>coerce5 &lt;- as.numeric(c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;))</code></li>
+</ul>
+<p>Coerce matrix to data frame:</p>
+<ul>
+<li><code>coerce7 &lt;- as.data.frame(matrix(1:9, nrow=3))</code></li>
+</ul>
+<p><br></p>
+<h1 id="Entering-Data"><a href="#Entering-Data" class="headerlink" title="Entering Data"></a>Entering Data</h1><ul>
+<li><code>x:y</code>: ascending or descending order</li>
+<li><p><code>seq(x, y, by = aStride)</code></p>
+</li>
+<li><p><code>c(x1, x2, ...)</code>: concatenate as a vector</p>
+</li>
+<li><code>scan()</code>: input from console window</li>
+<li><code>rep()</code>: replicate existing data</li>
+</ul>
+<p><br></p>
+<h1 id="Importing-Data"><a href="#Importing-Data" class="headerlink" title="Importing Data"></a>Importing Data</h1><blockquote>
+<p><strong>rio (R Import Output)</strong> package combines all of R’s import functions into one simple utility.</p>
+</blockquote>
+<ul>
+<li><code>import(&quot;aPath&quot;)</code>: import <em>.csv</em>, <em>.txt</em>, <em>.xlsx</em>, etc. file</li>
+</ul>
+<p>R’s built-in functions:</p>
+<ul>
+<li><code>read.table()</code></li>
+<li><code>read.csv()</code></li>
+</ul>
+<p><br></p>
+<h1 id="RStudio-Hotkey"><a href="#RStudio-Hotkey" class="headerlink" title="RStudio Hotkey"></a>RStudio Hotkey</h1><ul>
+<li>Clear console: <code>ctrl + L</code></li>
+<li>Run line by line: <code>ctrl + enter</code></li>
+<li>Fast dash <code>&lt;-</code>: <code>alt + -</code> </li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/R-language/" rel="tag"># R language</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/12/My-Research/" rel="next" title="< My Research Highlight >">
+                <i class="fa fa-chevron-left"></i> < My Research Highlight >
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/27/PhD-book-fpp3/" rel="prev" title="PhD book1 - fpp3">
+                PhD book1 - fpp3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shengjie.Xiu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Michael-Xiu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/xiao-li-dou-dan/activities" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-paper-plane"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xiushj@mail2.sysu.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/shengjie.xiu.3" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/michael.xiu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:Shengjie Xiu?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Packages"><span class="nav-text">Packages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Graphics"><span class="nav-text">Graphics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Analysis"><span class="nav-text">Data Analysis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Formats"><span class="nav-text">Data Formats</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector"><span class="nav-text">Vector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-array"><span class="nav-text">Matrix/array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-frame"><span class="nav-text">Data frame</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List"><span class="nav-text">List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Factor"><span class="nav-text">Factor</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Factors-in-data-frame"><span class="nav-text">Factors in data frame</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coercing-types"><span class="nav-text">Coercing types</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Entering-Data"><span class="nav-text">Entering Data</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Importing-Data"><span class="nav-text">Importing Data</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RStudio-Hotkey"><span class="nav-text">RStudio Hotkey</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shengjie Xiu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

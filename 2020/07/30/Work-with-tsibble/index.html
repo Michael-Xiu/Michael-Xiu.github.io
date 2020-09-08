@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/st-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/st-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="R language,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Summary of import operations for tsibble objects, especially those used in book “Forecasting: Principles and Practice”.">
+<meta name="keywords" content="R language">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R Work With Tsibble">
+<meta property="og:url" content="http://michaelxiu.com/2020/07/30/Work-with-tsibble/index.html">
+<meta property="og:site_name" content="Shengjie Xiu">
+<meta property="og:description" content="Summary of import operations for tsibble objects, especially those used in book “Forecasting: Principles and Practice”.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://michaelxiu.com/assets/tsibble/gather.png">
+<meta property="og:updated_time" content="2020-09-07T20:13:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="R Work With Tsibble">
+<meta name="twitter:description" content="Summary of import operations for tsibble objects, especially those used in book “Forecasting: Principles and Practice”.">
+<meta name="twitter:image" content="http://michaelxiu.com/assets/tsibble/gather.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://michaelxiu.com/2020/07/30/Work-with-tsibble/">
+
+
+
+
+
+  <title>R Work With Tsibble | Shengjie Xiu</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+	<a href="https://github.com/Michael-Xiu" class="github-corner" aria-label="My GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#CABCBC; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Shengjie Xiu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="https://www.linkedin.com/in/shengjie-michael-xiu-210b8215a/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://michaelxiu.com/2020/07/30/Work-with-tsibble/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shengjie.Xiu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shengjie Xiu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">R Work With Tsibble</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-30T11:16:00+08:00">
+                2020-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  40 mins
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Summary of import operations for tsibble objects, especially those used in book “Forecasting: Principles and Practice”.</p>
+<a id="more"></a>
+<h1 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h1><p><code>filter()</code>: select particular rows according some conditions to shortlist #samples</p>
+<h1 id="select"><a href="#select" class="headerlink" title="select()"></a>select()</h1><p><code>select()</code>: select particular columns to discard redundant variables (features)</p>
+<h1 id="mutate"><a href="#mutate" class="headerlink" title="mutate()"></a>mutate()</h1><p><code>mutate()</code>:  create new variables</p>
+<h1 id="summarise"><a href="#summarise" class="headerlink" title="summarise()"></a>summarise()</h1><p><code>summarise()</code>:  combine data across keys to convert multiple time series as a single time series (no key)</p>
+<h1 id="group-by"><a href="#group-by" class="headerlink" title="group_by()"></a>group_by()</h1><p><code>group_by()</code>: Identify different groups based on different values in specific columns. It doesn’t change how the data looks, but requires other functions including <code>summarise()</code> to act on different groups separately.</p>
+<p>example of <code>group_by()</code>: <a href="https://dplyr.tidyverse.org/reference/group_by.html" target="_blank" rel="noopener">link</a></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">by_cyl &lt;- mtcars %&gt;% group_by(cyl)</span><br><span class="line"></span><br><span class="line"><span class="comment"># grouping doesn't change how the data looks (apart from listing</span></span><br><span class="line"><span class="comment"># how it's grouped):</span></span><br><span class="line">by_cyl<span class="comment">#&gt; # A tibble: 32 x 11</span></span><br><span class="line"><span class="comment">#&gt; # Groups:   cyl [3]</span></span><br><span class="line"><span class="comment">#&gt;      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb</span></span><br><span class="line"><span class="comment">#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span><br><span class="line"><span class="comment">#&gt;  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4</span></span><br><span class="line"><span class="comment">#&gt;  2  21       6  160    110  3.9   2.88  17.0     0     1     4     4</span></span><br><span class="line"><span class="comment">#&gt;  3  22.8     4  108     93  3.85  2.32  18.6     1     1     4     1</span></span><br><span class="line"><span class="comment">#&gt;  4  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1</span></span><br><span class="line"><span class="comment">#&gt;  5  18.7     8  360    175  3.15  3.44  17.0     0     0     3     2</span></span><br><span class="line"><span class="comment">#&gt;  6  18.1     6  225    105  2.76  3.46  20.2     1     0     3     1</span></span><br><span class="line"><span class="comment">#&gt;  7  14.3     8  360    245  3.21  3.57  15.8     0     0     3     4</span></span><br><span class="line"><span class="comment">#&gt;  8  24.4     4  147.    62  3.69  3.19  20       1     0     4     2</span></span><br><span class="line"><span class="comment">#&gt;  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2</span></span><br><span class="line"><span class="comment">#&gt; 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4</span></span><br><span class="line"><span class="comment">#&gt; # … with 22 more rows</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># It changes how it acts with the other dplyr verbs:</span></span><br><span class="line"></span><br><span class="line">by_cyl %&gt;% summarise(</span><br><span class="line">  disp = mean(disp),</span><br><span class="line">  hp = mean(hp)</span><br><span class="line">)<span class="comment">#&gt; `summarise()` ungrouping output (override with `.groups` argument)#&gt; # A tibble: 3 x 3</span></span><br><span class="line"><span class="comment">#&gt;     cyl  disp    hp</span></span><br><span class="line"><span class="comment">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1     4  105.  82.6</span></span><br><span class="line"><span class="comment">#&gt; 2     6  183. 122. </span></span><br><span class="line"><span class="comment">#&gt; 3     8  353. 209. </span></span><br><span class="line"></span><br><span class="line">by_cyl %&gt;% filter(disp == max(disp))<span class="comment">#&gt; # A tibble: 3 x 11</span></span><br><span class="line"><span class="comment">#&gt; # Groups:   cyl [3]</span></span><br><span class="line"><span class="comment">#&gt;     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb</span></span><br><span class="line"><span class="comment">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1</span></span><br><span class="line"><span class="comment">#&gt; 2  24.4     4  147.    62  3.69  3.19  20       1     0     4     2</span></span><br><span class="line"><span class="comment">#&gt; 3  10.4     8  472    205  2.93  5.25  18.0     0     0     3     4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Each call to summarise() removes a layer of grouping</span></span><br><span class="line">by_vs_am &lt;- mtcars %&gt;% group_by(vs, am)</span><br><span class="line">by_vs &lt;- by_vs_am %&gt;% summarise(n = n())<span class="comment">#&gt; `summarise()` regrouping output by 'vs' (override with `.groups` argument)by_vs#&gt; # A tibble: 4 x 3</span></span><br><span class="line"><span class="comment">#&gt; # Groups:   vs [2]</span></span><br><span class="line"><span class="comment">#&gt;      vs    am     n</span></span><br><span class="line"><span class="comment">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1     0     0    12</span></span><br><span class="line"><span class="comment">#&gt; 2     0     1     6</span></span><br><span class="line"><span class="comment">#&gt; 3     1     0     7</span></span><br><span class="line"><span class="comment">#&gt; 4     1     1     7</span></span><br><span class="line"></span><br><span class="line">by_vs %&gt;% summarise(n = sum(n))<span class="comment">#&gt; `summarise()` ungrouping output (override with `.groups` argument)#&gt; # A tibble: 2 x 2</span></span><br><span class="line"><span class="comment">#&gt;      vs     n</span></span><br><span class="line"><span class="comment">#&gt;   &lt;dbl&gt; &lt;int&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1     0    18</span></span><br><span class="line"><span class="comment">#&gt; 2     1    14</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># To removing grouping, use ungroup</span></span><br><span class="line">by_vs %&gt;%</span><br><span class="line">  ungroup() %&gt;%</span><br><span class="line">  summarise(n = sum(n))<span class="comment">#&gt; # A tibble: 1 x 1</span></span><br><span class="line"><span class="comment">#&gt;       n</span></span><br><span class="line"><span class="comment">#&gt;   &lt;int&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1    32</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># You can group by expressions: this is just short-hand for</span></span><br><span class="line"><span class="comment"># a mutate() followed by a group_by()</span></span><br><span class="line">mtcars %&gt;% group_by(vsam = vs + am)<span class="comment">#&gt; # A tibble: 32 x 12</span></span><br><span class="line"><span class="comment">#&gt; # Groups:   vsam [3]</span></span><br><span class="line"><span class="comment">#&gt;      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb  vsam</span></span><br><span class="line"><span class="comment">#&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span><br><span class="line"><span class="comment">#&gt;  1  21       6  160    110  3.9   2.62  16.5     0     1     4     4     1</span></span><br><span class="line"><span class="comment">#&gt;  2  21       6  160    110  3.9   2.88  17.0     0     1     4     4     1</span></span><br><span class="line"><span class="comment">#&gt;  3  22.8     4  108     93  3.85  2.32  18.6     1     1     4     1     2</span></span><br><span class="line"><span class="comment">#&gt;  4  21.4     6  258    110  3.08  3.22  19.4     1     0     3     1     1</span></span><br><span class="line"><span class="comment">#&gt;  5  18.7     8  360    175  3.15  3.44  17.0     0     0     3     2     0</span></span><br><span class="line"><span class="comment">#&gt;  6  18.1     6  225    105  2.76  3.46  20.2     1     0     3     1     1</span></span><br><span class="line"><span class="comment">#&gt;  7  14.3     8  360    245  3.21  3.57  15.8     0     0     3     4     0</span></span><br><span class="line"><span class="comment">#&gt;  8  24.4     4  147.    62  3.69  3.19  20       1     0     4     2     1</span></span><br><span class="line"><span class="comment">#&gt;  9  22.8     4  141.    95  3.92  3.15  22.9     1     0     4     2     1</span></span><br><span class="line"><span class="comment">#&gt; 10  19.2     6  168.   123  3.92  3.44  18.3     1     0     4     4     1</span></span><br><span class="line"><span class="comment">#&gt; # … with 22 more rows</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># By default, group_by() overrides existing grouping</span></span><br><span class="line">by_cyl %&gt;%</span><br><span class="line">  group_by(vs, am) %&gt;%</span><br><span class="line">  group_vars()<span class="comment">#&gt; [1] "vs" "am"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Use add = TRUE to instead append</span></span><br><span class="line">by_cyl %&gt;%</span><br><span class="line">  group_by(vs, am, .add = <span class="literal">TRUE</span>) %&gt;%</span><br><span class="line">  group_vars()<span class="comment">#&gt; [1] "cyl" "vs"  "am" </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># when factors are involved, groups can be empty</span></span><br><span class="line">tbl &lt;- tibble(</span><br><span class="line">  x = <span class="number">1</span>:<span class="number">10</span>,</span><br><span class="line">  y = factor(rep(c(<span class="string">"a"</span>, <span class="string">"c"</span>), each  = <span class="number">5</span>), levels = c(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>))</span><br><span class="line">)</span><br><span class="line">tbl %&gt;%</span><br><span class="line">  group_by(y) %&gt;%</span><br><span class="line">  group_rows()<span class="comment">#&gt; &lt;list_of&lt;integer&gt;[2]&gt;</span></span><br><span class="line"><span class="comment">#&gt; [[1]]</span></span><br><span class="line"><span class="comment">#&gt; [1] 1 2 3 4 5</span></span><br><span class="line"><span class="comment">#&gt; </span></span><br><span class="line"><span class="comment">#&gt; [[2]]</span></span><br><span class="line"><span class="comment">#&gt; [1]  6  7  8  9 10</span></span><br><span class="line"><span class="comment">#&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Join-two-tbls-together"><a href="#Join-two-tbls-together" class="headerlink" title="Join two tbls together"></a>Join two tbls together</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inner_join()</span><br></pre></td></tr></table></figure>
+<p>return all rows from <code>x</code> where there are matching values in <code>y</code>, and all columns from <code>x</code> and <code>y</code>. If there are multiple matches between <code>x</code> and <code>y</code>, all combination of the matches are returned.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">left_join()</span><br></pre></td></tr></table></figure>
+<p>return all rows from <code>x</code>, and all columns from <code>x</code> and <code>y</code>. Rows in <code>x</code> with no match in <code>y</code> will have <code>NA</code> values in the new columns. If there are multiple matches between <code>x</code> and <code>y</code>, all combinations of the matches are returned.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">right_join()</span><br></pre></td></tr></table></figure>
+<p>return all rows from <code>y</code>, and all columns from <code>x</code> and y. Rows in <code>y</code> with no match in <code>x</code> will have <code>NA</code> values in the new columns. If there are multiple matches between <code>x</code> and <code>y</code>, all combinations of the matches are returned.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">full_join()</span><br></pre></td></tr></table></figure>
+<p>return all rows and all columns from both <code>x</code> and <code>y</code>. Where there are not matching values, returns <code>NA</code> for the one missing.</p>
+<h1 id="gather"><a href="#gather" class="headerlink" title="gather()"></a>gather()</h1><ul>
+<li><code>gather()</code>: Concatenate multiple features (columns) into a single column. This column becomes key and the names of old features become the value. <a href="https://tidyr.tidyverse.org/reference/gather.html" target="_blank" rel="noopener">link</a>. <strong><em>This function is extremely useful if we want to subplot the time time series according to different features with fcn <code>facet_grid()</code>.</em></strong></li>
+</ul>
+<p>example of gather():</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">print_retail &lt;- aus_retail %&gt;%</span><br><span class="line">  filter(Industry == <span class="string">"Newspaper and book retailing"</span>) %&gt;%</span><br><span class="line">  group_by(Industry) %&gt;%</span><br><span class="line">  index_by(Year = year(Month)) %&gt;%</span><br><span class="line">  summarise(Turnover = sum(Turnover))</span><br><span class="line"></span><br><span class="line">aus_economy &lt;- global_economy %&gt;%</span><br><span class="line">  filter(Code == <span class="string">"AUS"</span>)</span><br><span class="line"></span><br><span class="line">print_retail %&gt;%</span><br><span class="line">  left_join(aus_economy, by = <span class="string">"Year"</span>) %&gt;%</span><br><span class="line">  mutate(Adjusted_turnover = Turnover / CPI) %&gt;%</span><br><span class="line">  gather(<span class="string">"Type"</span>, <span class="string">"Turnover"</span>, Turnover, Adjusted_turnover, factor_key = <span class="literal">TRUE</span>) %&gt;%</span><br><span class="line">  ggplot(aes(x = Year, y = Turnover)) +</span><br><span class="line">    geom_line() +</span><br><span class="line">    facet_grid(vars(Type), scales = <span class="string">"free_y"</span>) +</span><br><span class="line">    xlab(<span class="string">"Years"</span>) + ylab(<span class="literal">NULL</span>) +</span><br><span class="line">    ggtitle(<span class="string">"Turnover for the Australian print media industry"</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="/assets/tsibble/gather.png" style="zoom:80%;"></p>
+<h1 id="filtering-time-index"><a href="#filtering-time-index" class="headerlink" title="filtering time index"></a>filtering time index</h1><ul>
+<li><code>filter()</code></li>
+<li><code>filter_index()</code>: A shorthand for filtering time index for a tsibble</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bricks &lt;- aus_production %&gt;% filter(between(year(Quarter), <span class="number">1970</span>, <span class="number">2004</span>))</span><br><span class="line">bricks &lt;- aus_production %&gt;% filter_index(<span class="string">"1970 Q1"</span> ~ <span class="string">"2004 Q4"</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/R-language/" rel="tag"># R language</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/27/PhD-book-fpp3/" rel="next" title="PhD book1 - fpp3">
+                <i class="fa fa-chevron-left"></i> PhD book1 - fpp3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/17/ggplot2-Basics/" rel="prev" title="R ggplot2 Note">
+                R ggplot2 Note <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Shengjie.Xiu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Michael-Xiu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/xiao-li-dou-dan/activities" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-paper-plane"></i>Zhihu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xiushj@mail2.sysu.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/shengjie.xiu.3" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/michael.xiu" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="skype:Shengjie Xiu?call|chat" target="_blank" title="Skype">
+                      
+                        <i class="fa fa-fw fa-skype"></i>Skype</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#filter"><span class="nav-text">filter()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#select"><span class="nav-text">select()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mutate"><span class="nav-text">mutate()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#summarise"><span class="nav-text">summarise()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#group-by"><span class="nav-text">group_by()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Join-two-tbls-together"><span class="nav-text">Join two tbls together</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gather"><span class="nav-text">gather()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#filtering-time-index"><span class="nav-text">filtering time index</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shengjie Xiu</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
