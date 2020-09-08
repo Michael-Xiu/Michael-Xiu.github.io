@@ -2,14 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://michaelxiu.com/2019/12/12/My-Research/</loc>
+    <loc>http://michaelxiu.com/2020/07/27/PhD-book-fpp3/</loc>
+    
+    <lastmod>2020-09-08T13:49:47.064Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://michaelxiu.com/2020/07/26/R-Coding-Basics/</loc>
     
     <lastmod>2020-09-07T20:13:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://michaelxiu.com/2020/07/26/R-Coding-Basics/</loc>
+    <loc>http://michaelxiu.com/2019/12/12/My-Research/</loc>
     
     <lastmod>2020-09-07T20:13:00.000Z</lastmod>
     
@@ -45,13 +52,6 @@
   
   <url>
     <loc>http://michaelxiu.com/2019/04/14/Random-Signal-Analysis/</loc>
-    
-    <lastmod>2020-09-07T20:13:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://michaelxiu.com/2020/07/27/PhD-book-fpp3/</loc>
     
     <lastmod>2020-09-07T20:13:00.000Z</lastmod>
     
