@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://michaelxiu.com/2019/12/12/My-Research/</loc>
+    
+    <lastmod>2020-09-10T10:11:36.855Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://michaelxiu.com/2019/04/14/Random-Signal-Analysis/</loc>
+    
+    <lastmod>2020-09-10T10:10:45.700Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://michaelxiu.com/2019/03/18/Mircrowave-and-Antenna/</loc>
+    
+    <lastmod>2020-09-10T10:08:36.409Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://michaelxiu.com/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/</loc>
+    
+    <lastmod>2020-09-10T10:05:53.076Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://michaelxiu.com/2020/07/27/PhD-book-fpp3/</loc>
     
     <lastmod>2020-09-10T09:58:04.568Z</lastmod>
@@ -16,13 +44,6 @@
   </url>
   
   <url>
-    <loc>http://michaelxiu.com/2019/12/12/My-Research/</loc>
-    
-    <lastmod>2020-09-07T20:13:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://michaelxiu.com/2020/07/30/Work-with-tsibble/</loc>
     
     <lastmod>2020-09-07T20:13:00.000Z</lastmod>
@@ -31,27 +52,6 @@
   
   <url>
     <loc>http://michaelxiu.com/2020/08/17/ggplot2-Basics/</loc>
-    
-    <lastmod>2020-09-07T20:13:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://michaelxiu.com/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/</loc>
-    
-    <lastmod>2020-09-07T20:13:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://michaelxiu.com/2019/03/18/Mircrowave-and-Antenna/</loc>
-    
-    <lastmod>2020-09-07T20:13:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://michaelxiu.com/2019/04/14/Random-Signal-Analysis/</loc>
     
     <lastmod>2020-09-07T20:13:00.000Z</lastmod>
     
