@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://michaelxiu.com/2020/07/27/PhD-book-fpp3/</loc>
+    
+    <lastmod>2020-09-11T09:42:19.624Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://michaelxiu.com/2019/12/12/My-Research/</loc>
     
-    <lastmod>2020-09-10T10:11:36.855Z</lastmod>
+    <lastmod>2020-09-10T10:55:44.600Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://michaelxiu.com/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/</loc>
     
     <lastmod>2020-09-10T10:05:53.076Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://michaelxiu.com/2020/07/27/PhD-book-fpp3/</loc>
-    
-    <lastmod>2020-09-10T09:58:04.568Z</lastmod>
     
   </url>
   
