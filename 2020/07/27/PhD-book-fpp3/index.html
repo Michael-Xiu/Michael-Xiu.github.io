@@ -133,7 +133,7 @@
 <meta property="og:image" content="http://michaelxiu.com/assets/fpp3/fig_8_7_1.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/fpp3/fig_8_7_2.png">
 <meta property="og:image" content="http://michaelxiu.com/assets/fpp3/fig_9_5_1.png">
-<meta property="og:updated_time" content="2020-09-24T09:00:36.536Z">
+<meta property="og:updated_time" content="2020-10-16T01:57:51.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PhD book1 - fpp3">
 <meta name="twitter:description" content="Important notes of book “Forecasting: Principles and Practice” by Rob J Hyndman and George Athanasopoulos.">
@@ -1927,7 +1927,7 @@ y_{t} = c + \phi_{1}y_{t-1} + \phi_{2}y_{t-2} + \dots + \phi_{p}y_{t-p} + \varep
 <li>For an AR(2) model: −1&lt;$\phi_2$&lt;1, $\phi_1$+$\phi_2$&lt;1, $\phi_2$−$\phi_1$&lt;1.</li>
 </ul>
 <p>When $p\ge3$, the restrictions are much more complicated. R takes care of these restrictions when estimating a model.</p>
-<h2 id="Moving-average-models-9-4"><a href="#Moving-average-models-9-4" class="headerlink" title="Moving average models (9.4)"></a>Moving average models (9.4)</h2><p>Rather than using past values of the forecast variable in a regression, a moving average model uses past forecast errors in a regression-like model.</p>
+<h2 id="Moving-average-models-9-4"><a href="#Moving-average-models-9-4" class="headerlink" title="Moving average models (9.4)"></a>Moving average models (9.4)</h2><p>Rather than using past values of the forecast variable in a regression, a moving average model uses <strong><em>past forecast errors</em></strong> in a regression-like model.</p>
 <script type="math/tex; mode=display">
 y_{t} = c + \varepsilon_t + \theta_{1}\varepsilon_{t-1} + \theta_{2}\varepsilon_{t-2} + \dots + \theta_{q}\varepsilon_{t-q}</script><p>where $\varepsilon_t$ is white noise. We refer to this as an <strong>MA($q$) model</strong>, a moving average model of order $q$. Of course, we do not <em>observe</em> the values of $\varepsilon_t$, so it is not really a regression in the usual sense.</p>
 <p>Notice that each value of $y_t$ can be thought of as a weighted moving average of the past few forecast errors. However, moving average <em>models</em> should not be confused with the moving average <em>smoothing</em>. A moving average model is used for forecasting future values, while moving average smoothing is used for estimating the trend-cycle of past values.</p>
@@ -2170,7 +2170,7 @@ y_t = 0.316
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2192,7 +2192,7 @@ y_t = 0.316
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

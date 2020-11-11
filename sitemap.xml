@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://michaelxiu.com/2020/10/04/Kalman-Filter/</loc>
+    <loc>http://michaelxiu.com/2020/11/11/Kalman_Understanding/</loc>
     
-    <lastmod>2020-10-09T06:58:24.923Z</lastmod>
+    <lastmod>2020-11-11T15:25:25.107Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://michaelxiu.com/2020/07/27/PhD-book-fpp3/</loc>
     
-    <lastmod>2020-09-24T09:00:36.536Z</lastmod>
+    <lastmod>2020-10-16T01:57:51.749Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://michaelxiu.com/2020/10/04/Kalman-Filter/</loc>
+    
+    <lastmod>2020-10-09T06:58:24.923Z</lastmod>
     
   </url>
   
@@ -44,6 +51,13 @@
   </url>
   
   <url>
+    <loc>http://michaelxiu.com/2020/07/26/R-Coding-Basics/</loc>
+    
+    <lastmod>2020-09-07T20:13:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://michaelxiu.com/2020/08/17/ggplot2-Basics/</loc>
     
     <lastmod>2020-09-07T20:13:00.000Z</lastmod>
@@ -52,13 +66,6 @@
   
   <url>
     <loc>http://michaelxiu.com/2020/07/30/Work-with-tsibble/</loc>
-    
-    <lastmod>2020-09-07T20:13:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://michaelxiu.com/2020/07/26/R-Coding-Basics/</loc>
     
     <lastmod>2020-09-07T20:13:00.000Z</lastmod>
     
