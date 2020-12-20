@@ -79,24 +79,24 @@
 
 
 
-<meta name="description" content="MARSS package1. observation equation:  \mathbf{y}_t = \mathbf{Z}_t \mathbf{x}_{t} + \mathbf{a}_t + \mathbf{D}_t \mathbf{d}_t + \mathbf{H}_t \mathbf{v}_t\text{, where } \mathbf{v}_t \sim \text{MVN} (0">
+<meta name="description" content="This is a summary of the Kalman filter tutorial written by Alex Becker.">
 <meta name="keywords" content="Kalman Filter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kalman Filter">
+<meta property="og:title" content="Kalman Filter Tutorial by Alex Becker">
 <meta property="og:url" content="http://michaelxiu.com/2020/10/04/Kalman-Filter/index.html">
 <meta property="og:site_name" content="Shengjie Xiu">
-<meta property="og:description" content="MARSS package1. observation equation:  \mathbf{y}_t = \mathbf{Z}_t \mathbf{x}_{t} + \mathbf{a}_t + \mathbf{D}_t \mathbf{d}_t + \mathbf{H}_t \mathbf{v}_t\text{, where } \mathbf{v}_t \sim \text{MVN} (0">
+<meta property="og:description" content="This is a summary of the Kalman filter tutorial written by Alex Becker.">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://michaelxiu.com/assets/kalman/ex1_stateUpdate.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/kalman/ex1_estimationAlgorithm.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/kalman/KalmanFilterAlgorithm.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/kalman/DetailedKalmanFilterAlgorithm.png">
-<meta property="og:image" content="http://michaelxiu.com/assets/kalman/ex7_EstimateVsTrueVsMeasured.png">
-<meta property="og:updated_time" content="2020-10-09T06:58:24.923Z">
+<meta property="og:image" content="http://michaelxiu.com/Blog%20Posts%20Backup/assest/ex1_stateUpdate.png">
+<meta property="og:image" content="http://michaelxiu.com/Blog%20Posts%20Backup/assest/ex1_estimationAlgorithm.png">
+<meta property="og:image" content="http://michaelxiu.com/Blog%20Posts%20Backup/assest/KalmanFilterAlgorithm.png">
+<meta property="og:image" content="http://michaelxiu.com/Blog%20Posts%20Backup/assest/DetailedKalmanFilterAlgorithm.png">
+<meta property="og:image" content="http://michaelxiu.com/Blog%20Posts%20Backup/assest/ex7_EstimateVsTrueVsMeasured.png">
+<meta property="og:updated_time" content="2020-12-20T11:53:20.102Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kalman Filter">
-<meta name="twitter:description" content="MARSS package1. observation equation:  \mathbf{y}_t = \mathbf{Z}_t \mathbf{x}_{t} + \mathbf{a}_t + \mathbf{D}_t \mathbf{d}_t + \mathbf{H}_t \mathbf{v}_t\text{, where } \mathbf{v}_t \sim \text{MVN} (0">
-<meta name="twitter:image" content="http://michaelxiu.com/assets/kalman/ex1_stateUpdate.png">
+<meta name="twitter:title" content="Kalman Filter Tutorial by Alex Becker">
+<meta name="twitter:description" content="This is a summary of the Kalman filter tutorial written by Alex Becker.">
+<meta name="twitter:image" content="http://michaelxiu.com/Blog%20Posts%20Backup/assest/ex1_stateUpdate.png">
 
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>Kalman Filter | Shengjie Xiu</title>
+  <title>Kalman Filter Tutorial by Alex Becker | Shengjie Xiu</title>
   
 
 
@@ -268,7 +268,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Kalman Filter</h1>
+          <h1 class="post-title" itemprop="name headline">Kalman Filter Tutorial by Alex Becker</h1>
         
 
         <div class="post-meta">
@@ -358,7 +358,8 @@
       
 
       
-        <a id="more"></a>
+        <p>This is a summary of the Kalman filter tutorial written by Alex Becker.</p>
+<a id="more"></a>
 <h1 id="MARSS-package"><a href="#MARSS-package" class="headerlink" title="MARSS package"></a>MARSS package</h1><p><em>1. observation equation:</em></p>
 <script type="math/tex; mode=display">
 \mathbf{y}_t = \mathbf{Z}_t \mathbf{x}_{t} + \mathbf{a}_t + \mathbf{D}_t \mathbf{d}_t + \mathbf{H}_t \mathbf{v}_t\text{, where } \mathbf{v}_t \sim \text{MVN} (0, \mathbf{R}_t)</script><p>includes $n$ measurements, $q$ dimensional inputs, and $n \times h$ dimensional input noise transformation matrix, where, </p>
@@ -456,13 +457,13 @@ P_{t|t} = (I-K_t Z_t) P_{t|t-1}</script><ul>
 </ul>
 <script type="math/tex; mode=display">
 v_{t|t} = y_t - Z_t \hat{\alpha}_{t|t}</script><h1 id="Tutorial-by-Alex-Becker"><a href="#Tutorial-by-Alex-Becker" class="headerlink" title="Tutorial by Alex Becker"></a>Tutorial by Alex Becker</h1><h2 id="The-alpha-beta-gamma-Filter"><a href="#The-alpha-beta-gamma-Filter" class="headerlink" title="The $\alpha-\beta-\gamma$ Filter"></a>The $\alpha-\beta-\gamma$ Filter</h2><h3 id="EXAMPLE-1-WEIGHTING-THE-GOLD"><a href="#EXAMPLE-1-WEIGHTING-THE-GOLD" class="headerlink" title="EXAMPLE 1 WEIGHTING THE GOLD"></a>EXAMPLE 1 WEIGHTING THE GOLD</h3><p>The overall logic of state update equation:</p>
-<p><img src="/assets/kalman/ex1_stateUpdate.png" style="zoom:65%;"></p>
+<p><img src="/Blog Posts Backup/assest/ex1_stateUpdate.png" style="zoom:65%;"></p>
 <script type="math/tex; mode=display">
 \hat{x}_{n,n}= \hat{x}_{n,n-1}+  \alpha _{n} \left( z_{n}-\hat{x}_{n,n-1} \right)</script><p>The term $\left( z_{n}- x_{n,n-1} \right)$ is a measurement residual, also called the <strong>innovation</strong>. The innovation contains the newest information.</p>
 <p>Before we make the first measurement, we can guess (or rough estimate) the gold bar weight simply by reading the stamp on the gold bar. It is called the <strong>Initial Guess</strong> and it will be our first estimate.</p>
 <p>As we will see later, the Kalman Filter requires the initial guess as a preset, and it can be very rough.</p>
 <p>The estimation algorithm:</p>
-<p><img src="/assets/kalman/ex1_estimationAlgorithm.png" style="zoom:80%;"></p>
+<p><img src="/Blog Posts Backup/assest/ex1_estimationAlgorithm.png" style="zoom:80%;"></p>
 <h3 id="EXAMPLE-2-TRACKING-THE-CONSTANT-VELOCITY-AIRCRAFT-IN-ONE-DIMENSION"><a href="#EXAMPLE-2-TRACKING-THE-CONSTANT-VELOCITY-AIRCRAFT-IN-ONE-DIMENSION" class="headerlink" title="EXAMPLE 2 TRACKING THE CONSTANT VELOCITY AIRCRAFT IN ONE DIMENSION"></a>EXAMPLE 2 TRACKING THE CONSTANT VELOCITY AIRCRAFT IN ONE DIMENSION</h3><p><strong>Equation1: State Extrapolation Equation</strong> (also called a <strong>Transition Equation</strong>, a <strong>Prediction Equation</strong>, a <strong>Dynamic Model</strong>, or a <strong>State Space Model</strong>) : the state equation in the standard form of Kalman Filters to predict the states.</p>
 <p><strong>Equation2: State Update Equation</strong> (also called a <strong>Filtering Equation</strong>): Equation including Kalman Gain that used to update the prediction into final estimate based on the new observation.</p>
 <h2 id="Kalman-Filter-in-one-dimension"><a href="#Kalman-Filter-in-one-dimension" class="headerlink" title="Kalman Filter in one dimension"></a>Kalman Filter in one dimension</h2><p>The differences between the measurements (blue samples) and the true value (green line) are measurement errors. Since the measurement errors are random, we can describe them by variance ( $\sigma^2$ ). The variance of the measurement errors could be provided by the scale vendor or can be derived by calibration procedure. The variance of the measurement errors is actually the <strong>measurement uncertainty</strong>.</p>
@@ -489,7 +490,7 @@ p_{n,n}=~  \left( 1-K_{n} \right) p_{n,n-1}</script><p>where $p_{n,n-1}$ is the 
 \hat{\dot{x}}_{n+1,n}= \hat{\dot{x}}_{n,n}</script><p>The estimate uncertainty extrapolation equation is called <strong>Equation5: Covariance Extrapolation Equation</strong> :</p>
 <script type="math/tex; mode=display">
 p_{n+1,n}^{x}= p_{n,n}^{x} +  \Delta t^{2} \cdot p_{n,n}^{v} \\
-p_{n+1,n}^{v}= p_{n,n}^{v}</script><h3 id="PUTTING-ALL-TOGETHER"><a href="#PUTTING-ALL-TOGETHER" class="headerlink" title="PUTTING ALL TOGETHER"></a>PUTTING ALL TOGETHER</h3><p><img src="/assets/kalman/KalmanFilterAlgorithm.png" style="zoom:60%;"></p>
+p_{n+1,n}^{v}= p_{n,n}^{v}</script><h3 id="PUTTING-ALL-TOGETHER"><a href="#PUTTING-ALL-TOGETHER" class="headerlink" title="PUTTING ALL TOGETHER"></a>PUTTING ALL TOGETHER</h3><p><img src="/Blog Posts Backup/assest/KalmanFilterAlgorithm.png" style="zoom:60%;"></p>
 <p>The filter inputs are:</p>
 <ul>
 <li><p>Initialization</p>
@@ -523,11 +524,11 @@ p_{n+1,n}^{v}= p_{n,n}^{v}</script><h3 id="PUTTING-ALL-TOGETHER"><a href="#PUTTI
 <script type="math/tex; mode=display">
 p_{n,n}=~  \left( 1-K_{n} \right) p_{n,n-1}</script><p>and $p_{n,n}$ is always getting smaller with each filter iteration, since $\left( 1-K_{n} \right)   \leq 1$.</p>
 <p>So it is up to us to decide how many measurements to take. If we are measuring the building height, and we are interested in precision of 3 centimeters ( $\sigma$ ), we will make the measurements until the Estimation Uncertainty ( $\sigma^2$ ) is less than 9 centimeters.</p>
-<p><img src="/assets/kalman/DetailedKalmanFilterAlgorithm.png" style="zoom:85%;"></p>
+<p><img src="/Blog Posts Backup/assest/DetailedKalmanFilterAlgorithm.png" style="zoom:85%;"></p>
 <ul>
 <li><strong>Process error</strong> is added to covariance extrapolation equation. [This can be understood because it cannot be added to state extrapolation equation because we should not manually add an error in the prediction. However, we know that there will be an added variance to our prediction.] </li>
 </ul>
-<h3 id="EXAMPLE-7-–-ESTIMATING-THE-TEMPERATURE-OF-THE-HEATING-LIQUID-Ⅰ"><a href="#EXAMPLE-7-–-ESTIMATING-THE-TEMPERATURE-OF-THE-HEATING-LIQUID-Ⅰ" class="headerlink" title="EXAMPLE 7 – ESTIMATING THE TEMPERATURE OF THE HEATING LIQUID Ⅰ"></a>EXAMPLE 7 – ESTIMATING THE TEMPERATURE OF THE HEATING LIQUID Ⅰ</h3><p><img src="/assets/kalman/ex7_EstimateVsTrueVsMeasured.png" style="zoom:65%;"></p>
+<h3 id="EXAMPLE-7-–-ESTIMATING-THE-TEMPERATURE-OF-THE-HEATING-LIQUID-Ⅰ"><a href="#EXAMPLE-7-–-ESTIMATING-THE-TEMPERATURE-OF-THE-HEATING-LIQUID-Ⅰ" class="headerlink" title="EXAMPLE 7 – ESTIMATING THE TEMPERATURE OF THE HEATING LIQUID Ⅰ"></a>EXAMPLE 7 – ESTIMATING THE TEMPERATURE OF THE HEATING LIQUID Ⅰ</h3><p><img src="/Blog Posts Backup/assest/ex7_EstimateVsTrueVsMeasured.png" style="zoom:65%;"></p>
 <p>There are two reasons that causing lag error in our Kalman Filter example:</p>
 <ul>
 <li>The dynamic model doesn’t fit the case. [The true value has a linear trend while the dynamic model is a constant, which shows that Kalman Filters can perform well only when the dynamic model is reasonable.] If we know that the liquid temperature can change linearly, we can define a new model that takes into account a possible linear change in the liquid temperature. We did it in Example 4. This is a preferred method. However, if the temperature change can’t be modeled, this method won’t improve the Kalman Filter performance.</li>
@@ -704,8 +705,8 @@ p_{n,n}=~  \left( 1-K_{n} \right) p_{n,n-1}</script><p>and $p_{n,n}$ is always g
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/11/11/Kalman_Understanding/" rel="prev" title="Kalman Filter">
-                Kalman Filter <i class="fa fa-chevron-right"></i>
+              <a href="/2020/11/07/Expectation-Maximization/" rel="prev" title="Expectation Maximization">
+                Expectation Maximization <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -783,7 +784,7 @@ p_{n,n}=~  \left( 1-K_{n} \right) p_{n,n-1}</script><p>and $p_{n,n}$ is always g
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

@@ -2,18 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://michaelxiu.com/2020/11/11/Kalman_Understanding/</loc>
-    <lastmod>2020-11-11</lastmod>
-  </url>  <url>
-    <loc>http://michaelxiu.com/2020/07/27/PhD-book-fpp3/</loc>
-    <lastmod>2020-10-16</lastmod>
+    <lastmod>2020-12-20</lastmod>
   </url>  <url>
     <loc>http://michaelxiu.com/2020/10/04/Kalman-Filter/</loc>
-    <lastmod>2020-10-09</lastmod>
+    <lastmod>2020-12-20</lastmod>
   </url>  <url>
-    <loc>http://michaelxiu.com/2019/04/14/Random-Signal-Analysis/</loc>
-    <lastmod>2020-09-12</lastmod>
+    <loc>http://michaelxiu.com/2020/07/27/PhD-book-fpp3/</loc>
+    <lastmod>2020-12-10</lastmod>
+  </url>  <url>
+    <loc>http://michaelxiu.com/2020/11/23/Deriveration-of-Kalman/</loc>
+    <lastmod>2020-11-15</lastmod>
+  </url>  <url>
+    <loc>http://michaelxiu.com/2020/11/07/Expectation-Maximization/</loc>
+    <lastmod>2020-11-15</lastmod>
   </url>  <url>
     <loc>http://michaelxiu.com/2019/12/12/My-Research/</loc>
+    <lastmod>2020-09-10</lastmod>
+  </url>  <url>
+    <loc>http://michaelxiu.com/2019/04/14/Random-Signal-Analysis/</loc>
     <lastmod>2020-09-10</lastmod>
   </url>  <url>
     <loc>http://michaelxiu.com/2019/03/18/Mircrowave-and-Antenna/</loc>
@@ -22,10 +28,10 @@
     <loc>http://michaelxiu.com/2018/04/20/Lecture-Note-Stanford-Computer-Vision-CS231n/</loc>
     <lastmod>2020-09-10</lastmod>
   </url>  <url>
-    <loc>http://michaelxiu.com/2020/07/26/R-Coding-Basics/</loc>
+    <loc>http://michaelxiu.com/2020/08/17/ggplot2-Basics/</loc>
     <lastmod>2020-09-07</lastmod>
   </url>  <url>
-    <loc>http://michaelxiu.com/2020/08/17/ggplot2-Basics/</loc>
+    <loc>http://michaelxiu.com/2020/07/26/R-Coding-Basics/</loc>
     <lastmod>2020-09-07</lastmod>
   </url>  <url>
     <loc>http://michaelxiu.com/2020/07/30/Work-with-tsibble/</loc>

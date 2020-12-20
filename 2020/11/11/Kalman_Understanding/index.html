@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="State space modelKalman is a “optimal solution” of the state space model,  \mathbf{x}_t = \mathbf{F}_t \mathbf{x}_{t-1} + \mathbf{B}_{t}\mathbf{u}_{t} + \mathbf{w}_{t} \\ \mathbf{z}_{t} = \mathbf{H}_">
+<meta name="description" content="Here is my notes on Kalman filter. (uncomplete)">
 <meta name="keywords" content="Deeper Understanding of Kalman Filter &amp; Smoother &amp; EM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kalman Filter">
+<meta property="og:title" content="Some notes on Kalman Filter">
 <meta property="og:url" content="http://michaelxiu.com/2020/11/11/Kalman_Understanding/index.html">
 <meta property="og:site_name" content="Shengjie Xiu">
-<meta property="og:description" content="State space modelKalman is a “optimal solution” of the state space model,  \mathbf{x}_t = \mathbf{F}_t \mathbf{x}_{t-1} + \mathbf{B}_{t}\mathbf{u}_{t} + \mathbf{w}_{t} \\ \mathbf{z}_{t} = \mathbf{H}_">
+<meta property="og:description" content="Here is my notes on Kalman filter. (uncomplete)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-11-11T15:25:25.107Z">
+<meta property="og:updated_time" content="2020-12-20T11:54:24.511Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kalman Filter">
-<meta name="twitter:description" content="State space modelKalman is a “optimal solution” of the state space model,  \mathbf{x}_t = \mathbf{F}_t \mathbf{x}_{t-1} + \mathbf{B}_{t}\mathbf{u}_{t} + \mathbf{w}_{t} \\ \mathbf{z}_{t} = \mathbf{H}_">
+<meta name="twitter:title" content="Some notes on Kalman Filter">
+<meta name="twitter:description" content="Here is my notes on Kalman filter. (uncomplete)">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>Kalman Filter | Shengjie Xiu</title>
+  <title>Some notes on Kalman Filter | Shengjie Xiu</title>
   
 
 
@@ -262,7 +262,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Kalman Filter</h1>
+          <h1 class="post-title" itemprop="name headline">Some notes on Kalman Filter</h1>
         
 
         <div class="post-meta">
@@ -352,7 +352,8 @@
       
 
       
-        <a id="more"></a>
+        <p>Here is my notes on Kalman filter. (uncomplete)</p>
+<a id="more"></a>
 <h1 id="State-space-model"><a href="#State-space-model" class="headerlink" title="State space model"></a>State space model</h1><p>Kalman is a “optimal solution” of the state space model,</p>
 <script type="math/tex; mode=display">
 \mathbf{x}_t = \mathbf{F}_t \mathbf{x}_{t-1} + \mathbf{B}_{t}\mathbf{u}_{t} + \mathbf{w}_{t} \\
@@ -392,7 +393,7 @@
 \end{align*}</script><script type="math/tex; mode=display">
 \mathbf{P}_{t|t} =\mathbf{P}_{t|t-1} - \mathbf{K}_t \mathbf{H}_t \mathbf{P}_{t|t-1}</script><p>where Kalman gain is defined as,</p>
 <script type="math/tex; mode=display">
-\mathbf{K}_t  = \mathbf{P}_{t|t-1} \mathbf{H}_t^T (\mathbf{H}_t \mathbf{P}_{t|t-1} \mathbf{H}_t^T + \mathbf{R}_{t})^{-1}</script><h1 id="PRML"><a href="#PRML" class="headerlink" title="PRML"></a>PRML</h1><p>The hidden Markov model, in which the latent variables are discrete, and linear dynamical systems, in which the latent variables are Gaussian.</p>
+\mathbf{K}_t  = \mathbf{P}_{t|t-1} \mathbf{H}_t^T (\mathbf{H}_t \mathbf{P}_{t|t-1} \mathbf{H}_t^T + \mathbf{R}_{t})^{-1}</script><h1 id="Kalman-Filtering"><a href="#Kalman-Filtering" class="headerlink" title="Kalman Filtering"></a>Kalman Filtering</h1><h1 id="PRML"><a href="#PRML" class="headerlink" title="PRML"></a>PRML</h1><p>The hidden Markov model, in which the latent variables are discrete, and linear dynamical systems, in which the latent variables are Gaussian.</p>
 <h1 id="Simple-and-Intuitive-Derivation"><a href="#Simple-and-Intuitive-Derivation" class="headerlink" title="Simple and Intuitive Derivation"></a>Simple and Intuitive Derivation</h1><p>卡尔曼滤波和HMM的区别，这在EM的时候可以注意下：</p>
 <p>The Kalman filter is an algorithm permitting exact inference in a linear dynamical system, which is a Bayesian model similar to a hidden Markov model but where the state space of the latent variables is continuous and where all latent and observed variables have a Gaussian distribution (often a multivariate Gaussian distribution).</p>
 <p>The Kalman filter provides an algorithm to determine an estimate $\mathbf{x}_t$ by combining models of the system and noisy measurements of certain parameters or linear functions of parameters.</p>
@@ -441,8 +442,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/10/04/Kalman-Filter/" rel="next" title="Kalman Filter">
-                <i class="fa fa-chevron-left"></i> Kalman Filter
+              <a href="/2020/11/07/Expectation-Maximization/" rel="next" title="Expectation Maximization">
+                <i class="fa fa-chevron-left"></i> Expectation Maximization
               </a>
             
           </div>
@@ -450,6 +451,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/11/23/Deriveration-of-Kalman/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -526,7 +531,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -621,7 +626,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#State-space-model"><span class="nav-text">State space model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kalman-filtering"><span class="nav-text">Kalman filtering</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prediction"><span class="nav-text">Prediction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Measurement-update"><span class="nav-text">Measurement update</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PRML"><span class="nav-text">PRML</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Simple-and-Intuitive-Derivation"><span class="nav-text">Simple and Intuitive Derivation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prediction-1"><span class="nav-text">Prediction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Measurement-Update"><span class="nav-text">Measurement Update</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Statistics-and-Econometric-Models"><span class="nav-text">Statistics and Econometric Models</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#State-space-model"><span class="nav-text">State space model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kalman-filtering"><span class="nav-text">Kalman filtering</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prediction"><span class="nav-text">Prediction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Measurement-update"><span class="nav-text">Measurement update</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kalman-Filtering"><span class="nav-text">Kalman Filtering</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PRML"><span class="nav-text">PRML</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Simple-and-Intuitive-Derivation"><span class="nav-text">Simple and Intuitive Derivation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prediction-1"><span class="nav-text">Prediction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Measurement-Update"><span class="nav-text">Measurement Update</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Statistics-and-Econometric-Models"><span class="nav-text">Statistics and Econometric Models</span></a></li></ol></div>
             
 
           </div>
