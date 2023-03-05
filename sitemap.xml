@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://michaelxiu.com/2021/02/17/A_Guide_to_Portfolio_Optimization/</loc>
+    
+    <lastmod>2023-03-05T11:52:05.017Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://michaelxiu.com/2021/01/06/A_Guide_to_Convex_Optimization/</loc>
+    
+    <lastmod>2023-03-05T11:49:48.694Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://michaelxiu.com/2022/11/15/A_Guide_to_Optimization_in_ML/</loc>
+    
+    <lastmod>2023-03-05T11:47:36.195Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://michaelxiu.com/2023/01/20/A_Guide_to_Machine_Learning/</loc>
+    
+    <lastmod>2023-03-05T11:47:07.040Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://michaelxiu.com/2021/01/11/A_Guide_to_Control_Theory/</loc>
+    
+    <lastmod>2023-03-05T11:43:54.010Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://michaelxiu.com/2020/11/11/Kalman_Understanding/</loc>
+    
+    <lastmod>2023-03-05T11:21:18.514Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://michaelxiu.com/2020/10/04/Kalman-Filter/</loc>
+    
+    <lastmod>2023-03-05T11:21:07.794Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://michaelxiu.com/2019/12/12/My-Research/</loc>
     
     <lastmod>2020-03-13T08:18:54.381Z</lastmod>
